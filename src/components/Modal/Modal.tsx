@@ -14,20 +14,6 @@ const Modal: FC<ModalProps> = ({ open, children, className }) => {
   const modalRef = useRef<HTMLDivElement>(null);
   const container = useRef<Element | null>(null);
   const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    console.log(modalRef);
-    console.log(open);
-
-    if (open) {
-      const scrollbarWidth =
-        window.innerWidth - document.documentElement.clientWidth;
-      document.body.classList.add("overflow-hidden");
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
-    } else {
-      document.body.classList.remove("overflow-hidden");
-      document.body.style.paddingRight = "";
-    }
-  }, [open]);
 
   useEffect(() => {
     container.current = document.querySelector<HTMLElement>("#modal");

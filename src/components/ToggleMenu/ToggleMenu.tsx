@@ -2,7 +2,7 @@
 
 import menu from "@/../public/icons/menu.svg";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "../Modal";
 import Link from "next/link";
 import instagram from "@/../public/icons/instagram.svg";
@@ -15,7 +15,12 @@ const ToggleMenu = () => {
     setOpen((prev) => !prev);
   };
 
-  // add useeffect to resize
+  useEffect(() => {
+    const handleResize = () => {
+      setOpen(false);
+    };
+    window.onresize = handleResize;
+  }, []);
 
   return (
     <div className="modal-toggle">
