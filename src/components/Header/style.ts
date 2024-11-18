@@ -1,15 +1,19 @@
 "use client";
 import styled from "@emotion/styled";
-import { Cantarell } from "next/font/google";
 
 export const Header = styled.header`
+  background: var(--violet-dark);
   color: var(--main-color);
-  max-width: 1440px;
+  padding-inline: 80px;
   margin-inline: auto;
   > p {
     margin-left: 24px;
     font-size: 12px;
-    margin-block: 8px;
+    padding-block: 8px;
+  }
+
+  @media (max-width: 568px) {
+    padding-inline: 16px;
   }
 `;
 
@@ -19,6 +23,12 @@ export const Menu = styled.menu`
   justify-content: space-between;
   border-bottom: 1px solid #fbf7fa;
   padding: 24px 24px 8px;
+  > .modal-toggle {
+    display: none;
+    @media (max-width: 568px) {
+      display: block;
+    }
+  }
 `;
 
 export const Nav = styled.nav`
@@ -26,6 +36,9 @@ export const Nav = styled.nav`
   height: 40px;
   gap: 12px;
   align-items: center;
+  @media (max-width: 568px) {
+    display: none;
+  }
 `;
 
 export const Tab = styled.div`

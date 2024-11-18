@@ -1,8 +1,8 @@
 import React from "react";
 import { Header, StyledHero, TextSection, Text, ImageSection } from "./style";
 import Image from "next/image";
-import hero_1 from "@/../public/hero_1.png";
-import hero_2 from "@/../public/hero_2.png";
+import hero_1 from "@/../public/images/hero_1.png";
+import hero_2 from "@/../public/images/hero_2.png";
 
 const Hero = () => {
   return (
@@ -21,7 +21,15 @@ const Hero = () => {
       </TextSection>
       <ImageSection>
         <Image src={hero_1} alt={""} />
-        <Image src={hero_2} alt={""} />
+        <Image
+          src={hero_2}
+          alt={""}
+          style={{
+            width: "100%",
+            objectFit: "cover",
+            objectPosition: "bottom",
+          }}
+        />
       </ImageSection>
     </StyledHero>
   );

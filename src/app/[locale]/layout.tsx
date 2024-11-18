@@ -30,7 +30,10 @@ export default async function RootLayout({
     <html lang="en">
       <body>
         <NextIntlClientProvider messages={messages}>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          <StyledComponentsRegistry>
+            {children}
+            <div id="modal"></div>
+          </StyledComponentsRegistry>
         </NextIntlClientProvider>
       </body>
     </html>
