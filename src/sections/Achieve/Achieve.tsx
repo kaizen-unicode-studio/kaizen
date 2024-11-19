@@ -1,6 +1,4 @@
-import React from "react";
 import { Header, StyledAchieve } from "./style";
-
 import achieve_1 from "/public/icons/achieve_1.svg";
 import achieve_2 from "/public/icons/achieve_2.svg";
 import achieve_3 from "/public/icons/achieve_3.svg";
