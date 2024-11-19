@@ -3,13 +3,19 @@ import increment from "/public/icons/increment.svg";
 import decrement from "/public/icons/decrement.svg";
 import Image from "next/image";
 import { Button } from "./style";
-import { FC } from "react";
+import { ComponentPropsWithRef, FC } from "react";
 
-interface NavButtonProps {
-  image: "arrow" | "increment" | "decrement";
+interface NavButtonProps extends ComponentPropsWithRef<"button"> {
+  image?: "arrow" | "increment" | "decrement";
+  text?: string;
+  rotate?: number;
 }
 
 const NavButton: FC<NavButtonProps> = ({ ...props }) => {
+  if (props.text) {
+    return <Button>{props.text}</Button>;
+  }
+
   const image =
     props.image === "arrow"
       ? violetArrow
@@ -18,7 +24,10 @@ const NavButton: FC<NavButtonProps> = ({ ...props }) => {
       : decrement;
 
   return (
-    <Button>
+    <Button
+      {...props}
+      style={props.rotate ? { transform: `rotate(${props.rotate}deg)` } : {}}
+    >
       <Image src={image} alt={""}></Image>
     </Button>
   );
