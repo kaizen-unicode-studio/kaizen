@@ -7,7 +7,7 @@ import {
   StyledAbout,
   Text,
 } from "./style";
-import AboutCard from "../AboutCard";
+import AboutCard from "@/components/AboutCard";
 import Image from "next/image";
 import donut from "/public/covers/donut.svg";
 

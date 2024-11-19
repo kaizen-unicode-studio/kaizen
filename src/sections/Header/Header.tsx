@@ -1,7 +1,7 @@
 import { Header as StyledHeader, Menu, Nav, Tab } from "./style";
 import Image from "next/image";
 import logo from "/public/icons/logo.svg";
-import ToggleMenu from "../ToggleMenu";
+import ToggleMenu from "@/components/ToggleMenu";
 
 const Header = () => {
   return (
