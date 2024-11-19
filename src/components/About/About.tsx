@@ -1,5 +1,12 @@
 import React from "react";
-import { Grid, Header, StyledAbout, Text } from "./style";
+import {
+  Afterword,
+  Grid,
+  Header,
+  MobileText,
+  StyledAbout,
+  Text,
+} from "./style";
 import AboutCard from "../AboutCard";
 
 const About = () => {
@@ -11,6 +18,11 @@ const About = () => {
         guidance and mindful eating practices, we support your journey towards
         better health — one step at a time, always striving for improvement.
       </Text>
+      <MobileText>
+        Welcome to Kaizen, your trusted partner on the journey to a healthier,
+        more fulfilling life. We are dedicated to helping you thrive through
+        tailored nutrition and mindful eating practices.
+      </MobileText>
       <Grid>
         <AboutCard
           header={"KNOWLEDGE"}
@@ -49,6 +61,11 @@ const About = () => {
           }
         ></AboutCard>
       </Grid>
+      <Afterword>
+        Our approach is rooted in the philosophy behind our name, reflecting our
+        commitment to continuous improvement. Here’s how we aim to support your
+        journey
+      </Afterword>
     </StyledAbout>
   );
 };
