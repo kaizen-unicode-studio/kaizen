@@ -1,8 +1,8 @@
 import React from "react";
 import { Header, StyledHero, TextSection, Text, ImageSection } from "./style";
 import Image from "next/image";
-import hero_1 from "@/../public/images/hero_1.jpeg";
-import hero_2 from "@/../public/images/hero_2.jpeg";
+import hero_1 from "/public/images/hero_1.jpeg";
+import hero_2 from "/public/images/hero_2.jpeg";
 
 const Hero = () => {
   return (

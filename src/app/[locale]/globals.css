@@ -5,8 +5,9 @@
   --foreground: #171717;
 
   --main-color: #fbf7fa;
-  --extra-light-gray: #c5c2c7;
   --light-gray: #959199;
+  --extra-light-gray: #c5c2c7;
+  --black: #1b1a1d;
 
   --violet-dark: #241f2f;
 }
