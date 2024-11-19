@@ -5,20 +5,18 @@ import { useTranslations } from "next-intl";
 import ToggleMenu from "../ToggleMenu";
 
 const Header = () => {
-  const t = useTranslations();
-
   return (
     <StyledHeader>
       <Menu>
         <Image src={logo} alt="" />
         <Nav>
-          <Tab>{t("about")}</Tab>
-          <Tab>{t("services")}</Tab>
-          <Tab>{t("contacts")}</Tab>
+          <Tab>About</Tab>
+          <Tab>Services</Tab>
+          <Tab>Contacts</Tab>
         </Nav>
         <ToggleMenu />
       </Menu>
-      <p>{t("header")}</p>
+      <p>Your Journey of Mindful Change for Body and Soul</p>
     </StyledHeader>
   );
 };

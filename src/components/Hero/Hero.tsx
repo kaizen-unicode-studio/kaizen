@@ -1,8 +1,8 @@
 import React from "react";
 import { Header, StyledHero, TextSection, Text, ImageSection } from "./style";
 import Image from "next/image";
-import hero_1 from "@/../public/images/hero_1.png";
-import hero_2 from "@/../public/images/hero_2.png";
+import hero_1 from "@/../public/images/hero_1.jpeg";
+import hero_2 from "@/../public/images/hero_2.jpeg";
 
 const Hero = () => {
   return (
@@ -21,16 +21,15 @@ const Hero = () => {
       </TextSection>
       <ImageSection>
         <Image src={hero_1} alt={""} />
-        <Image
-          src={hero_2}
-          alt={""}
-          style={{
-            width: "100%",
-            objectFit: "cover",
-            objectPosition: "bottom",
-          }}
-        />
+        <Image src={hero_2} alt={""} />
       </ImageSection>
+      <Text>
+        IMPROVING YOUR HEALTH THROUGH MINDFUL CHOICES IS AT THE HEART OF OUR
+        PHILOSOPHY, WHERE ZEST FOR LIFE GROWS BY PRIORITIZING NUTRITION. ELEVATE
+        YOUR WELL-BEING WITH OUR HOLISTIC APPROACH, NURTURING YOUR BODY AND SOUL
+        THROUGH THE PRINCIPLES OF LIFELONG IMPROVEMENT. TRANSFORM YOURSELF WITH
+        KAIZEN.
+      </Text>
     </StyledHero>
   );
 };
