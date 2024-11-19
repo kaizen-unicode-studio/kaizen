@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import StyledComponentsRegistry from "./lib/registry";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,10 +14,8 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StyledComponentsRegistry>
-          {children}
-          <div id="modal"></div>
-        </StyledComponentsRegistry>
+        {children}
+        <div id="modal"></div>
       </body>
     </html>
   );

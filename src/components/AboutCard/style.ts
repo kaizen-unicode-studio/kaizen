@@ -42,7 +42,7 @@ export const Header = styled.h3`
   }
 
   @media (max-width: 375px) {
-    font-size: 20px;
+    font-size: 18px;
     top: 40%;
     left: -3px;
     line-height: 24px;

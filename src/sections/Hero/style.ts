@@ -84,7 +84,7 @@ export const ImageSection = styled.article`
     border-radius: 12px;
   }
 
-  > img:nth-child(1) {
+  > img:nth-of-type(1) {
     height: 497px;
     width: 520px;
     object-fit: cover;
@@ -98,7 +98,7 @@ export const ImageSection = styled.article`
       height: 280px;
     }
   }
-  > img:nth-child(2) {
+  > img:nth-of-type(2) {
     height: 497px;
     width: 100%;
     object-fit: cover;
