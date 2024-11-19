@@ -8,10 +8,13 @@ import {
   Text,
 } from "./style";
 import AboutCard from "../AboutCard";
+import Image from "next/image";
+import donut from "/public/covers/donut.svg";
 
 const About = () => {
   return (
     <StyledAbout>
+      <Image src={donut} alt={""} />
       <Header>ABOUT THE PROJECT</Header>
       <Text>
         Discover a new path to wellness with Kaizen. Through expert nutrition

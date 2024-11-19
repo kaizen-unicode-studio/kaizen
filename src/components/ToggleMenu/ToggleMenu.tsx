@@ -1,11 +1,11 @@
 "use client";
 
-import menu from "@/../public/icons/menu.svg";
+import menu from "/public/icons/menu.svg";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Modal from "../Modal";
 import Link from "next/link";
-import instagram from "@/../public/icons/instagram.svg";
+import instagram from "/public/icons/instagram.svg";
 import { Info, Instagram, LinkList } from "./style";
 
 const ToggleMenu = () => {

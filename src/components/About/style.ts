@@ -9,6 +9,7 @@ export const StyledAbout = styled.section`
   flex-direction: column;
   gap: 20px;
   margin-top: 64px;
+  position: relative;
 
   @media (max-width: 1440px) {
     max-width: 1020px;
@@ -19,6 +20,21 @@ export const StyledAbout = styled.section`
 
   @media (max-width: 375px) {
     gap: 16px;
+  }
+
+  > img {
+    position: absolute;
+    top: 120px;
+    left: 285px;
+    z-index: -10;
+
+    @media (max-width: 1600px) {
+      left: 440px;
+    }
+
+    @media (max-width: 920px) {
+      display: none;
+    }
   }
 `;
 
