@@ -23,10 +23,15 @@ export const Header = styled.h3`
 `;
 
 export const Content = styled.div`
-  max-height: ${({ isExpanded }: { isExpanded: boolean }) =>
-    isExpanded ? "1000px" : "0"};
+  max-height: ${({
+    isExpanded,
+    height,
+  }: {
+    isExpanded: boolean;
+    height: `${number}px`;
+  }) => (isExpanded ? height : "0")};
   overflow: hidden;
-  transition: max-height 0.3s linear;
+  transition: max-height 0.2s linear;
   padding-inline: 10px;
 
   font-family: "Cantarell";
@@ -38,7 +43,7 @@ export const Content = styled.div`
 export const Icon = styled.span`
   transform: ${({ isExpanded }: { isExpanded: boolean }) =>
     isExpanded ? "rotate(180deg)" : "rotate(0deg)"};
-  transition: transform 0.3s ease;
+  transition: transform 0.2s linear;
 `;
 
 export const List = styled.ul`
