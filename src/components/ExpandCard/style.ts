@@ -3,10 +3,8 @@ import styled from "@emotion/styled";
 import { StaticImageData } from "next/image";
 
 export const Container = styled.div`
-  margin-bottom: 10px;
+  margin-bottom: 18px;
   overflow: hidden;
-  margin-bottom: 50px;
-  /* border-bottom: 1px solid var(--light-gray); */
 `;
 
 export const Overlay = styled.div`
@@ -23,6 +21,7 @@ export const Grid = styled.article`
   height: 180px;
   background-color: ${({ blur }: { blur: boolean }) =>
     blur ? "rgba(0, 0, 0, 0.4)" : ""};
+  border-radius: 8px;
   transition: background-color 0.2s linear;
   grid-template-columns: 520px 480px;
   justify-content: space-between;
@@ -57,9 +56,9 @@ export const Content = styled.div`
   }: {
     isExpanded: boolean;
     height: number;
-  }) => (isExpanded ? `${height}px` : "0")};
+  }) => (isExpanded ? `${height * 1.6}px` : "0")};
   overflow: hidden;
-  transition: max-height 0.3s linear, padding 0.2s linear;
+  transition: max-height 0.3s linear, padding 0.3s linear;
   color: var(--black);
   padding: ${({ isExpanded }: { isExpanded: boolean }) =>
     isExpanded ? "16px 60px 24px" : "0 60px 0"};

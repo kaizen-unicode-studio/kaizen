@@ -60,7 +60,7 @@ const ExpandCard: FC<ExpandCardProps> = ({
           <Description hidden={!isExpanded}>{description}</Description>
         </Grid>
       </Overlay>
-      <Content ref={contentRef} height={2000} isExpanded={isExpanded}>
+      <Content ref={contentRef} height={contentHeight} isExpanded={isExpanded}>
         {children}
 
         <ButtonsWrapper>
