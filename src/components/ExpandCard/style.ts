@@ -6,14 +6,15 @@ export const Container = styled.div`
   margin-bottom: 10px;
   overflow: hidden;
   margin-bottom: 50px;
-  border-bottom: 1px solid var(--light-gray);
-  border-radius: 8px;
+  /* border-bottom: 1px solid var(--light-gray); */
 `;
 
 export const Overlay = styled.div`
   background-image: ${({ img }: { img: StaticImageData }) => `url(${img.src})`};
   background-position: center;
   background-size: cover;
+  border-radius: 8px;
+  cursor: pointer;
 `;
 
 export const Grid = styled.article`
@@ -23,7 +24,7 @@ export const Grid = styled.article`
   background-color: ${({ blur }: { blur: boolean }) =>
     blur ? "rgba(0, 0, 0, 0.4)" : ""};
   transition: background-color 0.2s linear;
-  grid-template-columns: repeat(2, 480px);
+  grid-template-columns: 520px 480px;
   justify-content: space-between;
   align-items: center;
 `;
@@ -46,6 +47,7 @@ export const Header = styled.h3`
   font-size: 24px;
   font-weight: 500;
   line-height: 29.26px;
+  max-width: 380px;
 `;
 
 export const Content = styled.div`
@@ -54,10 +56,10 @@ export const Content = styled.div`
     height,
   }: {
     isExpanded: boolean;
-    height: `${number}px`;
-  }) => (isExpanded ? height : "0")};
+    height: number;
+  }) => (isExpanded ? `${height}px` : "0")};
   overflow: hidden;
-  transition: max-height 0.2s linear;
+  transition: max-height 0.3s linear, padding 0.2s linear;
   color: var(--black);
   padding: ${({ isExpanded }: { isExpanded: boolean }) =>
     isExpanded ? "16px 60px 24px" : "0 60px 0"};

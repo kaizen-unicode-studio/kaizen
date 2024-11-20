@@ -1,7 +1,7 @@
 "use client";
 import { FC, ReactNode, useEffect, useRef, useState } from "react";
 import NavButton from "../NavButton";
-import { Container, Content, Header, Icon, List } from "./style";
+import { Container, Content, Header, Icon } from "./style";
 
 interface ExpandProps {
   title: string;
@@ -36,7 +36,7 @@ const Expand: FC<ExpandProps> = ({ title, children }) => {
         height={`${contentHeight}px`}
         isExpanded={isExpanded}
       >
-        <List>{children}</List>
+        {children}
       </Content>
     </Container>
   );

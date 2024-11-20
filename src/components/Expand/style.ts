@@ -6,10 +6,13 @@ export const Container = styled.div`
   overflow: hidden;
   margin-bottom: 50px;
   border-bottom: 1px solid var(--light-gray);
+  padding: 10px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Header = styled.h3`
-  padding: 10px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -38,6 +41,10 @@ export const Content = styled.div`
   font-size: 16px;
   font-weight: 400;
   line-height: 22.66px;
+
+  > ul li {
+    list-style: square;
+  }
 `;
 
 export const Icon = styled.span`

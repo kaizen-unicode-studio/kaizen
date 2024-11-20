@@ -10,17 +10,17 @@ import {
   Overlay,
   ButtonsWrapper,
 } from "./style";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import plus from "/public/icons/plus.svg";
-import services_1 from "/public/covers/services_1.jpeg";
 import NavButton from "../NavButton";
 import Button from "../Button";
 
 interface ExpandCardProps {
-  title?: string;
+  title: string;
   children: ReactNode;
-  description?: string;
-  number?: number;
+  description: string;
+  number: number;
+  image: StaticImageData;
 }
 
 const ExpandCard: FC<ExpandCardProps> = ({
@@ -28,6 +28,7 @@ const ExpandCard: FC<ExpandCardProps> = ({
   children,
   description,
   number,
+  image,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [contentHeight, setContentHeight] = useState(1000);
@@ -45,25 +46,21 @@ const ExpandCard: FC<ExpandCardProps> = ({
 
   return (
     <Container>
-      <Overlay img={services_1}>
+      <Overlay img={image} onClick={() => setIsExpanded(true)}>
         <Grid blur={!isExpanded}>
           <HeaderWrapper>
             /00{number}
             <Header hidden={isExpanded}>{title}</Header>
           </HeaderWrapper>
 
-          <Button hidden={isExpanded} onClick={handleToggle}>
+          <Button hidden={isExpanded}>
             SHOW MORE
             <Image src={plus} alt={""} />
           </Button>
           <Description hidden={!isExpanded}>{description}</Description>
         </Grid>
       </Overlay>
-      <Content
-        ref={contentRef}
-        height={`${contentHeight + 50}px`}
-        isExpanded={isExpanded}
-      >
+      <Content ref={contentRef} height={2000} isExpanded={isExpanded}>
         {children}
 
         <ButtonsWrapper>
