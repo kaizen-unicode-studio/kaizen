@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Wrapper, Card, Header, Text, Letter } from "./style";
 
 interface AboutCardProps {

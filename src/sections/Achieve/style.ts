@@ -18,10 +18,11 @@ export const StyledAchieve = styled.section`
 
 export const Header = styled.h2`
   font-family: "Montserrat";
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 600;
-  line-height: 39px;
-  margin-bottom: 28px;
+  line-height: 43.5px;
+  margin-bottom: 22px;
+  letter-spacing: -0.1px;
 
   @media (max-width: 768px) {
     font-size: 24px;

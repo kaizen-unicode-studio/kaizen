@@ -1,4 +1,3 @@
-import React from "react";
 import { Header, StyledHero, TextSection, Text, ImageSection } from "./style";
 import Image from "next/image";
 import hero_1 from "/public/images/hero_1.jpeg";

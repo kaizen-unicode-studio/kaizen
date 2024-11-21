@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, ReactNode, useEffect, useRef, useState } from "react";
+import { FC, ReactNode, useEffect, useRef, useState } from "react";
 import { Dialog } from "./style";
 import { createPortal } from "react-dom";
 

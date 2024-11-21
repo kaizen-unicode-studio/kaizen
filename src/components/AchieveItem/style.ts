@@ -4,11 +4,14 @@ import styled from "@emotion/styled";
 
 export const Item = styled.article`
   border-bottom: 1px solid var(--dark-gray);
-  padding-block: 18px;
+  padding-block: 12px;
   display: grid;
   grid-template-columns: repeat(2, 480px);
   grid-template-rows: 1fr;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
+  margin-bottom: 11px;
 
   @media (max-width: 1080px) {
     grid-template-columns: repeat(2, 420px);
@@ -34,12 +37,13 @@ export const Header = styled.div`
   display: flex;
   gap: 20px;
   align-items: center;
-
   > h3 {
     font-family: "Montserrat";
-    font-size: 24px;
+    font-size: 21px;
     font-weight: 400;
-    line-height: 29.26px;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+    word-spacing: 1.5px;
 
     @media (max-width: 768px) {
       color: var(--main-color);
@@ -61,8 +65,10 @@ export const Header = styled.div`
 export const Text = styled.p`
   font-family: "Cantarell";
   font-size: 16px;
+  padding-top: 8px;
   font-weight: 400;
   line-height: 22.66px;
+  text-justify: auto;
   @media (max-width: 768px) {
     color: var(--main-color);
     font-size: 14px;

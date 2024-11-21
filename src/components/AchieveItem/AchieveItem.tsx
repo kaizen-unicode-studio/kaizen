@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Header, Item, Text } from "./style";
 import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";

@@ -9,7 +9,7 @@ export const StyledHero = styled.section`
   border-bottom-right-radius: 24px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 32px;
 
   @media (max-width: 1290px) {
     padding: 40px 0;
@@ -85,13 +85,14 @@ export const ImageSection = styled.article`
   }
 
   > img:nth-of-type(1) {
-    height: 497px;
+    height: 420px;
     width: 520px;
     object-fit: cover;
-    object-position: center;
+    object-position: center -230px;
 
     @media (max-width: 1280px) {
       width: 330px;
+      object-position: center;
     }
     @media (max-width: 768px) {
       width: 167px;
@@ -99,7 +100,7 @@ export const ImageSection = styled.article`
     }
   }
   > img:nth-of-type(2) {
-    height: 497px;
+    height: 420px;
     width: 100%;
     object-fit: cover;
     object-position: bottom;
@@ -115,8 +116,8 @@ export const Header = styled.h1`
   font-size: 128px;
   font-family: "Montserrat";
   font-weight: 700;
-  line-height: 156.03px;
-  letter-spacing: 0.32em;
+  line-height: 1.2;
+  letter-spacing: 41px;
 
   @media (max-width: 768px) {
     font-size: 80px;
