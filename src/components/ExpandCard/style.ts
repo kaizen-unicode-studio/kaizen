@@ -62,9 +62,7 @@ export const HeaderWrapper = styled.div`
   }
 `;
 
-export const StyledNumber = styled.span`
-  font-family: "Montserrat";
-`;
+export const StyledNumber = styled.span``;
 
 export const Header = styled.h3`
   padding: 10px;
@@ -73,7 +71,6 @@ export const Header = styled.h3`
   align-items: center;
   font-weight: bold;
   color: var(--main-color);
-  font-family: "Montserrat";
   font-size: 19px;
   font-weight: 500;
   line-height: 22.26px;

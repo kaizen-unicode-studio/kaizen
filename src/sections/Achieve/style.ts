@@ -17,7 +17,6 @@ export const StyledAchieve = styled.section`
 `;
 
 export const Header = styled.h2`
-  font-family: "Montserrat";
   font-size: 28px;
   font-weight: 600;
   line-height: 43.5px;

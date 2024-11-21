@@ -8,6 +8,7 @@ export const Header = styled.header`
   margin-inline: auto;
 
   > p {
+    font-family: "Cantarell";
     margin-left: 24px;
     letter-spacing: 0.5px;
     word-spacing: -1.1px;

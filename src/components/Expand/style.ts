@@ -19,7 +19,6 @@ export const Header = styled.h3`
   align-items: center;
   font-weight: bold;
 
-  font-family: "Montserrat";
   font-size: 24px;
   font-weight: 500;
   line-height: 29.26px;

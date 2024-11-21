@@ -17,14 +17,12 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const Header = styled.h2`
-  font-family: "Montserrat";
   font-size: 32px;
   font-weight: 700;
   line-height: 39.01px;
 `;
 
 export const Amount = styled.span`
-  font-family: "Montserrat";
   font-size: 32px;
   font-weight: 800;
   line-height: 39.01px;

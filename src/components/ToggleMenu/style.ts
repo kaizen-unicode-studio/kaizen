@@ -9,7 +9,6 @@ export const LinkList = styled.div`
     color: var(--main-color);
     text-decoration: none;
 
-    font-family: "Montserrat";
     font-size: 24px;
     font-weight: 600;
     line-height: 29.26px;
