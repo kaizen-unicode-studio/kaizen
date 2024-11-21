@@ -3,6 +3,7 @@ import Achieve from "@/sections/Achieve";
 import Founder from "@/sections/Founder";
 import Header from "@/sections/Header";
 import Hero from "@/sections/Hero";
+import Kaizen from "@/sections/Kaizen";
 import Services from "@/sections/Services";
 
 export default function Home() {
@@ -15,6 +16,8 @@ export default function Home() {
         <Achieve />
         <Services />
         <Founder />
+        {/* // SLIDER */}
+        <Kaizen />
       </main>
     </>
   );
