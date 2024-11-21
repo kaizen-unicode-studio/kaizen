@@ -17,8 +17,9 @@ const About = () => {
       <Header>ABOUT THE PROJECT</Header>
       <Text>
         Discover a new path to wellness with Kaizen. Through expert nutrition
-        guidance and mindful eating practices, we support your journey towards
-        better health — one step at a time, always striving for improvement.
+        guidance and mindful eating
+        <br /> practices, we support your journey towards better health — one
+        step at a time, always striving for improvement.
       </Text>
       <MobileText>
         Welcome to Kaizen, your trusted partner on the journey to a healthier,

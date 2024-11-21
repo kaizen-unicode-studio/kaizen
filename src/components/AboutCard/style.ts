@@ -14,8 +14,8 @@ export const Letter = styled.span`
   font-family: "Montserrat";
   font-size: 128px;
   font-weight: 700;
-  line-height: 100px;
-  letter-spacing: 0.32em;
+  line-height: 0.7;
+  margin-left: -10px;
 
   @media (max-width: 520px) {
     font-size: 64px;
@@ -26,13 +26,14 @@ export const Letter = styled.span`
 
 export const Header = styled.h3`
   position: absolute;
-  left: 10px;
-  top: 45%;
+  left: 0;
+  top: 39%;
   color: var(--main-color);
   font-family: "Montserrat";
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
-  line-height: 29.26px;
+  line-height: 32px;
+  letter-spacing: 0.5px;
 
   @media (max-width: 520px) {
     font-size: 24px;
@@ -68,8 +69,8 @@ export const Card = styled.div`
   height: 218px;
   padding: 24px 16px;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  gap: 24px;
   border-radius: 8px;
   background-image: url("/images/about_card.jpeg");
   background-size: cover;

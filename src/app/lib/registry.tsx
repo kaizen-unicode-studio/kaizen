@@ -1,4 +1,6 @@
 "use client";
+import { Global } from "@emotion/react";
+import { GlobalStyles } from "../style";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 import { useServerInsertedHTML } from "next/navigation";
@@ -28,5 +30,10 @@ export default function StyledComponentsRegistry({
     );
   });
 
-  return <CacheProvider value={cache}>{children}</CacheProvider>;
+  return (
+    <CacheProvider value={cache}>
+      <Global styles={GlobalStyles} />
+      {children}
+    </CacheProvider>
+  );
 }

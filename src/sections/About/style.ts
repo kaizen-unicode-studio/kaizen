@@ -7,8 +7,7 @@ export const StyledAbout = styled.section`
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-top: 64px;
+  margin-top: 72px;
   position: relative;
 
   @media (max-width: 1440px) {
@@ -24,12 +23,12 @@ export const StyledAbout = styled.section`
 
   > img {
     position: absolute;
-    top: 120px;
+    top: 114px;
     left: 285px;
     z-index: -10;
 
     @media (max-width: 1600px) {
-      left: 440px;
+      left: 442px;
     }
 
     @media (max-width: 920px) {
@@ -41,9 +40,11 @@ export const StyledAbout = styled.section`
 export const Header = styled.h2`
   color: var(--black);
   font-family: "Montserrat";
-  font-size: 32px;
+  font-size: 27px;
   font-weight: 700;
-  line-height: 39.01px;
+  line-height: 44px;
+  word-spacing: 2px;
+  letter-spacing: 0.4px;
 
   @media (max-width: 375px) {
     font-size: 24px;
@@ -55,10 +56,11 @@ export const Text = styled.p`
   color: var(--black);
   font-variant: small-caps;
   font-family: "Montserrat";
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 29.26px;
-  width: 477px;
+  font-size: 26px;
+  letter-spacing: -1.25px;
+  line-height: 1.11;
+  width: 43%;
+  margin: 24px 0 20px;
 
   @media (max-width: 520px) {
     width: 100%;

@@ -9,6 +9,7 @@ import {
   HeaderWrapper,
   Overlay,
   ButtonsWrapper,
+  StyledNumber,
 } from "./style";
 import Image, { StaticImageData } from "next/image";
 import plus from "/public/icons/plus.svg";
@@ -49,7 +50,7 @@ const ExpandCard: FC<ExpandCardProps> = ({
       <Overlay img={image} onClick={() => setIsExpanded(true)}>
         <Grid blur={!isExpanded}>
           <HeaderWrapper>
-            /00{number}
+            <StyledNumber>/00{number}</StyledNumber>
             <Header hidden={isExpanded}>{title}</Header>
           </HeaderWrapper>
 
