@@ -27,6 +27,7 @@ export const Container = styled.article`
   gap: 20px;
   display: grid;
   grid-template-columns: repeat(2, 582px);
+  margin-bottom: 45px;
 
   @media (max-width: 1440px) {
     grid-template-columns: 582px 578px;
@@ -57,7 +58,7 @@ export const FounderImage = styled.div`
   }
 
   img {
-    margin-top: 17px;
+    margin-top: 19px;
     width: 578px;
     height: 625px;
     border-radius: 12px;
