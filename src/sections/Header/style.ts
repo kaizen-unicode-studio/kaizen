@@ -10,10 +10,11 @@ export const Header = styled.header`
   > p {
     font-family: "Cantarell";
     margin-left: 24px;
-    letter-spacing: 0.5px;
-    word-spacing: -1.1px;
+    letter-spacing: -0.2px;
+    word-spacing: 1.2px;
     font-size: 12px;
-    padding-block: 10px;
+    padding-block: 8px;
+    line-height: 1.4;
   }
 
   @media (max-width: 568px) {
@@ -26,7 +27,7 @@ export const Menu = styled.menu`
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #fbf7fa;
-  padding: 17px 24px 8px;
+  padding: 19px 24px 10px;
   > .modal-toggle {
     display: none;
     @media (max-width: 568px) {
