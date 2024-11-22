@@ -45,19 +45,24 @@ export const GlobalStyles = css`
     --foreground: #171717;
 
     --main-color: #fbf7fa;
+
+    --gray: #262b33;
+    --extra-gray: #222222;
     --light-gray: #959199;
     --extra-light-gray: #c5c2c7;
     --dark-gray: #403c43;
+
     --black: #1b1a1d;
 
     --violet-dark: #241f2f;
     --violet-primary: #422585;
+    --violet-light: #7861a9;
   }
 
   body {
     color: var(--foreground);
     background: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

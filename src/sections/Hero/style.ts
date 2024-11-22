@@ -23,7 +23,6 @@ export const StyledHero = styled.section`
       display: block;
       align-self: center;
       text-align: center;
-      font-family: "Montserrat";
       font-size: 16px;
       font-weight: 400;
       line-height: 19.5px;
@@ -114,7 +113,6 @@ export const ImageSection = styled.article`
 export const Header = styled.h1`
   color: var(--light-gray);
   font-size: 128px;
-  font-family: "Montserrat";
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 41px;
@@ -126,7 +124,6 @@ export const Header = styled.h1`
   }
 
   > span {
-    font-family: "Montserrat";
     color: var(--extra-light-gray);
     font-weight: 200;
     letter-spacing: 0.16em;

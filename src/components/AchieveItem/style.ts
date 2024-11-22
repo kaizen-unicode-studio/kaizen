@@ -38,7 +38,6 @@ export const Header = styled.div`
   gap: 20px;
   align-items: center;
   > h3 {
-    font-family: "Montserrat";
     font-size: 21px;
     font-weight: 400;
     line-height: 1.2;

@@ -39,7 +39,6 @@ export const StyledAbout = styled.section`
 
 export const Header = styled.h2`
   color: var(--black);
-  font-family: "Montserrat";
   font-size: 27px;
   font-weight: 700;
   line-height: 44px;
@@ -55,7 +54,6 @@ export const Header = styled.h2`
 export const Text = styled.p`
   color: var(--black);
   font-variant: small-caps;
-  font-family: "Montserrat";
   font-size: 26px;
   letter-spacing: -1.25px;
   line-height: 1.11;
@@ -73,7 +71,6 @@ export const MobileText = styled.p`
   display: none;
   @media (max-width: 375px) {
     font-variant: small-caps;
-    font-family: Montserrat;
     font-size: 20px;
     font-weight: 300;
     line-height: 24.38px;

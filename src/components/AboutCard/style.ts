@@ -11,7 +11,6 @@ export const Wrapper = styled.div`
 export const Letter = styled.span`
   opacity: 0.45;
   color: var(--extra-light-gray);
-  font-family: "Montserrat";
   font-size: 128px;
   font-weight: 700;
   line-height: 0.7;
@@ -29,7 +28,6 @@ export const Header = styled.h3`
   left: 0;
   top: 39%;
   color: var(--main-color);
-  font-family: "Montserrat";
   font-size: 20px;
   font-weight: 600;
   line-height: 32px;

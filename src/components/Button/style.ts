@@ -6,7 +6,6 @@ export const StyledButton = styled.button`
   background: ${({ theme }: { theme: "ghost" | "dark" }) =>
     theme === "ghost" ? "transparent" : "var(--violet-primary)"};
 
-  font-family: "Montserrat";
   gap: 4px;
   cursor: pointer;
   font-size: 14px;
