@@ -4,8 +4,12 @@ import styled from "@emotion/styled";
 export const Header = styled.header`
   background: var(--violet-dark);
   color: var(--main-color);
+`;
+
+export const Container = styled.div`
   padding-inline: 80px;
   margin-inline: auto;
+  max-width: 1760px;
 
   > p {
     font-family: "Cantarell";

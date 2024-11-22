@@ -3,14 +3,18 @@
 import styled from "@emotion/styled";
 
 export const StyledHero = styled.section`
-  padding: 0 0 60px;
   background: var(--violet-dark);
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
+`;
+
+export const Container = styled.div`
+  margin-inline: auto;
+  max-width: 1760px;
+  padding: 0 0 60px;
   display: flex;
   flex-direction: column;
   gap: 32px;
-
   @media (max-width: 1290px) {
     padding: 40px 0;
     gap: 24px;

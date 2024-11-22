@@ -1,5 +1,6 @@
 import About from "@/sections/About";
 import Achieve from "@/sections/Achieve";
+import Footer from "@/sections/Footer";
 import Founder from "@/sections/Founder";
 import Header from "@/sections/Header";
 import Hero from "@/sections/Hero";
@@ -21,6 +22,7 @@ export default function Home() {
         <Slider />
         <Kaizen />
         <Questions />
+        <Footer />
       </main>
     </>
   );
