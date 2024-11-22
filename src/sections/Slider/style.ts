@@ -10,7 +10,7 @@ export const StyledSlider = styled.section`
 
 export const SliderContainer = styled.article`
   max-width: 1180px;
-  padding-block: 80px 93px;
+  padding-block: 80px 60px;
   margin-inline: auto;
   z-index: 1;
 `;
