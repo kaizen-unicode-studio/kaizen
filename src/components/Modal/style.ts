@@ -11,6 +11,6 @@ export const Dialog = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 95px);
   padding: 40px 0 16px;
 `;

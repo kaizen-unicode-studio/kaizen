@@ -13,6 +13,10 @@ export const Container = styled.div`
   padding-bottom: ${({ isExpanded }: { isExpanded: boolean }) =>
     isExpanded ? "20px" : "0"};
   transition: padding 0.2s linear;
+
+  @media (max-width: 520px) {
+    padding: 18px 0 0;
+  }
 `;
 
 export const Header = styled.h3`

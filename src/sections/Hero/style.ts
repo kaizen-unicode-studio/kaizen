@@ -41,10 +41,6 @@ export const Container = styled.div`
       font-weight: 400;
       line-height: 19.5px;
     }
-
-    @media (max-width: 568px) {
-      margin-inline: 10px;
-    }
   }
 `;
 
@@ -83,8 +79,8 @@ export const ImageSection = styled.article`
     grid-template-columns: 167px 1fr;
   }
 
-  @media (max-width: 568px) {
-    margin-inline: 40px;
+  @media (max-width: 520px) {
+    margin-inline: 0;
   }
 
   @media (max-width: 375px) {

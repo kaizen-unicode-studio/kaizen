@@ -27,9 +27,14 @@ export const Container = styled.div`
     font-size: 12px;
     padding-block: 8px;
     line-height: 1.4;
+
+    @media (max-width: 520px) {
+      padding-inline: 0;
+      margin-left: 0;
+    }
   }
 
-  @media (max-width: 568px) {
+  @media (max-width: 520px) {
     padding-inline: 16px;
   }
 `;
@@ -42,9 +47,13 @@ export const Menu = styled.menu`
   border-bottom: 1px solid #fbf7fa;
   padding: 19px 24px 10px;
 
+  @media (max-width: 520px) {
+    padding-inline: 0;
+  }
+
   > .modal-toggle {
     display: none;
-    @media (max-width: 568px) {
+    @media (max-width: 520px) {
       display: block;
     }
   }
@@ -55,7 +64,7 @@ export const Nav = styled.nav`
   height: 40px;
   gap: 12px;
   align-items: center;
-  @media (max-width: 568px) {
+  @media (max-width: 520px) {
     display: none;
   }
 `;

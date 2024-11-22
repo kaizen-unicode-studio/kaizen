@@ -30,6 +30,11 @@ export const Header = styled.h2`
   font-weight: 700;
   line-height: 40px;
   margin-bottom: 16px;
+
+  @media (max-width: 520px) {
+    border-bottom: 1px solid var(--light-gray);
+    padding-bottom: 8px;
+  }
 `;
 
 export const SmallCaps = styled.span`

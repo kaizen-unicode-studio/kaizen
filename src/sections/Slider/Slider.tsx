@@ -34,6 +34,7 @@ const Slider = () => {
           breakpoints={{
             1080: { slidesPerView: 2, centeredSlides: true, spaceBetween: 0 },
             768: { slidesPerView: 2, centeredSlides: true, spaceBetween: 20 },
+            520: { slidesPerView: 1, centeredSlides: true, spaceBetween: 0 },
           }}
         >
           <SwiperSlide>

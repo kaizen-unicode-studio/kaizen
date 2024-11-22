@@ -10,6 +10,10 @@ export const StyledFooter = styled.footer`
   width: 100%;
   background: var(--black);
   color: var(--main-color);
+
+  @media (max-width: 520px) {
+    padding-block: 72px 40px;
+  }
 `;
 
 export const Container = styled.section`
@@ -27,7 +31,7 @@ export const Section = styled.section`
   color: var(--main-color);
   display: flex;
   flex-direction: column;
-  gap: 24;
+  /* gap: 24px; */
 
   :nth-child(1) {
     grid-column-start: 2;
@@ -42,6 +46,10 @@ export const SubHeader = styled.h5`
   font-weight: 400;
   line-height: 1.8;
   margin-bottom: 6px;
+
+  @media (max-width: 520px) {
+    font-size: 20px;
+  }
 `;
 
 export const Item = styled.p`
@@ -60,6 +68,10 @@ export const Header = styled.h4`
   font-weight: 700;
   line-height: 40px;
   margin-bottom: 21px;
+
+  @media (max-width: 520px) {
+    font-size: 32px;
+  }
 `;
 
 export const Grid = styled.article`
@@ -74,5 +86,9 @@ export const Grid = styled.article`
 
   @media (max-width: 768px) {
     grid-template: 1fr / repeat(3, 1fr);
+  }
+  @media (max-width: 520px) {
+    grid-template: repeat(3, auto) / 1fr;
+    gap: 20px;
   }
 `;
