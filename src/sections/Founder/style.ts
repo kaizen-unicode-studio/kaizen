@@ -11,6 +11,7 @@ export const StyledFounder = styled.section`
   @media (max-width: 1440px) {
     max-width: 1020px;
   }
+
   @media (max-width: 768px) {
     padding-inline: 16px;
   }
@@ -32,6 +33,11 @@ export const Container = styled.article`
   @media (max-width: 1440px) {
     grid-template-columns: 582px 578px;
   }
+
+  @media (max-width: 1280px) {
+    grid-template-columns: 582px auto;
+  }
+
   @media (max-width: 1080px) {
     grid-template-columns: 1fr 1fr;
   }

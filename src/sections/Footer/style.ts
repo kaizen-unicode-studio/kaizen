@@ -15,6 +15,9 @@ export const StyledFooter = styled.footer`
 export const Container = styled.section`
   max-width: 1180px;
   margin-inline: auto;
+  @media (max-width: 1080px) {
+    padding-inline: 30px;
+  }
 `;
 
 export const Section = styled.section`
@@ -50,6 +53,10 @@ export const Header = styled.h4`
 
 export const Grid = styled.article`
   display: grid;
-  grid-template: 2fr / 265px repeat(3, 1fr);
+  grid-template: 1fr / 265px repeat(3, 1fr);
   gap: 80px;
+  @media (max-width: 1080px) {
+    grid-template: 1fr / 235px repeat(3, 1fr);
+    gap: 60px;
+  }
 `;

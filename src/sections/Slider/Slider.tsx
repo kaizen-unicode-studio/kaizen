@@ -31,6 +31,9 @@ const Slider = () => {
           slidesPerView={3}
           modules={[Autoplay, Pagination]}
           spaceBetween={20}
+          breakpoints={{
+            1080: { slidesPerView: 2, centeredSlides: true, spaceBetween: 0 },
+          }}
         >
           <SwiperSlide>
             <Slide />
