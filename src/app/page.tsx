@@ -4,6 +4,7 @@ import Founder from "@/sections/Founder";
 import Header from "@/sections/Header";
 import Hero from "@/sections/Hero";
 import Kaizen from "@/sections/Kaizen";
+import Questions from "@/sections/Questions";
 import Services from "@/sections/Services";
 import Slider from "@/sections/Slider";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <Founder />
         <Slider />
         <Kaizen />
+        <Questions />
       </main>
     </>
   );

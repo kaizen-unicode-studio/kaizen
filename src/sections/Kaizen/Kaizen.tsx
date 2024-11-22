@@ -21,8 +21,8 @@ const Kaizen = () => {
       <Container>
         <Header>
           KAI<span>ZEN</span>
-          <Quote>“ Kaizen wa isshō ”</Quote>
         </Header>
+        <Quote>“ Kaizen wa isshō ”</Quote>
         <Japanese>改善は一生</Japanese>
         <Text>
           Improvement is a lifelong process. Guided by this belief, we inspire

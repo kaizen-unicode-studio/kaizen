@@ -24,14 +24,25 @@ export const Container = styled.article`
   display: block;
 `;
 
-export const Header = styled.h1`
+export const Header = styled.h4`
   color: var(--black);
   font-size: 128px;
   font-weight: 700;
   letter-spacing: 41px;
-  line-height: 1.67;
-  position: relative;
-  margin-bottom: 8px;
+  line-height: 0.8;
+  margin-bottom: 15px;
+  padding-top: 55px;
+
+  > span {
+    color: var(--black);
+    font-size: 128px;
+    font-weight: 700;
+    letter-spacing: 41px;
+    line-height: 0.8 !important;
+    margin-bottom: 15px;
+    padding-top: 55px;
+  }
+
   @media (max-width: 768px) {
     font-size: 80px;
     line-height: 97.5px;
@@ -57,11 +68,10 @@ export const Quote = styled.p`
   font-size: 24px;
   font-weight: 300;
   line-height: 30px;
-  position: absolute;
   color: var(--black);
   letter-spacing: 1.6px;
-  bottom: 10px;
   word-spacing: 3.9px;
+  margin-bottom: 18px;
 `;
 
 export const Japanese = styled.p`
