@@ -19,6 +19,10 @@ export const Container = styled.div`
     max-width: 1440px;
   }
 
+  @media (max-width: 520px) {
+    padding-inline: 0;
+  }
+
   > p {
     font-family: "Cantarell";
     margin-left: 24px;
@@ -33,10 +37,6 @@ export const Container = styled.div`
       margin-left: 0;
     }
   }
-
-  @media (max-width: 520px) {
-    padding-inline: 16px;
-  }
 `;
 
 export const Menu = styled.menu`
@@ -49,6 +49,9 @@ export const Menu = styled.menu`
 
   @media (max-width: 520px) {
     padding-inline: 0;
+  }
+  @media (max-width: 520px) {
+    padding-right: 10px;
   }
 
   > .modal-toggle {

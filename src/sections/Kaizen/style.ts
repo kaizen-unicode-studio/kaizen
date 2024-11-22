@@ -46,6 +46,10 @@ export const StyledKaizen = styled.section`
       border-radius: 8px;
       margin-block: 32px;
     }
+
+    @media (max-width: 375px) {
+      width: 300px;
+    }
   }
 `;
 
@@ -79,7 +83,7 @@ export const Header = styled.h4`
   > span {
     color: var(--black);
     font-size: 128px;
-    letter-spacing: 41px;
+    letter-spacing: 20px;
     line-height: 0.8 !important;
     font-weight: 200;
     padding-top: 55px;

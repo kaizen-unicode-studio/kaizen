@@ -31,6 +31,11 @@ export const Item = styled.article`
     padding-inline: 12px;
     grid-gap: 8px;
   }
+  @media (max-width: 375px) {
+    padding-block: 14px;
+    margin-top: 0px;
+    margin-bottom: 8px;
+  }
 `;
 
 export const Header = styled.div`
@@ -48,6 +53,9 @@ export const Header = styled.div`
       color: var(--main-color);
       font-size: 20px;
       line-height: 20px;
+    }
+    @media (max-width: 375px) {
+      font-size: 15px;
     }
   }
 

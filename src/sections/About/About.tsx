@@ -23,8 +23,8 @@ const About = () => {
       </Text>
       <MobileText>
         Welcome to Kaizen, your trusted partner on the journey to a healthier,
-        more fulfilling life. We are dedicated to helping you thrive through
-        tailored nutrition and mindful eating practices.
+        more fulfilling life. <br /> We are dedicated to helping you thrive
+        through tailored <br /> nutrition and mindful eating practices.
       </MobileText>
       <Grid>
         <AboutCard

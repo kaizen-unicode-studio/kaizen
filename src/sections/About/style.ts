@@ -19,6 +19,7 @@ export const StyledAbout = styled.section`
 
   @media (max-width: 375px) {
     gap: 16px;
+    margin-top: 34px;
   }
 
   > img {
@@ -46,7 +47,7 @@ export const Header = styled.h2`
   letter-spacing: 0.4px;
 
   @media (max-width: 375px) {
-    font-size: 24px;
+    font-size: 20px;
     border-bottom: 1px solid var(--light-gray);
   }
 `;
@@ -76,9 +77,11 @@ export const MobileText = styled.p`
   display: none;
   @media (max-width: 375px) {
     font-variant: small-caps;
-    font-size: 20px;
     font-weight: 300;
-    line-height: 24.38px;
+    line-height: 23.5px;
+    font-size: 24px;
+    word-spacing: 1.3px;
+    letter-spacing: -1px;
     display: block;
   }
 `;
@@ -104,8 +107,7 @@ export const Grid = styled.article`
   @media (max-width: 1440px) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    row-gap: 18px;
-    column-gap: 19px;
+    gap: 20px;
   }
   @media (max-width: 520px) {
     gap: 8px;
