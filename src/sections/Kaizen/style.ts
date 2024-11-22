@@ -16,6 +16,10 @@ export const StyledKaizen = styled.section`
     grid-template-columns: auto 322px;
   }
 
+  @media (max-width: 768px) {
+    padding-inline: 16px;
+  }
+
   > img {
     width: 482px;
     height: 480px;
@@ -99,12 +103,17 @@ export const Text = styled.p`
   width: 66%;
   letter-spacing: 2.5px;
   word-spacing: -4px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Cover = styled.div`
   position: absolute;
   top: 16px;
   left: 287px;
+  z-index: -10;
 
   > img {
     width: 100%;

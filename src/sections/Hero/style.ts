@@ -8,6 +8,10 @@ export const StyledHero = styled.section`
   border-bottom-right-radius: 24px;
 
   padding: 0 80px 60px;
+
+  @media (max-width: 768px) {
+    padding: 0 16px 20px;
+  }
 `;
 
 export const Container = styled.div`
@@ -20,7 +24,8 @@ export const Container = styled.div`
   @media (max-width: 1600px) {
     max-width: 1440px;
   }
-  @media (max-width: 1290px) {
+
+  @media (max-width: 1280px) {
     padding: 40px 0;
     gap: 24px;
   }
@@ -28,7 +33,7 @@ export const Container = styled.div`
   > p {
     display: none;
 
-    @media (max-width: 1290px) {
+    @media (max-width: 1280px) {
       display: block;
       align-self: center;
       text-align: center;
@@ -49,7 +54,7 @@ export const TextSection = styled.article`
   justify-content: space-between;
   width: 100%;
 
-  @media (max-width: 1290px) {
+  @media (max-width: 1280px) {
     justify-content: center;
   }
 
@@ -59,7 +64,7 @@ export const TextSection = styled.article`
 
   > p {
     display: block;
-    @media (max-width: 1290px) {
+    @media (max-width: 1280px) {
       display: none;
     }
   }

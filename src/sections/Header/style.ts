@@ -3,8 +3,12 @@ import styled from "@emotion/styled";
 
 export const Header = styled.header`
   background: var(--violet-dark);
-  padding-inline: 80px;
   color: var(--main-color);
+  padding-inline: 80px;
+
+  @media (max-width: 768px) {
+    padding-inline: 16px;
+  }
 `;
 
 export const Container = styled.div`

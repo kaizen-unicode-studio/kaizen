@@ -20,7 +20,7 @@ const Footer = () => {
       <Container>
         <Header>CONTACT INFO</Header>
         <Grid>
-          <Section style={{ gridColumnStart: 2 }}>
+          <Section>
             <SubHeader>CUSTOMER SUPPORT</SubHeader>
             <div>
               <Item>

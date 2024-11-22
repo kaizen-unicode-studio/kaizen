@@ -18,6 +18,9 @@ export const Container = styled.section`
   @media (max-width: 1080px) {
     padding-inline: 30px;
   }
+  @media (max-width: 768px) {
+    padding-inline: 16px;
+  }
 `;
 
 export const Section = styled.section`
@@ -25,6 +28,14 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
   gap: 24;
+
+  :nth-child(1) {
+    grid-column-start: 2;
+
+    @media (max-width: 768px) {
+      grid-column-start: 1;
+    }
+  }
 `;
 export const SubHeader = styled.h5`
   font-size: 17px;
@@ -55,8 +66,13 @@ export const Grid = styled.article`
   display: grid;
   grid-template: 1fr / 265px repeat(3, 1fr);
   gap: 80px;
+
   @media (max-width: 1080px) {
     grid-template: 1fr / 235px repeat(3, 1fr);
     gap: 60px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template: 1fr / repeat(3, 1fr);
   }
 `;
