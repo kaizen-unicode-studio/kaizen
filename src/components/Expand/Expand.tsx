@@ -4,7 +4,7 @@ import NavButton from "../NavButton";
 import { Container, Content, Header, Icon } from "./style";
 
 interface ExpandProps {
-  title: string;
+  title: string | ReactNode;
   children: ReactNode;
 }
 
@@ -24,7 +24,7 @@ const Expand: FC<ExpandProps> = ({ title, children }) => {
   }, [contentRef]);
 
   return (
-    <Container>
+    <Container isExpanded={isExpanded}>
       <Header onClick={handleToggle}>
         {title}
         <Icon isExpanded={isExpanded}>

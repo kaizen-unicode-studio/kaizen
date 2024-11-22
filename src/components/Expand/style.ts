@@ -4,12 +4,15 @@ import styled from "@emotion/styled";
 export const Container = styled.div`
   margin-bottom: 10px;
   overflow: hidden;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   border-bottom: 1px solid var(--light-gray);
-  padding: 10px;
-  gap: 10px;
+  padding: 18px 15px 0;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  padding-bottom: ${({ isExpanded }: { isExpanded: boolean }) =>
+    isExpanded ? "20px" : "0"};
+  transition: padding 0.2s linear;
 `;
 
 export const Header = styled.h3`
@@ -18,7 +21,6 @@ export const Header = styled.h3`
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
-
   font-size: 24px;
   font-weight: 500;
   line-height: 29.26px;
@@ -32,17 +34,17 @@ export const Content = styled.div`
     isExpanded: boolean;
     height: `${number}px`;
   }) => (isExpanded ? height : "0")};
-  overflow: hidden;
   transition: max-height 0.2s linear;
   padding-inline: 10px;
+  overflow: hidden;
 
   font-family: "Cantarell";
   font-size: 16px;
   font-weight: 400;
   line-height: 22.66px;
 
-  > ul li {
-    list-style: square;
+  > ul + li {
+    list-style: square inside;
   }
 `;
 
