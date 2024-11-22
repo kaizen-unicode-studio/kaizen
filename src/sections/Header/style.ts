@@ -3,13 +3,17 @@ import styled from "@emotion/styled";
 
 export const Header = styled.header`
   background: var(--violet-dark);
+  padding-inline: 80px;
   color: var(--main-color);
 `;
 
 export const Container = styled.div`
-  padding-inline: 80px;
-  margin-inline: auto;
   max-width: 1760px;
+  width: 100%;
+
+  @media (max-width: 1600px) {
+    max-width: 1440px;
+  }
 
   > p {
     font-family: "Cantarell";
@@ -27,11 +31,13 @@ export const Container = styled.div`
 `;
 
 export const Menu = styled.menu`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #fbf7fa;
   padding: 19px 24px 10px;
+
   > .modal-toggle {
     display: none;
     @media (max-width: 568px) {

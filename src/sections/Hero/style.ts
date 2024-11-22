@@ -6,15 +6,20 @@ export const StyledHero = styled.section`
   background: var(--violet-dark);
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
+
+  padding: 0 80px 60px;
 `;
 
 export const Container = styled.div`
-  margin-inline: auto;
   max-width: 1760px;
-  padding: 0 0 60px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 32px;
+
+  @media (max-width: 1600px) {
+    max-width: 1440px;
+  }
   @media (max-width: 1290px) {
     padding: 40px 0;
     gap: 24px;
@@ -42,7 +47,7 @@ export const TextSection = styled.article`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 80px;
+  width: 100%;
 
   @media (max-width: 1290px) {
     justify-content: center;
@@ -64,7 +69,6 @@ export const ImageSection = styled.article`
   display: grid;
   grid-template-columns: 520px 1fr;
   gap: 20px;
-  margin-inline: 80px;
 
   @media (max-width: 1280px) {
     grid-template-columns: 330px 1fr;
@@ -88,10 +92,17 @@ export const ImageSection = styled.article`
   }
 
   > img:nth-of-type(1) {
-    height: 420px;
+    height: 497px;
     width: 520px;
     object-fit: cover;
-    object-position: center -230px;
+    object-position: center -190px;
+
+    @media (max-width: 1600px) {
+      height: 420px;
+      width: 520px;
+      object-fit: cover;
+      object-position: center -230px;
+    }
 
     @media (max-width: 1280px) {
       width: 330px;
@@ -103,10 +114,17 @@ export const ImageSection = styled.article`
     }
   }
   > img:nth-of-type(2) {
-    height: 420px;
+    height: 497px;
     width: 100%;
     object-fit: cover;
     object-position: bottom;
+
+    @media (max-width: 1600px) {
+      height: 420px;
+      width: 100%;
+      object-fit: cover;
+      object-position: bottom;
+    }
 
     @media (max-width: 768px) {
       height: 280px;
