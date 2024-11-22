@@ -26,8 +26,8 @@ export const Section = styled.section`
 export const SubHeader = styled.h5`
   font-size: 17px;
   font-weight: 400;
-  line-height: 1.7;
-  margin-bottom: 8px;
+  line-height: 1.8;
+  margin-bottom: 6px;
 `;
 
 export const Item = styled.p`
@@ -37,7 +37,7 @@ export const Item = styled.p`
   margin: 12px 0;
   display: flex;
   align-items: flex-end;
-  gap: 8;
+  gap: 8px;
   cursor: pointer;
 `;
 
@@ -50,6 +50,6 @@ export const Header = styled.h4`
 
 export const Grid = styled.article`
   display: grid;
-  grid-template: 1fr / 265px repeat(3, 1fr);
+  grid-template: 2fr / 265px repeat(3, 1fr);
   gap: 80px;
 `;
