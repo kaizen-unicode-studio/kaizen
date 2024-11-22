@@ -11,12 +11,21 @@ export const StyledKaizen = styled.section`
   justify-content: space-between;
   position: relative;
 
+  @media (max-width: 1440px) {
+    max-width: 1020px;
+    grid-template-columns: auto 322px;
+  }
+
   > img {
     width: 482px;
     height: 480px;
     border-radius: 8px;
     object-fit: cover;
     object-position: center center;
+
+    @media (max-width: 1440px) {
+      width: 322px;
+    }
   }
 `;
 

@@ -60,6 +60,11 @@ export const Text = styled.p`
   width: 43%;
   margin: 24px 0 20px;
 
+  @media (max-width: 1440px) {
+    margin: 24px 0 19px;
+    width: 47%;
+  }
+
   @media (max-width: 520px) {
     width: 100%;
   }
@@ -99,6 +104,8 @@ export const Grid = styled.article`
   @media (max-width: 1440px) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    row-gap: 18px;
+    column-gap: 19px;
   }
   @media (max-width: 520px) {
     gap: 8px;

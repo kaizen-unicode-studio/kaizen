@@ -67,6 +67,7 @@ export const FounderImage = styled.div`
     object-position: center -190px;
 
     @media (max-width: 1440px) {
+      margin-top: 17px;
       object-position: center;
       width: 418px;
     }
@@ -120,6 +121,9 @@ export const Quote = styled.div`
   align-items: center;
   padding-block: 42px;
   gap: 20px;
+
+  @media (max-width: 1440px) {
+  }
 
   @media (max-width: 768px) {
     display: none;

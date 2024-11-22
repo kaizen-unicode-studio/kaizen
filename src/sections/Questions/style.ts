@@ -7,6 +7,10 @@ export const StyledQuestions = styled.section`
   max-width: 1180px;
   margin-inline: auto;
 
+  @media (max-width: 1440px) {
+    max-width: 1020px;
+  }
+
   ol {
     overflow: auto;
     padding-inline: 24px;
