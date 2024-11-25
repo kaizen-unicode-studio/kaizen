@@ -12,6 +12,11 @@ export const Card = styled.div`
   border: 1px;
   background: var(--extra-light-gray);
   box-shadow: 0 5px 5px var(--violet-light);
+
+  @media (max-width: 375px) {
+    height: auto;
+  }
+
   > img {
     width: 76px;
     height: 52px;

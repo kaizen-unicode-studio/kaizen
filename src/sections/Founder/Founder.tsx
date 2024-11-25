@@ -6,6 +6,7 @@ import {
   FounderImage,
   FounderName,
   Header,
+  MobileText,
   Quote,
   StyledFounder,
   Text,
@@ -19,6 +20,10 @@ const Founder = () => {
   return (
     <StyledFounder>
       <Header>ABOUT FOUNDER</Header>
+      <MobileText>
+        at kaizen project, we provide customized nutrition plans to help you
+        achieve sustainable wellness and a positive relationship with food.
+      </MobileText>
       <Container>
         <Quote>
           <Image src={achieve_1} alt={""} />
@@ -49,7 +54,7 @@ const Founder = () => {
               improvements. Begin your journey toward better health with us.
             </Text>
           </FounderImage>
-          <FounderName>asdf</FounderName>
+          <FounderName>Yulia Dantes</FounderName>
         </FounderContainer>
       </Container>
     </StyledFounder>

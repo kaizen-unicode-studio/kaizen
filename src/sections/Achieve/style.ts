@@ -31,4 +31,8 @@ export const Header = styled.h2`
     margin-bottom: 16px;
     padding-bottom: 8px;
   }
+  @media (max-width: 375px) {
+    font-size: 21px;
+    line-height: 22.26px;
+  }
 `;

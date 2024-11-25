@@ -4,12 +4,29 @@ import styled from "@emotion/styled";
 export const Header = styled.header`
   background: var(--violet-dark);
   color: var(--main-color);
+  padding-inline: 80px;
+
+  @media (max-width: 768px) {
+    padding-inline: 16px;
+  }
+
+  @media (max-width: 375px) {
+    padding-inline: 10px;
+  }
 `;
 
 export const Container = styled.div`
-  padding-inline: 80px;
-  margin-inline: auto;
   max-width: 1760px;
+  width: 100%;
+  margin-inline: auto;
+
+  @media (max-width: 1600px) {
+    max-width: 1440px;
+  }
+
+  @media (max-width: 520px) {
+    padding-inline: 0;
+  }
 
   > p {
     font-family: "Cantarell";
@@ -19,22 +36,32 @@ export const Container = styled.div`
     font-size: 12px;
     padding-block: 8px;
     line-height: 1.4;
-  }
 
-  @media (max-width: 568px) {
-    padding-inline: 16px;
+    @media (max-width: 520px) {
+      padding-inline: 0;
+      margin-left: 0;
+    }
   }
 `;
 
 export const Menu = styled.menu`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #fbf7fa;
   padding: 19px 24px 10px;
+
+  @media (max-width: 520px) {
+    padding-inline: 0;
+  }
+  @media (max-width: 520px) {
+    padding-right: 10px;
+  }
+
   > .modal-toggle {
     display: none;
-    @media (max-width: 568px) {
+    @media (max-width: 520px) {
       display: block;
     }
   }
@@ -45,7 +72,7 @@ export const Nav = styled.nav`
   height: 40px;
   gap: 12px;
   align-items: center;
-  @media (max-width: 568px) {
+  @media (max-width: 520px) {
     display: none;
   }
 `;

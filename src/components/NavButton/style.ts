@@ -15,4 +15,9 @@ export const Button = styled.button`
   :hover {
     cursor: pointer;
   }
+
+  @media (max-width: 375px) {
+    width: 32px;
+    height: 32px;
+  }
 `;

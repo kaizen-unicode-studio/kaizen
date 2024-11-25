@@ -18,6 +18,14 @@
   background: var(--violet-light);
   width: 24px;
 }
-/* .swiper-pagination-bullet-active + span {
-  width: 0;
-} */
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+
+  @media (max-width: 375px) {
+    padding-inline: 20px;
+  }
+}

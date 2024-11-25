@@ -13,6 +13,13 @@ export const Container = styled.div`
   padding-bottom: ${({ isExpanded }: { isExpanded: boolean }) =>
     isExpanded ? "20px" : "0"};
   transition: padding 0.2s linear;
+
+  @media (max-width: 520px) {
+    padding: 18px 0 0;
+  }
+  @media (max-width: 375px) {
+    padding: 14px 0 0;
+  }
 `;
 
 export const Header = styled.h3`
@@ -24,6 +31,11 @@ export const Header = styled.h3`
   font-size: 24px;
   font-weight: 500;
   line-height: 29.26px;
+
+  @media (max-width: 375px) {
+    font-size: 20px;
+    line-height: 1.1;
+  }
 `;
 
 export const Content = styled.div`
@@ -52,6 +64,11 @@ export const Icon = styled.span`
   transform: ${({ isExpanded }: { isExpanded: boolean }) =>
     isExpanded ? "rotate(180deg)" : "rotate(0deg)"};
   transition: transform 0.2s linear;
+
+  @media (max-width: 375px) {
+    width: 32px;
+    height: 32px;
+  }
 `;
 
 export const List = styled.ul`

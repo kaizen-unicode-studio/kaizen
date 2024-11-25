@@ -19,7 +19,13 @@ export const Letter = styled.span`
   @media (max-width: 520px) {
     font-size: 64px;
     line-height: 80px;
+    margin-left: 0;
     text-align: center;
+  }
+  @media (max-width: 375px) {
+    font-size: 64px;
+    text-align: center;
+    line-height: 72px;
   }
 `;
 
@@ -35,15 +41,12 @@ export const Header = styled.h3`
 
   @media (max-width: 520px) {
     font-size: 24px;
-    top: 45%;
-    left: 0;
     line-height: 24px;
   }
 
   @media (max-width: 375px) {
-    font-size: 18px;
-    top: 40%;
-    left: -3px;
+    font-size: 16px;
+    top: 39%;
     line-height: 24px;
   }
 `;
@@ -63,8 +66,7 @@ export const Text = styled.p`
 
 export const Card = styled.div`
   color: white;
-  width: 380px;
-  height: 218px;
+  gap: 35px;
   padding: 24px 16px;
   display: flex;
   justify-content: space-between;
@@ -74,10 +76,6 @@ export const Card = styled.div`
   background-size: cover;
   background-position: center;
 
-  @media (max-width: 1440px) {
-    width: 500px;
-    height: 220px;
-  }
   @media (max-width: 1080px) {
     max-width: 500px;
     width: 100%;
@@ -86,7 +84,14 @@ export const Card = styled.div`
   }
 
   @media (max-width: 520px) {
-    gap: 8px;
     padding: 12px 8px;
+    gap: 8px;
+  }
+
+  @media (max-width: 375px) {
+    justify-content: start;
+    gap: 0px;
+    padding: 0px 9px 11px;
+    min-height: 170px;
   }
 `;

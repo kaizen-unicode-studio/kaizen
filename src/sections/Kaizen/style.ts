@@ -11,17 +11,62 @@ export const StyledKaizen = styled.section`
   justify-content: space-between;
   position: relative;
 
-  > img {
+  @media (max-width: 1440px) {
+    max-width: 1020px;
+    grid-template-columns: auto 322px;
+  }
+
+  @media (max-width: 768px) {
+    padding-inline: 16px;
+  }
+
+  @media (max-width: 375px) {
+    padding-inline: 10px;
+  }
+
+  .main_image {
     width: 482px;
     height: 480px;
     border-radius: 8px;
     object-fit: cover;
     object-position: center center;
+
+    @media (max-width: 1440px) {
+      width: 322px;
+    }
+
+    @media (max-width: 520px) {
+      display: none;
+    }
+  }
+
+  .mobile_image {
+    display: none;
+
+    @media (max-width: 520px) {
+      display: block;
+      width: 488px;
+      height: auto;
+      border-radius: 8px;
+      margin-block: 32px;
+    }
+
+    @media (max-width: 375px) {
+      width: 343px;
+      height: 205px;
+      margin-block: 14px;
+    }
   }
 `;
 
 export const Container = styled.article`
   display: block;
+
+  @media (max-width: 520px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Header = styled.h4`
@@ -33,31 +78,29 @@ export const Header = styled.h4`
   margin-bottom: 15px;
   padding-top: 55px;
 
-  > span {
-    color: var(--black);
-    font-size: 128px;
-    font-weight: 700;
-    letter-spacing: 41px;
-    line-height: 0.8 !important;
-    margin-bottom: 15px;
-    padding-top: 55px;
-  }
-
   @media (max-width: 768px) {
     font-size: 80px;
     line-height: 97.5px;
     letter-spacing: 0.16em;
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 375px) {
+    line-height: 0.7;
+    padding: 16px 0 10px;
   }
 
   > span {
-    color: var(--dark-gray);
+    color: var(--black);
+    font-size: 128px;
+    letter-spacing: 20px;
+    line-height: 0.8 !important;
     font-weight: 200;
-    letter-spacing: 0.16em;
-    line-height: 156.03px;
+    padding-top: 55px;
 
     @media (max-width: 768px) {
       font-size: 80px;
-      line-height: 97.52px;
       letter-spacing: 0.02em;
     }
   }
@@ -72,6 +115,10 @@ export const Quote = styled.p`
   letter-spacing: 1.6px;
   word-spacing: 3.9px;
   margin-bottom: 18px;
+
+  @media (max-width: 375px) {
+    margin-bottom: 10px;
+  }
 `;
 
 export const Japanese = styled.p`
@@ -90,12 +137,20 @@ export const Text = styled.p`
   width: 66%;
   letter-spacing: 2.5px;
   word-spacing: -4px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  @media (max-width: 375px) {
+    padding: 15px 6px;
+  }
 `;
 
 export const Cover = styled.div`
   position: absolute;
   top: 16px;
   left: 287px;
+  z-index: -10;
 
   > img {
     width: 100%;

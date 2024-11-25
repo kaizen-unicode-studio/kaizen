@@ -11,6 +11,7 @@ export const StyledFounder = styled.section`
   @media (max-width: 1440px) {
     max-width: 1020px;
   }
+
   @media (max-width: 768px) {
     padding-inline: 16px;
   }
@@ -21,6 +22,25 @@ export const Header = styled.h2`
   font-weight: 600;
   line-height: 56px;
   letter-spacing: -0.4px;
+
+  @media (max-width: 375px) {
+    border-bottom: 1px solid black;
+    font-size: 21px;
+    letter-spacing: -0.1px;
+    line-height: 1.7;
+  }
+`;
+
+export const MobileText = styled.p`
+  display: none;
+  @media (max-width: 375px) {
+    font-variant: small-caps;
+    margin-block: 12px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    display: block;
+  }
 `;
 
 export const Container = styled.article`
@@ -32,6 +52,11 @@ export const Container = styled.article`
   @media (max-width: 1440px) {
     grid-template-columns: 582px 578px;
   }
+
+  @media (max-width: 1280px) {
+    grid-template-columns: 582px auto;
+  }
+
   @media (max-width: 1080px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -44,8 +69,11 @@ export const Container = styled.article`
 export const FounderContainer = styled.article`
   display: flex;
   flex-direction: column;
-
   gap: 12px;
+
+  @media (max-width: 375px) {
+    gap: 10px;
+  }
 `;
 
 export const FounderImage = styled.div`
@@ -67,6 +95,7 @@ export const FounderImage = styled.div`
     object-position: center -190px;
 
     @media (max-width: 1440px) {
+      margin-top: 17px;
       object-position: center;
       width: 418px;
     }
@@ -77,7 +106,11 @@ export const FounderImage = styled.div`
 
     @media (max-width: 768px) {
       width: 100%;
-      height: 950px;
+      height: 590px;
+    }
+
+    @media (max-width: 375px) {
+      height: 420px;
     }
   }
 `;
@@ -97,6 +130,9 @@ export const FounderName = styled.p`
     color: var(--main-color);
     background: var(--black);
   }
+  @media (max-width: 375px) {
+    padding: 12px;
+  }
 `;
 
 export const Text = styled.p`
@@ -112,6 +148,11 @@ export const Text = styled.p`
     font-weight: 400;
     line-height: 22.66px;
   }
+
+  @media (max-width: 375px) {
+    padding: 12px;
+    line-height: 1.45;
+  }
 `;
 
 export const Quote = styled.div`
@@ -120,6 +161,9 @@ export const Quote = styled.div`
   align-items: center;
   padding-block: 42px;
   gap: 20px;
+
+  @media (max-width: 1440px) {
+  }
 
   @media (max-width: 768px) {
     display: none;
