@@ -3,8 +3,10 @@
 import React, { ComponentPropsWithRef, FC, ReactNode } from "react";
 import { StyledButton } from "./style";
 
+export type ThemeType = "ghost" | "dark" | "pay";
+
 interface ButtonProps extends ComponentPropsWithRef<"button"> {
-  theme?: "ghost" | "dark";
+  theme?: ThemeType;
   children: ReactNode;
   onClick?: () => any;
   hidden?: boolean;

@@ -12,7 +12,7 @@ import donut from "/public/covers/donut.svg";
 
 const About = () => {
   return (
-    <StyledAbout>
+    <StyledAbout id="about">
       <Image src={donut} alt={""} />
       <Header>ABOUT THE PROJECT</Header>
       <Text>

@@ -45,12 +45,14 @@ export const GlobalStyles = css`
     --foreground: #171717;
 
     --main-color: #fbf7fa;
+    --secondary-color: #fdfdfd;
 
     --gray: #262b33;
     --extra-gray: #222222;
     --light-gray: #959199;
     --extra-light-gray: #c5c2c7;
     --dark-gray: #403c43;
+    --dark-gray-rgb: 64, 60, 67;
 
     --black: #1b1a1d;
 
@@ -69,6 +71,8 @@ export const GlobalStyles = css`
 
   * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
+
     padding: 0;
     margin: 0;
   }

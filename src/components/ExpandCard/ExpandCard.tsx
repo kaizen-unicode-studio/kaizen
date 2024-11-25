@@ -15,6 +15,7 @@ import Image, { StaticImageData } from "next/image";
 import plus from "/public/icons/plus.svg";
 import NavButton from "../NavButton";
 import Button from "../Button";
+import { IProduct, products } from "@/products";
 
 interface ExpandCardProps {
   title: string;
@@ -37,6 +38,18 @@ const ExpandCard: FC<ExpandCardProps> = ({
 
   const handleToggle = () => {
     setIsExpanded((prev) => !prev);
+  };
+
+  const addToLocalStorage = (id: number) => {
+    const basket: { data: IProduct[] } = JSON.parse(
+      localStorage.getItem("basket") || '{"data": []}'
+    );
+    const product = products.find((item) => item.id === id);
+
+    if (!basket.data.find((item) => item.id === id) && product) {
+      basket.data.push(product);
+      localStorage.setItem("basket", JSON.stringify(basket));
+    }
   };
 
   useEffect(() => {
@@ -66,7 +79,12 @@ const ExpandCard: FC<ExpandCardProps> = ({
 
         <ButtonsWrapper>
           <NavButton rotate={45} image="increment" onClick={handleToggle} />
-          <Button theme="dark">
+          <Button
+            theme="dark"
+            onClick={() => {
+              addToLocalStorage(number);
+            }}
+          >
             GET IT NOW
             <Image src={plus} alt={""} />
           </Button>

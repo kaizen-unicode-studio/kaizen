@@ -101,9 +101,9 @@ export const Content = styled.div`
   }: {
     isExpanded: boolean;
     height: number;
-  }) => (isExpanded ? `${height * 1.8}px` : "0")};
+  }) => (isExpanded ? `${height * 2}px` : "0")};
   overflow: hidden;
-  transition: max-height 0.3s linear, padding 0.3s linear;
+  transition: max-height 0.3s linear, padding 0.1s linear;
   color: var(--black);
   padding: ${({ isExpanded }: { isExpanded: boolean }) =>
     isExpanded ? "16px 60px 24px" : "0 60px 0"};

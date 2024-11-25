@@ -1,3 +1,4 @@
+import Bag from "@/components/Bag";
 import About from "@/sections/About";
 import Achieve from "@/sections/Achieve";
 import Footer from "@/sections/Footer";
@@ -24,6 +25,7 @@ export default function Home() {
         <Questions />
         <Footer />
       </main>
+      <Bag />
     </>
   );
 }

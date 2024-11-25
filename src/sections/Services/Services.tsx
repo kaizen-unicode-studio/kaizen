@@ -9,10 +9,9 @@ import services_2 from "/public/covers/services_2.jpeg";
 import services_3 from "/public/covers/services_3.jpeg";
 import services_4 from "/public/covers/services_4.jpeg";
 import services_5 from "/public/covers/services_5.jpeg";
-
 const Services = () => {
   return (
-    <StyledServices>
+    <StyledServices id="services">
       <Header>NUTRITION SERVICES</Header>
       <ServicesWrapper gap="18px">
         <ExpandCard

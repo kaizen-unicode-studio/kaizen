@@ -2,19 +2,25 @@
 
 import styled from "@emotion/styled";
 
-export const StyledButton = styled.button`
-  background: ${({ theme }: { theme: "ghost" | "dark" }) =>
-    theme === "ghost" ? "transparent" : "var(--violet-primary)"};
+export const StyledButton = styled.button((props) => ({
+  background: props.theme === "ghost" ? "transparent" : "var(--violet-primary)",
+  gap: "4px",
+  cursor: "pointer",
+  lineHeight: "17.07px",
+  padding: "7px 8px 7px 11px",
+  borderRadius: "50px",
+  border: "1px solid var(--main-color)",
+  color: "var(--main-color)",
+  display: props.hidden ? "none" : "flex",
+  alignItems: "center",
+  fontSize: props.theme === "pay" ? "16px" : "14px",
+  fontWeight: props.theme === "pay" ? "500" : "400",
+  justifyContent: props.theme === "pay" ? "center" : "start",
+  width: props.theme === "pay" ? "100%" : "",
 
-  gap: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17.07px;
-  padding: 7px 8px 7px 11px;
-  border-radius: 50px;
-  border: 1px solid var(--main-color);
-  color: var(--main-color);
-  display: ${({ hidden }: { hidden?: boolean }) => (hidden ? "none" : "flex")};
-  align-items: center;
-`;
+  "& > a": {
+    width: "100%",
+    textDecoration: "none",
+    color: "var(--main-color)",
+  },
+}));

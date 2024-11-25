@@ -16,7 +16,7 @@ import phone from "/public/icons/phone.svg";
 
 const Footer = () => {
   return (
-    <StyledFooter>
+    <StyledFooter id="contacts">
       <Container>
         <Header>CONTACT INFO</Header>
         <Grid>

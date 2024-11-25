@@ -1,6 +1,5 @@
 import React, { FC, ReactNode } from "react";
 import { Header, StyledList } from "./style";
-import { css } from "@emotion/react";
 
 interface ListProps {
   header?: string;

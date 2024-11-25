@@ -1,7 +1,6 @@
 "use client";
 
 import { FC, ReactNode, useEffect, useRef, useState } from "react";
-import { Dialog } from "./style";
 import { createPortal } from "react-dom";
 
 interface ModalProps {
@@ -24,9 +23,9 @@ const Modal: FC<ModalProps> = ({ open, children, className }) => {
 
   return container && mounted && open
     ? createPortal(
-        <Dialog ref={modalRef} className={className}>
+        <div ref={modalRef} className={className}>
           {children}
-        </Dialog>,
+        </div>,
         container.current!
       )
     : null;

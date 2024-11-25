@@ -10,9 +10,9 @@ const Header = () => {
         <Menu>
           <Image src={logo} alt="" />
           <Nav>
-            <Tab>About</Tab>
-            <Tab>Services</Tab>
-            <Tab>Contacts</Tab>
+            <Tab href="#about">About</Tab>
+            <Tab href="#services">Services</Tab>
+            <Tab href="#contacts">Contacts</Tab>
           </Nav>
           <ToggleMenu />
         </Menu>

@@ -46,7 +46,7 @@ export const Content = styled.div`
     isExpanded: boolean;
     height: `${number}px`;
   }) => (isExpanded ? height : "0")};
-  transition: max-height 0.2s linear;
+  transition: max-height 0.1s linear;
   padding-inline: 10px;
   overflow: hidden;
 

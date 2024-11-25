@@ -77,8 +77,9 @@ export const Nav = styled.nav`
   }
 `;
 
-export const Tab = styled.div`
+export const Tab = styled.a`
   padding: 8px 16px;
   color: var(--main-color);
   font-family: "Cantarell";
+  text-decoration: none;
 `;
