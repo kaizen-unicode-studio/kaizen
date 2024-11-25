@@ -8,7 +8,7 @@ export type ThemeType = "ghost" | "dark" | "pay";
 interface ButtonProps extends ComponentPropsWithRef<"button"> {
   theme?: ThemeType;
   children: ReactNode;
-  onClick?: () => any;
+  onClick?: () => void;
   hidden?: boolean;
 }
 

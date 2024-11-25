@@ -6,9 +6,12 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
-import { Container, Grid, Header, SubHeader } from "./Style";
+import { Container, Grid, Header, OrderWrapper, SubHeader } from "./style";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
+import Image from "next/image";
+import Order from "@/components/Order/Order";
+import donut from "/public/covers/donut.svg";
 
 const CheckoutPage = ({
   amount,
@@ -36,7 +39,7 @@ const CheckoutPage = ({
     } catch (err) {
       alert(`Error:${err}`);
     }
-  }, []);
+  }, [amount, currency.currency]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -71,6 +74,7 @@ const CheckoutPage = ({
 
   return (
     <Container>
+      <Image src={donut} alt={""} />
       {!clientSecret || !stripe || !elements ? (
         <div>
           <div role="status">
@@ -108,6 +112,10 @@ Please make sure you are available on WhatsApp, Telegram, or Viber"
                 {!loading ? `Pay now` : "Processing..."}
               </Button>
             </form>
+            <OrderWrapper>
+              <SubHeader style={{ margin: "0 0 16px" }}>your order</SubHeader>
+              <Order bgColor="--main-color" />
+            </OrderWrapper>
           </Grid>
         </>
       )}

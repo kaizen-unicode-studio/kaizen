@@ -3,7 +3,7 @@
 import styled from "@emotion/styled";
 
 export const Card = styled.div`
-  background: var(--secondary-color);
+  background: ${(props: { var?: string }) => `var(${props.var})`};
   padding: 16px;
 `;
 

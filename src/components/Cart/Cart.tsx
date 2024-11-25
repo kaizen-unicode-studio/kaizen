@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import {
   Container,
   Header,
@@ -8,28 +8,19 @@ import {
   SubHeader,
   Wrapper,
   Error,
-  Total,
-  Overflow,
 } from "./style";
 import Image from "next/image";
 import cancel from "/public/icons/cancel.svg";
 import Button from "../Button";
 import Link from "next/link";
-import { IProduct } from "@/products";
-import CartItem from "../CartItem/CartItem";
+import Order from "../Order/Order";
 
 interface CartProps {
   close: () => void;
 }
 
 const Cart: FC<CartProps> = ({ close }) => {
-  const items: { data: IProduct[] } = JSON.parse(
-    localStorage.getItem("basket") || '{"data": []}'
-  );
-
-  const total = items.data
-    .map((item) => item.amount)
-    .reduce((acc, cur) => acc + cur);
+  const items = localStorage.getItem("basket");
 
   return (
     <Wrapper>
@@ -46,15 +37,7 @@ const Cart: FC<CartProps> = ({ close }) => {
         <Separator />
         {items ? (
           <>
-            <Overflow>
-              {items.data.map((product) => (
-                <CartItem key={product.id} {...product}></CartItem>
-              ))}
-            </Overflow>
-
-            <Total>
-              TOTAL AMOUNT <span>£{total.toFixed(2)}</span>
-            </Total>
+            <Order />
             <Button theme="pay">
               <Link href={"/checkout"}>CHECK OUT</Link>
             </Button>

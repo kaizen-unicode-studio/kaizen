@@ -5,7 +5,7 @@ import React from "react";
 
 const Checkout = () => {
   return (
-    <div>
+    <div style={{ background: "var(--main-color)" }}>
       <Header />
       <ElementsProvider />
       <Footer />

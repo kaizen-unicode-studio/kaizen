@@ -1,5 +1,3 @@
-"use client";
-
 import styled from "@emotion/styled";
 
 export const Container = styled.section`
@@ -7,6 +5,18 @@ export const Container = styled.section`
   padding-inline: 80px;
   margin-inline: auto;
   margin-block: 64px 110px;
+  position: relative;
+
+  > img {
+    position: absolute;
+    top: 114px;
+    left: 523px;
+    z-index: 0;
+
+    @media (max-width: 920px) {
+      display: none;
+    }
+  }
 `;
 
 export const Header = styled.h3`
@@ -27,10 +37,17 @@ export const Grid = styled.div`
   display: grid;
   grid-template: auto / 580px auto;
   gap: 120px;
+  z-index: 10;
+  position: relative;
 
   > form {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
+`;
+
+export const OrderWrapper = styled.div`
+  background: var(--secondary-color);
+  padding: 16px;
 `;
