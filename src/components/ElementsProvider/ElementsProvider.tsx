@@ -9,6 +9,10 @@ const stripePromise = loadStripe(
   "pk_test_51Q5MVHK3Qri9t8WuOL0RIOeGPgwuCKuXJ9EEIJcSMBbtZ5Ncq4dafZ25Yk0PBxU2Vkc4Bej2Kn4Q8ImebWJTMx0D00vrX1OB9z"
 );
 const ElementsProvider = () => {
+  if (typeof window === "undefined") {
+    return <>loading ...</>;
+  }
+
   const items: { data: IProduct[] } = JSON.parse(
     localStorage.getItem("basket") || '{"data": []}'
   );
