@@ -6,6 +6,9 @@ export const Container = styled.section`
   background: var(--violet-dark);
   padding-inline: 80px;
   width: 100%;
+  padding-bottom: 60px;
+  border-bottom-right-radius: 24px;
+  border-bottom-left-radius: 24px;
 `;
 
 export const TextSection = styled.article`

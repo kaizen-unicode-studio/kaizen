@@ -6,12 +6,12 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
-import { Container, Grid, Header, OrderWrapper, SubHeader } from "./style";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import Image from "next/image";
 import Order from "@/components/Order/Order";
 import donut from "/public/covers/donut.svg";
+import { Container, Grid, Header, OrderWrapper, SubHeader } from "./style";
 
 const CheckoutPage = ({
   amount,
