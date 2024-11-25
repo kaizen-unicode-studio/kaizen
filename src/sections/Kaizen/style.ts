@@ -20,6 +20,10 @@ export const StyledKaizen = styled.section`
     padding-inline: 16px;
   }
 
+  @media (max-width: 375px) {
+    padding-inline: 10px;
+  }
+
   .main_image {
     width: 482px;
     height: 480px;
@@ -48,7 +52,9 @@ export const StyledKaizen = styled.section`
     }
 
     @media (max-width: 375px) {
-      width: 300px;
+      width: 343px;
+      height: 205px;
+      margin-block: 14px;
     }
   }
 `;
@@ -80,6 +86,11 @@ export const Header = styled.h4`
     margin-bottom: 0;
   }
 
+  @media (max-width: 375px) {
+    line-height: 0.7;
+    padding: 16px 0 10px;
+  }
+
   > span {
     color: var(--black);
     font-size: 128px;
@@ -104,6 +115,10 @@ export const Quote = styled.p`
   letter-spacing: 1.6px;
   word-spacing: 3.9px;
   margin-bottom: 18px;
+
+  @media (max-width: 375px) {
+    margin-bottom: 10px;
+  }
 `;
 
 export const Japanese = styled.p`
@@ -125,6 +140,9 @@ export const Text = styled.p`
 
   @media (max-width: 768px) {
     width: 100%;
+  }
+  @media (max-width: 375px) {
+    padding: 15px 6px;
   }
 `;
 

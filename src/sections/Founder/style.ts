@@ -22,6 +22,25 @@ export const Header = styled.h2`
   font-weight: 600;
   line-height: 56px;
   letter-spacing: -0.4px;
+
+  @media (max-width: 375px) {
+    border-bottom: 1px solid black;
+    font-size: 21px;
+    letter-spacing: -0.1px;
+    line-height: 1.7;
+  }
+`;
+
+export const MobileText = styled.p`
+  display: none;
+  @media (max-width: 375px) {
+    font-variant: small-caps;
+    margin-block: 12px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    display: block;
+  }
 `;
 
 export const Container = styled.article`
@@ -50,8 +69,11 @@ export const Container = styled.article`
 export const FounderContainer = styled.article`
   display: flex;
   flex-direction: column;
-
   gap: 12px;
+
+  @media (max-width: 375px) {
+    gap: 10px;
+  }
 `;
 
 export const FounderImage = styled.div`
@@ -84,10 +106,11 @@ export const FounderImage = styled.div`
 
     @media (max-width: 768px) {
       width: 100%;
-      height: 950px;
-    }
-    @media (max-width: 768px) {
       height: 590px;
+    }
+
+    @media (max-width: 375px) {
+      height: 420px;
     }
   }
 `;
@@ -107,6 +130,9 @@ export const FounderName = styled.p`
     color: var(--main-color);
     background: var(--black);
   }
+  @media (max-width: 375px) {
+    padding: 12px;
+  }
 `;
 
 export const Text = styled.p`
@@ -121,6 +147,11 @@ export const Text = styled.p`
     font-size: 16px;
     font-weight: 400;
     line-height: 22.66px;
+  }
+
+  @media (max-width: 375px) {
+    padding: 12px;
+    line-height: 1.45;
   }
 `;
 

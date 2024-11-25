@@ -9,11 +9,16 @@ export const Header = styled.header`
   @media (max-width: 768px) {
     padding-inline: 16px;
   }
+
+  @media (max-width: 375px) {
+    padding-inline: 10px;
+  }
 `;
 
 export const Container = styled.div`
   max-width: 1760px;
   width: 100%;
+  margin-inline: auto;
 
   @media (max-width: 1600px) {
     max-width: 1440px;

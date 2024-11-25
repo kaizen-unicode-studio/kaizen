@@ -26,14 +26,6 @@ export const Grid = styled.article`
   justify-content: space-between;
   align-items: center;
 
-  > button {
-    justify-self: end;
-
-    @media (max-width: 520px) {
-      justify-self: start;
-    }
-  }
-
   @media (max-width: 1440px) {
     grid-template-columns: 480px 480px;
   }
@@ -47,6 +39,20 @@ export const Grid = styled.article`
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
     gap: 36px;
+  }
+  @media (max-width: 375px) {
+    gap: 28px;
+    padding: 16px;
+    height: 180px;
+    align-items: baseline;
+  }
+
+  > button {
+    justify-self: end;
+
+    @media (max-width: 520px) {
+      justify-self: start;
+    }
   }
 `;
 
@@ -79,6 +85,12 @@ export const Header = styled.h3`
 
   @media (max-width: 520px) {
     padding-inline: 0;
+  }
+  @media (max-width: 375px) {
+    font-size: 17px;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+    padding-block: 9px 5px;
   }
 `;
 

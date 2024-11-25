@@ -32,7 +32,7 @@ export const Item = styled.article`
     grid-gap: 8px;
   }
   @media (max-width: 375px) {
-    padding-block: 14px;
+    padding-block: 14px 15px;
     margin-top: 0px;
     margin-bottom: 8px;
   }
@@ -42,6 +42,11 @@ export const Header = styled.div`
   display: flex;
   gap: 20px;
   align-items: center;
+
+  @media (max-width: 375px) {
+    gap: 12px;
+  }
+
   > h3 {
     font-size: 21px;
     font-weight: 400;
@@ -56,6 +61,9 @@ export const Header = styled.div`
     }
     @media (max-width: 375px) {
       font-size: 15px;
+      line-height: 1;
+      word-spacing: 3px;
+      letter-spacing: 1px;
     }
   }
 
@@ -76,9 +84,14 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 22.66px;
   text-justify: auto;
+
   @media (max-width: 768px) {
     color: var(--main-color);
     font-size: 14px;
     line-height: 19.82px;
+  }
+
+  @media (max-width: 375px) {
+    padding-inline: 8px;
   }
 `;

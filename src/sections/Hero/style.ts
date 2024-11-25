@@ -25,6 +25,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
+  margin-inline: auto;
 
   @media (max-width: 1600px) {
     max-width: 1440px;

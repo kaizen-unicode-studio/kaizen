@@ -27,8 +27,9 @@ const Kaizen = () => {
         <Japanese>改善は一生</Japanese>
         <Image className="mobile_image" src={kaizen_mobile} alt={""} />
         <Text>
-          Improvement is a lifelong process. Guided by this belief, we inspire
-          lasting health through small, meaningful changes that grow over time.
+          Improvement is a lifelong process. <br /> Guided by this belief, we
+          inspire lasting health through small, meaningful changes that grow
+          over time.
         </Text>
       </Container>
       <Image className="main_image" src={kaizen} alt={""} />

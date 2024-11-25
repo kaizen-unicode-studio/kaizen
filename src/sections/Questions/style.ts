@@ -15,6 +15,10 @@ export const StyledQuestions = styled.section`
     padding-inline: 16px;
   }
 
+  @media (max-width: 375px) {
+    margin-top: 50px;
+  }
+
   ol {
     overflow: auto;
     padding-inline: 24px;
@@ -35,11 +39,15 @@ export const Header = styled.h2`
     border-bottom: 1px solid var(--light-gray);
     padding-bottom: 8px;
   }
+  @media (max-width: 375px) {
+    font-size: 21px;
+    line-height: 35px;
+    padding-bottom: 2px;
+  }
 `;
 
 export const SmallCaps = styled.span`
   font-variant: small-caps;
-  max-width: 480px;
 
   > span {
     font-weight: 600;

@@ -24,4 +24,8 @@
   align-items: center;
   justify-content: center;
   width: fit-content;
+
+  @media (max-width: 375px) {
+    padding-inline: 20px;
+  }
 }

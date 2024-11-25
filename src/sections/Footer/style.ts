@@ -50,6 +50,9 @@ export const SubHeader = styled.h5`
   @media (max-width: 520px) {
     font-size: 20px;
   }
+  @media (max-width: 375px) {
+    font-size: 17px;
+  }
 `;
 
 export const Item = styled.p`
@@ -71,6 +74,9 @@ export const Header = styled.h4`
 
   @media (max-width: 520px) {
     font-size: 32px;
+  }
+  @media (max-width: 375px) {
+    font-size: 28px;
   }
 `;
 

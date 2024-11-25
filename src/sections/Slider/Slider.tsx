@@ -36,6 +36,8 @@ const Slider = () => {
             1080: { slidesPerView: 2, spaceBetween: 0 },
             768: { slidesPerView: 2, spaceBetween: 20 },
             520: { slidesPerView: 1, spaceBetween: 0 },
+            375: { slidesPerView: 1, spaceBetween: 0 },
+            0: { slidesPerView: 1, spaceBetween: 0 },
           }}
         >
           <SwiperSlide>
