@@ -6,6 +6,7 @@ export const StyledQuestions = styled.section`
   margin-top: 74px;
   max-width: 1180px;
   margin-inline: auto;
+  margin-bottom: 118px;
 
   @media (max-width: 1440px) {
     max-width: 1020px;

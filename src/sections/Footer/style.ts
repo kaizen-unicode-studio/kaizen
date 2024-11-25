@@ -3,7 +3,6 @@
 import styled from "@emotion/styled";
 
 export const StyledFooter = styled.footer`
-  margin-top: 118px;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
   padding-block: 72px;

@@ -5,9 +5,10 @@ import {
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
-import React, { useState } from "react";
-import { Container, Grid, Header } from "./Style";
+import React, { useEffect, useState } from "react";
+import { Container, Grid, Header, SubHeader } from "./Style";
 import Button from "@/components/Button";
+import Input from "@/components/Input";
 
 const CheckoutPage = ({
   amount,
@@ -22,18 +23,20 @@ const CheckoutPage = ({
   const [clientSecret, setClientSecret] = useState("");
   const [loading, setLoading] = useState(false);
 
-  try {
-    fetch(`/api/strapi?total=${amount}&currency=${currency.currency}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret));
-  } catch (err) {
-    alert(`Error:${err}`);
-  }
+  useEffect(() => {
+    try {
+      fetch(`/api/strapi?total=${amount}&currency=${currency.currency}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => setClientSecret(data.clientSecret));
+    } catch (err) {
+      alert(`Error:${err}`);
+    }
+  }, []);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -77,8 +80,22 @@ const CheckoutPage = ({
       ) : (
         <>
           <Header>CHECKOUT</Header>
+          <SubHeader>Contact information</SubHeader>
           <Grid>
             <form onSubmit={handleSubmit} className="bg-white p-2 rounded-md">
+              <Input label={"First Name"} />
+              <Input label={"Last Name"} />
+              <Input
+                label={"Phone number"}
+                placeholder="Enter you number"
+                description="We need your phone number to contact you about the consultation.
+Please make sure you are available on WhatsApp, Telegram, or Viber"
+              />
+              <Input
+                label={"Email address"}
+                placeholder="Enter your email"
+                description="We need your email to send your order in PDF format"
+              />
               {clientSecret && <PaymentElement />}
 
               {errorMessage && <div>{errorMessage}</div>}
