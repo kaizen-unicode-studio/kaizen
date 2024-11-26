@@ -12,7 +12,7 @@ import Image from "next/image";
 import Order from "@/components/Order/Order";
 import donut from "/public/covers/donut.svg";
 import { Container, Grid, Header, OrderWrapper, SubHeader } from "./style";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 export interface Fields {
   firstName: string;
@@ -55,9 +55,14 @@ const CheckoutPage = ({
     }
   }, [amount, currency.currency]);
 
-  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const onSubmit: SubmitHandler<Fields> = async (data) => {
     setLoading(true);
+
+    Object.keys(data).map((key: string) => {
+      if (!data[key as keyof Fields]) {
+        errors[key as keyof Fields]?.message;
+      }
+    });
 
     if (!stripe || !elements) {
       return;
@@ -99,7 +104,7 @@ const CheckoutPage = ({
         <>
           <Header>CHECKOUT</Header>
           <Grid>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <SubHeader>Contact information</SubHeader>
 
               <Input
@@ -109,6 +114,10 @@ const CheckoutPage = ({
                   required: true,
                 }}
                 registerKey="firstName"
+                error={{
+                  state: errors.firstName,
+                  message: "User name is required",
+                }}
               />
               <Input
                 label={"Last Name"}
@@ -117,6 +126,10 @@ const CheckoutPage = ({
                   required: true,
                 }}
                 registerKey="lastName"
+                error={{
+                  state: errors.lastName,
+                  message: "Last name is required",
+                }}
               />
               <Input
                 register={register}
@@ -124,6 +137,10 @@ const CheckoutPage = ({
                   required: true,
                 }}
                 registerKey="phone"
+                error={{
+                  state: errors.phone,
+                  message: "Phone is required",
+                }}
                 label={"Phone number"}
                 placeholder="Enter you number"
                 description="We need your phone number to contact you about the consultation.
@@ -135,6 +152,7 @@ Please make sure you are available on WhatsApp, Telegram, or Viber"
                   required: true,
                   pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
                 }}
+                error={{ state: errors.email, message: "Email is required" }}
                 registerKey="email"
                 label={"Email address"}
                 placeholder="Enter your email"
