@@ -11,7 +11,7 @@ import Input from "@/components/Input";
 import Image from "next/image";
 import Order from "@/components/Order/Order";
 import donut from "/public/covers/donut.svg";
-import { Container, Grid, Header, OrderWrapper, SubHeader } from "./Style";
+import { Container, Grid, Header, OrderWrapper, SubHeader } from "./style";
 
 const CheckoutPage = ({
   amount,
@@ -84,9 +84,10 @@ const CheckoutPage = ({
       ) : (
         <>
           <Header>CHECKOUT</Header>
-          <SubHeader>Contact information</SubHeader>
           <Grid>
-            <form onSubmit={handleSubmit} className="bg-white p-2 rounded-md">
+            <form onSubmit={handleSubmit}>
+              <SubHeader>Contact information</SubHeader>
+
               <Input label={"First Name"} />
               <Input label={"Last Name"} />
               <Input
@@ -109,7 +110,7 @@ Please make sure you are available on WhatsApp, Telegram, or Viber"
                 disabled={!stripe || loading}
                 style={{ marginTop: 20 }}
               >
-                {!loading ? `Pay now` : "Processing..."}
+                {!loading ? `pay now` : "Processing..."}
               </Button>
             </form>
             <OrderWrapper>

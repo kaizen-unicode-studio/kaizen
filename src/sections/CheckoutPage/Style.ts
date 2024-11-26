@@ -6,6 +6,7 @@ export const Container = styled.section`
   margin-inline: auto;
   margin-block: 64px 110px;
   position: relative;
+  min-height: 50vh;
 
   > img {
     position: absolute;
@@ -48,6 +49,7 @@ export const Grid = styled.div`
 `;
 
 export const OrderWrapper = styled.div`
+  margin-top: 37px;
   background: var(--secondary-color);
   padding: 16px;
 `;

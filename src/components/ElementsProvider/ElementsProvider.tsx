@@ -4,14 +4,20 @@ import CheckoutPage from "@/sections/CheckoutPage";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { TextSection, TopHeader, Text, Container } from "./style";
+import { useMemo } from "react";
 
 const stripePromise = loadStripe(
   "pk_test_51Q5MVHK3Qri9t8WuOL0RIOeGPgwuCKuXJ9EEIJcSMBbtZ5Ncq4dafZ25Yk0PBxU2Vkc4Bej2Kn4Q8ImebWJTMx0D00vrX1OB9z"
 );
 const ElementsProvider = () => {
-  const items: { data: IProduct[] } = window?.localStorage
-    ? JSON.parse(window?.localStorage.getItem("basket") || '{"data": []}')
-    : null;
+  const items: { data: IProduct[] } = useMemo(() => {
+    if (typeof window !== undefined) {
+      return JSON.parse(
+        window?.localStorage.getItem("basket") || '{"data": []}'
+      );
+    }
+    return null;
+  }, [window]);
 
   const total = items.data
     .map((item) => item.amount)
