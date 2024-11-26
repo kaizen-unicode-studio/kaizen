@@ -12,6 +12,14 @@ import Image from "next/image";
 import Order from "@/components/Order/Order";
 import donut from "/public/covers/donut.svg";
 import { Container, Grid, Header, OrderWrapper, SubHeader } from "./style";
+import { useForm } from "react-hook-form";
+
+export interface Fields {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: number;
+}
 
 const CheckoutPage = ({
   amount,
@@ -20,6 +28,12 @@ const CheckoutPage = ({
   amount: number;
   currency: { symbol: string; currency: string };
 }) => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<Fields>();
   const stripe = useStripe();
   const elements = useElements();
   const [errorMessage, setErrorMessage] = useState<string>();
@@ -41,7 +55,7 @@ const CheckoutPage = ({
     }
   }, [amount, currency.currency]);
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
 
@@ -85,18 +99,43 @@ const CheckoutPage = ({
         <>
           <Header>CHECKOUT</Header>
           <Grid>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={onSubmit}>
               <SubHeader>Contact information</SubHeader>
 
-              <Input label={"First Name"} />
-              <Input label={"Last Name"} />
               <Input
+                label={"First Name"}
+                register={register}
+                params={{
+                  required: true,
+                }}
+                registerKey="firstName"
+              />
+              <Input
+                label={"Last Name"}
+                register={register}
+                params={{
+                  required: true,
+                }}
+                registerKey="lastName"
+              />
+              <Input
+                register={register}
+                params={{
+                  required: true,
+                }}
+                registerKey="phone"
                 label={"Phone number"}
                 placeholder="Enter you number"
                 description="We need your phone number to contact you about the consultation.
 Please make sure you are available on WhatsApp, Telegram, or Viber"
               />
               <Input
+                register={register}
+                params={{
+                  required: true,
+                  pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
+                }}
+                registerKey="email"
                 label={"Email address"}
                 placeholder="Enter your email"
                 description="We need your email to send your order in PDF format"
