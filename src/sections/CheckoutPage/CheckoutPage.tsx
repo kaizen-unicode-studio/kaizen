@@ -13,7 +13,6 @@ import Order from "@/components/Order/Order";
 import donut from "/public/covers/donut.svg";
 import { Container, Grid, Header, OrderWrapper, SubHeader } from "./style";
 import { SubmitHandler, useForm } from "react-hook-form";
-
 export interface Fields {
   firstName: string;
   lastName: string;
@@ -58,12 +57,6 @@ const CheckoutPage = ({
   const onSubmit: SubmitHandler<Fields> = async (data) => {
     setLoading(true);
 
-    Object.keys(data).map((key: string) => {
-      if (!data[key as keyof Fields]) {
-        errors[key as keyof Fields]?.message;
-      }
-    });
-
     if (!stripe || !elements) {
       return;
     }
@@ -76,11 +69,15 @@ const CheckoutPage = ({
       return;
     }
 
+    const fields = Object.keys(data).map((key) => {
+      return `${key}=${data[key as keyof Fields]}&`;
+    });
+
     const { error } = await stripe.confirmPayment({
       elements,
       clientSecret,
       confirmParams: {
-        return_url: `${window.location.origin}/success?amount=${amount}&currency=${currency.currency}`,
+        return_url: `${window.location.origin}/success?${fields.join("")}`,
       },
     });
 
@@ -135,6 +132,8 @@ const CheckoutPage = ({
                 register={register}
                 params={{
                   required: true,
+                  pattern:
+                    /^\+?(\d{1,3})?[-.\s]?(\(?\d{1,4}\)?)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/i,
                 }}
                 registerKey="phone"
                 error={{
