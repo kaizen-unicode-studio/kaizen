@@ -55,7 +55,7 @@ const page = () => {
         <Container>
           <Image src={donut} className="cover_img" alt={""} />
           <article>
-            <SubHeader>Thank you for purchasing our service!</SubHeader>
+            <SubHeader>THANK YOU FOR PURCHASING OUR SERVICE!</SubHeader>
             <Description>
               We are glad that you have decided to take a step towards improving
               your health and well-being. Our specialist will contact you
