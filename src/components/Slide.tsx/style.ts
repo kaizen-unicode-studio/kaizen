@@ -18,8 +18,6 @@ export const Card = styled.div`
   }
 
   > img {
-    width: 76px;
-    height: 52px;
     opacity: 0.16;
     transform: rotate(180deg);
   }

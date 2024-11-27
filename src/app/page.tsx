@@ -13,19 +13,19 @@ import Slider from "@/sections/Slider";
 export default function Home() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <main>
-        {/* <Hero /> */}
-        {/* <About /> */}
-        {/* <Achieve /> */}
-        {/* <Services /> */}
-        {/* <Founder /> */}
-        {/* <Slider /> */}
-        {/* <Kaizen /> */}
-        {/* <Questions /> */}
-        {/* <Footer /> */}
+        <Hero />
+        <About />
+        <Achieve />
+        <Services />
+        <Founder />
+        <Slider />
+        <Kaizen />
+        <Questions />
+        <Footer />
       </main>
-      {/* <Bag /> */}
+      <Bag />
     </>
   );
 }

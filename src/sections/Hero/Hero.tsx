@@ -27,8 +27,8 @@ const Hero = () => {
           </Text>
         </TextSection>
         <ImageSection>
-          <Image src={hero_1} alt={""} priority />
-          <Image src={hero_2} alt={""} priority />
+          <Image src={hero_1} alt={""} priority fetchPriority="high" />
+          <Image src={hero_2} alt={""} priority fetchPriority="high" />
         </ImageSection>
         <Text>
           IMPROVING YOUR HEALTH THROUGH MINDFUL CHOICES IS AT THE HEART OF OUR
