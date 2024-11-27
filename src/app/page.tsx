@@ -19,8 +19,8 @@ export default function Home() {
         {/* <About /> */}
         {/* <Achieve /> */}
         {/* <Services /> */}
-        <Founder />
-        {/* <Slider /> */}
+        {/* <Founder /> */}
+        <Slider />
         {/* <Kaizen /> */}
         {/* <Questions /> */}
         {/* <Footer /> */}
