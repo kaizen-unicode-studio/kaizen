@@ -49,11 +49,11 @@ const ElementsProvider = () => {
 
   return (
     <>
-      {!items.data.length && (
+      {!items.data.length && !total && (
         <Empty>
           <SubHeader>OOPS!</SubHeader>
           <Error>looks like your cart is empty</Error>
-          <Button theme="pay" onClick={close}>
+          <Button theme="pay">
             <Link href="/#services">GO TO THE SERVICES</Link>
           </Button>
         </Empty>
@@ -81,6 +81,7 @@ const ElementsProvider = () => {
               </Text>
             </TextSection>
           </Container>
+          <CheckoutPage amount={total} currency={currency} />
         </Elements>
       )}
     </>
