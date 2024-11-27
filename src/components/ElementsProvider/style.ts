@@ -4,9 +4,8 @@ import styled from "@emotion/styled";
 
 export const Container = styled.section`
   background: var(--violet-dark);
-  padding-inline: 80px;
+  padding: 100px 80px 60px;
   width: 100%;
-  padding-bottom: 60px;
   border-bottom-right-radius: 24px;
   border-bottom-left-radius: 24px;
 `;

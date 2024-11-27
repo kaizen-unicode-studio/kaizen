@@ -7,7 +7,7 @@ export const StyledHero = styled.section`
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
 
-  padding: 0 80px 60px;
+  padding: 100px 80px 60px;
 
   @media (max-width: 768px) {
     padding: 0 16px 20px;

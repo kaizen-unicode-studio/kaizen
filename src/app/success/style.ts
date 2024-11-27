@@ -55,7 +55,7 @@ export const TextWrapper = styled.section`
   background: var(--violet-dark);
   border-bottom-right-radius: 24px;
   border-bottom-left-radius: 24px;
-  padding-inline: 80px;
+  padding: 100px 80px 60px;
 `;
 
 export const TextSection = styled.article`
