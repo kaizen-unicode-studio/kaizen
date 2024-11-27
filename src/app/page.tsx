@@ -23,7 +23,7 @@ export default function Home() {
         {/* <Slider /> */}
         {/* <Kaizen /> */}
         {/* <Questions /> */}
-        <Footer />
+        {/* <Footer /> */}
       </main>
       {/* <Bag /> */}
     </>
