@@ -1,14 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import bag from "/public/icons/bag.svg";
 import { StyledBag } from "./style";
 import Modal from "../Modal";
 import Cart from "../Cart";
+import { IProduct } from "@/products";
 
 const Bag = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    const items: { data: IProduct[] } = JSON.parse(
+      localStorage.getItem("basket") || '{"data": []}'
+    );
+    setTotal(items.data.length);
+  }, [localStorage]);
 
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
@@ -17,6 +26,7 @@ const Bag = () => {
   return (
     <StyledBag onClick={handleToggle}>
       <Image src={bag} alt={""} width={64} height={64} />
+      {total !== 0 && <div>{total}</div>}
       <Modal open={isOpen}>
         <Cart close={handleToggle} />
       </Modal>

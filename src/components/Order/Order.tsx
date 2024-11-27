@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import CartItem from "../CartItem/CartItem";
 import { Overflow, Total } from "./style";
 import { IProduct } from "@/products";
@@ -8,12 +8,18 @@ interface OrderProps {
 }
 
 const Order: FC<OrderProps> = ({ bgColor }) => {
-  const items: { data: IProduct[] } = JSON.parse(
-    localStorage.getItem("basket") || '{"data": []}'
-  );
+  const [items, setItems] = useState<{ data: IProduct[] }>({ data: [] });
   const total = items.data
     .map((item) => item.amount)
-    .reduce((acc, cur) => acc + cur);
+    .reduce((acc, cur) => acc + cur, 0);
+
+  useEffect(() => {
+    const items: { data: IProduct[] } = JSON.parse(
+      localStorage.getItem("basket") || '{"data": []}'
+    );
+
+    setItems(items);
+  }, [localStorage]);
 
   return (
     <div>

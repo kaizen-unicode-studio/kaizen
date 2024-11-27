@@ -8,13 +8,17 @@ export const Card = styled.div`
 `;
 
 export const Header = styled.h6`
-  font-size: 20px;
+  font-size: 17px;
+  line-height: 1.8;
+  letter-spacing: 0.2px;
   font-weight: 500;
-  line-height: 24.38px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
+  align-items: flex-start;
+
+  > div {
+    display: flex;
+  }
 `;
 
 export const Amount = styled.p`
@@ -24,10 +28,17 @@ export const Amount = styled.p`
   color: var(--violet-primary);
 `;
 
+export const Remove = styled.div`
+  cursor: pointer;
+  > img {
+    margin: 4px;
+  }
+`;
+
 export const Description = styled.p`
   font-family: Cantarell;
   font-size: 12px;
   font-weight: 400;
   line-height: 16.99px;
-  width: 50%;
+  width: 57%;
 `;
