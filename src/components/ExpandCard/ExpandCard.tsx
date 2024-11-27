@@ -83,6 +83,7 @@ const ExpandCard: FC<ExpandCardProps> = ({
             theme="dark"
             onClick={() => {
               addToLocalStorage(number);
+              window.dispatchEvent(new Event("storage"));
             }}
           >
             GET IT NOW

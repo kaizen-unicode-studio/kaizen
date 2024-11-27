@@ -12,12 +12,28 @@ const Bag = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [total, setTotal] = useState(0);
 
-  useEffect(() => {
+  const updateTotal = () => {
     const items: { data: IProduct[] } = JSON.parse(
       localStorage.getItem("basket") || '{"data": []}'
     );
     setTotal(items.data.length);
-  }, [localStorage]);
+  };
+
+  useEffect(() => {
+    // Initial load
+    updateTotal();
+
+    // Event listener for localStorage changes
+    const handleStorageChange = () => {
+      updateTotal();
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
 
   const handleToggle = () => {
     setIsOpen((prev) => !prev);

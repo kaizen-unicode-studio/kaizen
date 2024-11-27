@@ -35,7 +35,12 @@ const CartItem: FC<CartItemProps> = ({
         {name}
         <div>
           <Amount>£{amount.toFixed(2)}</Amount>
-          <Remove onClick={handleRemove}>
+          <Remove
+            onClick={() => {
+              handleRemove();
+              window.dispatchEvent(new Event("storage"));
+            }}
+          >
             <Image src={remove} alt={""} />
           </Remove>
         </div>
