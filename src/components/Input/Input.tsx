@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithRef, FC } from "react";
 import { Label, StyledInput } from "./style";
-import { RegisterOptions, UseFormRegister } from "react-hook-form";
+import { FieldError, RegisterOptions, UseFormRegister } from "react-hook-form";
 import { Fields } from "@/sections/CheckoutPage/CheckoutPage";
 
 interface InputProps extends ComponentPropsWithRef<"input"> {
@@ -8,19 +8,30 @@ interface InputProps extends ComponentPropsWithRef<"input"> {
   description?: string;
   register: UseFormRegister<Fields>;
   registerKey: keyof Fields;
-  params: RegisterOptions;
+  params: RegisterOptions<Fields, keyof Fields>;
+  error: { state: FieldError | undefined; message: string };
 }
 
-const Input: FC<InputProps> = ({ label, description, register, ...rest }) => {
+const Input: FC<InputProps> = ({
+  label,
+  description,
+  register,
+  registerKey,
+  params,
+  error,
+  ...rest
+}) => {
   return (
     <Label>
       {label}
       <StyledInput
-        {...register}
+        {...register(registerKey, { ...params })}
         type="text"
+        error={error.state}
         {...rest}
         placeholder="Enter your details"
       />
+      {error.state && <p className="error">{error.message}</p>}
       {description && <p>{description}</p>}
     </Label>
   );

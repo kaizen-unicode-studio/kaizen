@@ -1,6 +1,7 @@
 "use client";
 
 import styled from "@emotion/styled";
+import { FieldError } from "react-hook-form";
 
 export const Label = styled.label`
   display: flex;
@@ -19,13 +20,23 @@ export const Label = styled.label`
     line-height: 16.99px;
     color: var(--light-gray);
   }
+
+  .error {
+    font-family: Cantarell;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16.99px;
+    color: red;
+  }
 `;
 
 export const StyledInput = styled.input`
   padding: 12px;
   background-color: white;
   border-radius: 4px;
-  border: 1px solid var(--light-gray);
+  border: 1px solid
+    ${({ error }: { error: FieldError | undefined }) =>
+      error ? "red" : "var(--light-gray)"};
   transition: border 0.15s ease;
   margin-top: 8px;
 
