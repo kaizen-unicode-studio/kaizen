@@ -30,11 +30,21 @@ const ToggleMenu = () => {
       <Modal open={open}>
         <ModalContent>
           <LinkList>
-            <Link href={""}>HOME</Link>
-            <Link href={""}>ABOUT</Link>
-            <Link href={""}>SERVICES</Link>
-            <Link href={""}>MY BASKET</Link>
-            <Link href={""}>CONTACTS</Link>
+            <Link onClick={handleToggleOpen} href={"/"}>
+              HOME
+            </Link>
+            <Link onClick={handleToggleOpen} href={"/#about"}>
+              ABOUT
+            </Link>
+            <Link onClick={handleToggleOpen} href={"/#services"}>
+              SERVICES
+            </Link>
+            <Link onClick={handleToggleOpen} href={""}>
+              MY BASKET
+            </Link>
+            <Link onClick={handleToggleOpen} href={"/#contacts"}>
+              CONTACTS
+            </Link>
           </LinkList>
           <Instagram>
             <Image src={instagram} alt={""} />

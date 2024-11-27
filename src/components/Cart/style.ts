@@ -16,12 +16,17 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   background: var(--main-color);
-  height: calc(100vh - 100px);
-  margin-block: 50px;
+  height: 100vh;
   padding: 24px 20px;
   border-bottom-left-radius: 32px;
   border-top-left-radius: 32px;
   width: 480px;
+
+  @media (max-width: 520px) {
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
 `;
 
 export const Header = styled.h3`

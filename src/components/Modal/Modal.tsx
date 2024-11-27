@@ -19,6 +19,14 @@ const Modal: FC<ModalProps> = ({ open, children, className }) => {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    const body = document.querySelector("body")!;
+    body.style.overflowY = open ? "hidden" : "auto";
+    return () => {
+      body.style.overflowY = "auto";
+    };
+  }, [open]);
+
   if (!container) return null;
 
   return container && mounted && open
