@@ -69,6 +69,7 @@ export const Container = styled.article`
 export const FounderContainer = styled.article`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 12px;
 
   @media (max-width: 375px) {

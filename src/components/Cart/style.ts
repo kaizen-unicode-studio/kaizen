@@ -17,6 +17,7 @@ export const Container = styled.div`
   flex-direction: column;
   background: var(--main-color);
   height: 100vh;
+  max-height: 100vh;
   padding: 24px 20px;
   border-bottom-left-radius: 32px;
   border-top-left-radius: 32px;
