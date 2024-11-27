@@ -35,7 +35,7 @@ export const Section = styled.section`
   :nth-child(1) {
     grid-column-start: 2;
 
-    @media (max-width: 768px) {
+    @media (max-width: 978px) {
       grid-column-start: 1;
     }
   }
@@ -85,13 +85,14 @@ export const Grid = styled.article`
   gap: 80px;
 
   @media (max-width: 1080px) {
-    grid-template: 1fr / 235px repeat(3, 1fr);
+    grid-template: 1fr / 200px repeat(3, 1fr);
     gap: 60px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 978px) {
     grid-template: 1fr / repeat(3, 1fr);
   }
+
   @media (max-width: 520px) {
     grid-template: repeat(3, auto) / 1fr;
     gap: 20px;

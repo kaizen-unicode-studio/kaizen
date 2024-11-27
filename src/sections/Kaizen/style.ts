@@ -16,7 +16,7 @@ export const StyledKaizen = styled.section`
     grid-template-columns: auto 322px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1080px) {
     padding-inline: 16px;
   }
 
@@ -78,6 +78,14 @@ export const Header = styled.h4`
   margin-bottom: 15px;
   padding-top: 55px;
 
+  @media (max-width: 1080px) {
+    font-size: 100px;
+    line-height: 97.5px;
+    letter-spacing: 0.16em;
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+
   @media (max-width: 768px) {
     font-size: 80px;
     line-height: 97.5px;
@@ -98,6 +106,14 @@ export const Header = styled.h4`
     line-height: 0.8 !important;
     font-weight: 200;
     padding-top: 55px;
+
+    @media (max-width: 1080px) {
+      font-size: 100px;
+      line-height: 97.5px;
+      letter-spacing: 0.16em;
+      padding-top: 0;
+      margin-bottom: 0;
+    }
 
     @media (max-width: 768px) {
       font-size: 80px;
