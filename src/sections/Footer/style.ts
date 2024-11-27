@@ -93,7 +93,7 @@ export const Grid = styled.article`
     grid-template: 1fr / repeat(3, 1fr);
   }
 
-  @media (max-width: 520px) {
+  @media (max-width: 660px) {
     grid-template: repeat(3, auto) / 1fr;
     gap: 20px;
   }

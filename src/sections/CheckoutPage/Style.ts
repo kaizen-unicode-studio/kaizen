@@ -8,6 +8,10 @@ export const Container = styled.section`
   position: relative;
   min-height: 50vh;
 
+  @media (max-width: 768px) {
+    padding-inline: 16px;
+  }
+
   > img {
     position: absolute;
     top: 114px;
@@ -41,6 +45,18 @@ export const Grid = styled.div`
   z-index: 10;
   position: relative;
 
+  @media (max-width: 1340px) {
+    grid-template: auto / 480px auto;
+  }
+  @media (max-width: 1280px) {
+    grid-template: auto / 400px auto;
+    gap: 60px;
+  }
+  @media (max-width: 920px) {
+    grid-template: repeat(2, auto) / auto;
+    gap: 16px;
+  }
+
   > form {
     display: flex;
     flex-direction: column;
@@ -52,4 +68,8 @@ export const OrderWrapper = styled.div`
   margin-top: 37px;
   background: var(--secondary-color);
   padding: 16px;
+
+  @media (max-width: 920px) {
+    grid-row-start: 1;
+  }
 `;
