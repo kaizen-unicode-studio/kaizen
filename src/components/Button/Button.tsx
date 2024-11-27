@@ -10,10 +10,7 @@ import { StyledButton, StyledLink } from "./style";
 
 export type ThemeType = "ghost" | "dark" | "pay" | "ghost-invert";
 
-type CustomComponent = ComponentPropsWithRef<"button"> &
-  ComponentPropsWithRef<"a">;
-
-interface ButtonProps extends CustomComponent {
+interface ButtonProps extends ComponentPropsWithRef<"button"> {
   theme?: ThemeType;
   children: ReactNode;
   onClick?: () => void;

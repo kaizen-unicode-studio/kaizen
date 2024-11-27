@@ -3,31 +3,62 @@ import { IProduct } from "@/products";
 import CheckoutPage from "@/sections/CheckoutPage";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import { TextSection, TopHeader, Text, Container } from "./style";
-import { useMemo } from "react";
+import {
+  TextSection,
+  TopHeader,
+  Text,
+  Container,
+  SubHeader,
+  Error,
+  Empty,
+} from "./style";
+import { useEffect, useState } from "react";
+import Button from "../Button";
+import Link from "next/link";
 
 const stripePromise = loadStripe(
   "pk_test_51Q5MVHK3Qri9t8WuOL0RIOeGPgwuCKuXJ9EEIJcSMBbtZ5Ncq4dafZ25Yk0PBxU2Vkc4Bej2Kn4Q8ImebWJTMx0D00vrX1OB9z"
 );
 const ElementsProvider = () => {
-  const items: { data: IProduct[] } = useMemo(() => {
-    if (typeof window !== undefined) {
-      return JSON.parse(
-        window?.localStorage.getItem("basket") || '{"data": []}'
-      );
-    }
-    return null;
-  }, [window]);
-
+  const [items, setItems] = useState<{ data: IProduct[] }>({ data: [] });
   const total = items.data
     .map((item) => item.amount)
-    .reduce((acc, cur) => acc + cur);
+    .reduce((acc, cur) => acc + cur, 0);
+  const updateItems = () => {
+    const items: { data: IProduct[] } = JSON.parse(
+      localStorage.getItem("basket") || '{"data": []}'
+    );
+    setItems(items);
+  };
+
+  useEffect(() => {
+    updateItems();
+
+    const handleStorageChange = () => {
+      updateItems();
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
 
   const currency = { symbol: "$", currency: "usd" };
 
   return (
     <>
-      {total && (
+      {!items.data.length && !total && (
+        <Empty>
+          <SubHeader>OOPS!</SubHeader>
+          <Error>looks like your cart is empty</Error>
+          <Button theme="pay">
+            <Link href="/#services">GO TO THE SERVICES</Link>
+          </Button>
+        </Empty>
+      )}
+      {!!total && (
         <Elements
           stripe={stripePromise}
           options={{

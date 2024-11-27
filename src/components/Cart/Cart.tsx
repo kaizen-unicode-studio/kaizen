@@ -50,7 +50,9 @@ const Cart: FC<CartProps> = ({ close }) => {
             <SubHeader>OOPS!</SubHeader>
             <Error>looks like your cart is empty</Error>
             <Button theme="pay" onClick={close}>
-              <Link href="#services">GO TO THE SERVICES</Link>
+              <Link onClick={close} href="/#services">
+                GO TO THE SERVICES
+              </Link>
             </Button>
           </>
         )}
