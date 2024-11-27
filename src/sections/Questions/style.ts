@@ -12,7 +12,7 @@ export const StyledQuestions = styled.section`
     max-width: 1020px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1180px) {
     padding-inline: 16px;
   }
 
