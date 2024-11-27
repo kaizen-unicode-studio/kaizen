@@ -55,4 +55,5 @@ export const ModalContent = styled.div`
   width: 100%;
   height: calc(100vh - 95px);
   padding: 40px 0 16px;
+  z-index: 40;
 `;

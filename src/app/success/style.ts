@@ -12,6 +12,14 @@ export const Container = styled.section`
   margin-block: 64px;
   position: relative;
 
+  @media (max-width: 1180px) {
+    padding-inline: 16px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template: repeat(2, auto) / auto;
+  }
+
   > article {
     display: flex;
     flex-direction: column;
@@ -23,7 +31,7 @@ export const Container = styled.section`
     width: 100%;
     height: 318px;
     object-fit: cover;
-    object-position: center center;
+    object-position: right center;
     border-radius: 12px;
     z-index: 10;
   }
@@ -128,6 +136,7 @@ export const Description = styled.p`
   font-size: 24px;
   font-weight: 300;
   line-height: 29.26px;
+  font-variant: small-caps;
 `;
 
 export const Afterword = styled.p`
@@ -142,4 +151,9 @@ export const ButtonWrapper = styled.section`
   max-width: 1180px;
   margin-inline: auto;
   margin-bottom: 120px;
+
+  @media (max-width: 1180px) {
+    padding-inline: 16px;
+    margin-bottom: 0;
+  }
 `;

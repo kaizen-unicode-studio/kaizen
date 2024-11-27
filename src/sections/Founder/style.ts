@@ -12,7 +12,7 @@ export const StyledFounder = styled.section`
     max-width: 1020px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1080px) {
     padding-inline: 16px;
   }
 `;
