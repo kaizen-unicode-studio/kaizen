@@ -20,10 +20,10 @@ export default function Home() {
         {/* <Achieve /> */}
         {/* <Services /> */}
         {/* <Founder /> */}
-        <Slider />
+        {/* <Slider /> */}
         {/* <Kaizen /> */}
         {/* <Questions /> */}
-        {/* <Footer /> */}
+        <Footer />
       </main>
       {/* <Bag /> */}
     </>

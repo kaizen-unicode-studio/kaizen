@@ -18,7 +18,7 @@ export const StyledFooter = styled.footer`
 export const Container = styled.section`
   max-width: 1180px;
   margin-inline: auto;
-  @media (max-width: 1080px) {
+  @media (max-width: 1180px) {
     padding-inline: 30px;
   }
   @media (max-width: 768px) {
