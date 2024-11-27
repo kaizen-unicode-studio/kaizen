@@ -23,8 +23,10 @@ import Button from "@/components/Button";
 import Link from "next/link";
 
 const page = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const params = useSearchParams();
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     fetch(`/api/payment_meta?${params.toString()}`, {
       method: "POST",
@@ -32,7 +34,7 @@ const page = () => {
         "Content-Type": "application/json",
       },
     });
-  }, []);
+  }, [params]);
 
   return (
     <>
