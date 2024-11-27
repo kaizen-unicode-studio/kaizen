@@ -14,13 +14,16 @@ import cancel from "/public/icons/cancel.svg";
 import Button from "../Button";
 import Link from "next/link";
 import Order from "../Order/Order";
+import { IProduct } from "@/products";
 
 interface CartProps {
   close: () => void;
 }
 
 const Cart: FC<CartProps> = ({ close }) => {
-  const items = localStorage.getItem("basket");
+  const items: { data: IProduct[] } = JSON.parse(
+    localStorage.getItem("basket") || `{"data": []}`
+  );
 
   return (
     <Wrapper>
@@ -35,7 +38,7 @@ const Cart: FC<CartProps> = ({ close }) => {
           <Image src={cancel} alt={""} width={24} height={24} onClick={close} />
         </Header>
         <Separator />
-        {items ? (
+        {items.data.length ? (
           <>
             <Order />
             <Button theme="pay">
