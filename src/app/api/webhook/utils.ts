@@ -9,11 +9,11 @@ export async function buffer(readable: Readable) {
 }
 
 export function Utf8ArrayToStr(array: Uint8Array) {
-  var out, i, len, c;
-  var char2, char3;
+  let out, i, c;
+  let char2, char3;
 
   out = "";
-  len = array.length;
+  const len = array.length;
   i = 0;
   while (i < len) {
     c = array[i++];
