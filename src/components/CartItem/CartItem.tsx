@@ -27,6 +27,7 @@ const CartItem: FC<CartItemProps> = ({
       "basket",
       JSON.stringify({ data: items.data.filter((item) => item.id !== id) })
     );
+    window.dispatchEvent(new Event("storage"));
   };
 
   return (
@@ -35,12 +36,7 @@ const CartItem: FC<CartItemProps> = ({
         {name}
         <div>
           <Amount>£{amount.toFixed(2)}</Amount>
-          <Remove
-            onClick={() => {
-              handleRemove();
-              window.dispatchEvent(new Event("storage"));
-            }}
-          >
+          <Remove onClick={handleRemove}>
             <Image src={remove} alt={""} />
           </Remove>
         </div>

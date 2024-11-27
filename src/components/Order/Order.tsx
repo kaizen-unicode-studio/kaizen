@@ -13,13 +13,28 @@ const Order: FC<OrderProps> = ({ bgColor }) => {
     .map((item) => item.amount)
     .reduce((acc, cur) => acc + cur, 0);
 
-  useEffect(() => {
+  const updateItems = () => {
     const items: { data: IProduct[] } = JSON.parse(
       localStorage.getItem("basket") || '{"data": []}'
     );
-
     setItems(items);
-  }, [localStorage]);
+  };
+
+  useEffect(() => {
+    // Initial load
+    updateItems();
+
+    // Event listener for localStorage changes
+    const handleStorageChange = () => {
+      updateItems();
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
 
   return (
     <div>
