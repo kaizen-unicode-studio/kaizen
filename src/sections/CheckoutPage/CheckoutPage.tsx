@@ -30,7 +30,6 @@ const CheckoutPage = ({
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<Fields>();
   const stripe = useStripe();

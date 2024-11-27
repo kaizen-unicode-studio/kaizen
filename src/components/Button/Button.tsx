@@ -1,11 +1,19 @@
 "use client";
 
-import React, { ComponentPropsWithRef, FC, ReactNode } from "react";
-import { StyledButton } from "./style";
+import React, {
+  ComponentPropsWithRef,
+  FC,
+  isValidElement,
+  ReactNode,
+} from "react";
+import { StyledButton, StyledLink } from "./style";
 
-export type ThemeType = "ghost" | "dark" | "pay";
+export type ThemeType = "ghost" | "dark" | "pay" | "ghost-invert";
 
-interface ButtonProps extends ComponentPropsWithRef<"button"> {
+type CustomComponent = ComponentPropsWithRef<"button"> &
+  ComponentPropsWithRef<"a">;
+
+interface ButtonProps extends CustomComponent {
   theme?: ThemeType;
   children: ReactNode;
   onClick?: () => void;
@@ -18,6 +26,19 @@ const Button: FC<ButtonProps> = ({
   children,
   ...rest
 }) => {
+  const isLink =
+    isValidElement(children) &&
+    (() => {
+      const type = children.type as unknown as { render: { name: string } };
+      return type.render.name === "LinkComponent";
+    })();
+
+  if (isLink)
+    return (
+      <StyledLink hidden={hidden} theme={theme}>
+        {children}
+      </StyledLink>
+    );
   return (
     <StyledButton {...rest} hidden={hidden} theme={theme}>
       {children}
