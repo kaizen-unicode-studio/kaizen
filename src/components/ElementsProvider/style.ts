@@ -78,3 +78,36 @@ export const Text = styled.p`
   line-height: 22.66px;
   max-width: 480px;
 `;
+
+export const SubHeader = styled.h5`
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29.26px;
+  margin-top: 64px;
+`;
+
+export const Error = styled.p`
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24.38px;
+  font-variant: small-caps;
+  margin-bottom: 32px;
+`;
+
+export const Empty = styled.main`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  max-width: 700px;
+  min-height: 50vh;
+
+  padding-inline: 80px;
+  margin-inline: auto;
+  margin-block: 110px;
+
+  @media (max-width: 768px) {
+    padding-inline: 16px;
+  }
+`;

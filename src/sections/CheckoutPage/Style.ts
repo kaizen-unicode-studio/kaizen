@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Container = styled.section`
+export const Container = styled.main`
   max-width: 1340px;
   padding-inline: 80px;
   margin-inline: auto;
@@ -72,4 +72,11 @@ export const OrderWrapper = styled.div`
   @media (max-width: 920px) {
     grid-row-start: 1;
   }
+`;
+export const Error = styled.p`
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24.38px;
+  font-variant: small-caps;
+  margin-bottom: 32px;
 `;

@@ -21,10 +21,8 @@ const Order: FC<OrderProps> = ({ bgColor }) => {
   };
 
   useEffect(() => {
-    // Initial load
     updateItems();
 
-    // Event listener for localStorage changes
     const handleStorageChange = () => {
       updateItems();
     };
