@@ -15,18 +15,19 @@ export const LinkList = styled.div`
   }
 `;
 
-export const Instagram = styled.div`
+export const Instagram = styled.a`
   display: flex;
   gap: 8px;
+  text-decoration: none;
+  color: var(--main-color);
+  font-family: Cantarell;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.66px;
+
   > img {
     width: 24px;
     height: 24px;
-  }
-  > p {
-    font-family: "Cantarell";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 22.66px;
   }
 `;
 
@@ -34,7 +35,9 @@ export const Info = styled.div`
   gap: 4px;
   display: flex;
   flex-direction: column;
-  > p {
+  > a {
+    text-decoration: none;
+    color: var(--main-color);
     font-family: Cantarell;
     font-size: 12px;
     font-weight: 400;

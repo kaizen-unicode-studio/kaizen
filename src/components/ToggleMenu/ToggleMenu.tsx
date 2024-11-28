@@ -46,14 +46,17 @@ const ToggleMenu = () => {
               CONTACTS
             </Link>
           </LinkList>
-          <Instagram>
+          <Instagram
+            target="_blank"
+            href="https://www.instagram.com/kaizenpro.j/"
+          >
             <Image src={instagram} alt={""} />
-            <p>kaizenpro.j</p>
+            kaizenpro.j
           </Instagram>
           <Info>
-            <p>Privacy Policy</p>
-            <p>Terms & Conditions</p>
-            <p>Refund Policy</p>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/terms">Terms & Conditions</Link>
+            <Link href="/refund">Refund Policy</Link>
           </Info>
         </ModalContent>
       </Modal>
