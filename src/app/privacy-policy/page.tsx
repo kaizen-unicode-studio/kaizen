@@ -4,6 +4,11 @@ import Header from "@/sections/Header";
 import React from "react";
 import { Section, SectionHeader } from "./style";
 import TextTab from "@/components/TextTab";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+};
 
 const page = () => {
   return (
