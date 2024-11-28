@@ -8,6 +8,7 @@ import { Metadata } from "next";
 import donut from "/public/covers/donut.svg";
 import donut_part from "/public/covers/donut_part.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions",
@@ -69,9 +70,9 @@ const page = () => {
                 revised terms. These Terms & Conditions form a binding agreement
                 between you and KAIZEN. If you have any questions or concerns,
                 please contact us at{" "}
-                <a href="mailto:kaizenbyyulia@gmail.com">
+                <Link href="mailto:kaizenbyyulia@gmail.com">
                   kaizenbyyulia@gmail.com
-                </a>
+                </Link>
               </>
             }
           />

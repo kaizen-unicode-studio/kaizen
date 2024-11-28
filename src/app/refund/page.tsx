@@ -8,6 +8,7 @@ import { Metadata } from "next";
 import donut from "/public/covers/donut.svg";
 import donut_part from "/public/covers/donut_part.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Refund Policy",
@@ -33,9 +34,9 @@ const page = () => {
               <>
                 To initiate a refund, please contact our customer support via
                 email at{" "}
-                <a href="mailto:kaizenbyyulia@gmail.com">
+                <Link href="mailto:kaizenbyyulia@gmail.com">
                   kaizenbyyulia@gmail.com
-                </a>{" "}
+                </Link>{" "}
                 and provide your order details (Email and Full Name). Your
                 refund request should include the reasons for the return.
               </>
@@ -63,9 +64,9 @@ const page = () => {
               <>
                 For any questions or issues related to refunds, please contact
                 customer support via email at{" "}
-                <a href="mailto:kaizenbyyulia@gmail.com">
+                <Link href="mailto:kaizenbyyulia@gmail.com">
                   kaizenbyyulia@gmail.com
-                </a>{" "}
+                </Link>{" "}
                 This refund policy is an integral part of our Terms of Service.
                 We reserve the right to make changes to this policy at any time
                 without prior notice. Thank you for choosing our services!
