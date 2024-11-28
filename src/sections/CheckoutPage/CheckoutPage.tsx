@@ -13,6 +13,7 @@ import Order from "@/components/Order/Order";
 import donut from "/public/covers/donut.svg";
 import { Container, Grid, Header, OrderWrapper, SubHeader } from "./style";
 import { SubmitHandler, useForm } from "react-hook-form";
+import right_arrow from "/public/icons/right_arrow.svg";
 export interface Fields {
   firstName: string;
   lastName: string;
@@ -165,7 +166,14 @@ Please make sure you are available on WhatsApp, Telegram, or Viber"
                 disabled={!stripe || loading}
                 style={{ marginTop: 20 }}
               >
-                {!loading ? `pay now` : "Processing..."}
+                {!loading ? (
+                  <>
+                    <p>pay now</p>
+                    <Image src={right_arrow} alt={""} width={20} height={20} />
+                  </>
+                ) : (
+                  "Processing..."
+                )}
               </Button>
             </form>
             <OrderWrapper>
