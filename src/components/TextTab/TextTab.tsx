@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import { Article, Header, Text } from "./style";
 
 interface TextTabProps {
   header?: string;
-  text: string;
+  text: string | ReactNode;
 }
 
 const TextTab: FC<TextTabProps> = ({ header, text }) => {
