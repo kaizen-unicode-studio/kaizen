@@ -11,7 +11,7 @@ import Input from "@/components/Input";
 import Image from "next/image";
 import Order from "@/components/Order/Order";
 import donut from "/public/covers/donut.svg";
-import { Container, Grid, Header, OrderWrapper, SubHeader } from "./style";
+import { Container, Grid, Header, OrderWrapper, SubHeader } from "./style1";
 import { SubmitHandler, useForm } from "react-hook-form";
 import right_arrow from "/public/icons/right_arrow.svg";
 import { IProduct } from "@/products";
