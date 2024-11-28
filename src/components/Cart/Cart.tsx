@@ -42,7 +42,7 @@ const Cart: FC<CartProps> = ({ close }) => {
         {items.data.length ? (
           <>
             <Order />
-            <Button theme="pay">
+            <Button theme="pay" isLink>
               <Link href={"/checkout"}>
                 CHECK OUT
                 <Image src={right_arrow} alt={""} width={24} height={24} />
@@ -53,7 +53,7 @@ const Cart: FC<CartProps> = ({ close }) => {
           <>
             <SubHeader>OOPS!</SubHeader>
             <Error>looks like your cart is empty</Error>
-            <Button theme="pay" onClick={close}>
+            <Button theme="pay" onClick={close} isLink>
               <Link onClick={close} href="/#services">
                 GO TO THE SERVICES
                 <Image src={right_arrow} alt={""} width={24} height={24} />

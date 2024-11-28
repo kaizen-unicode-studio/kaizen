@@ -24,7 +24,7 @@ export const StyledButton = styled.button(
         ? "var(--main-color)"
         : "var(--violet-primary)",
     display: props.hidden ? "none" : "flex",
-    alignItems: props.theme === "pay" ? "flex-start" : "flex-end",
+    alignItems: props.theme === "pay" ? "flex-start" : "center",
     // alignItems: "flex-end",
     fontSize: props.theme === "pay" ? "24px" : "14px",
     fontWeight: props.theme === "pay" ? "500" : "400",

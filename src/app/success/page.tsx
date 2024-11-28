@@ -21,6 +21,7 @@ import donut from "/public/covers/donut.svg";
 import Image from "next/image";
 import Button from "@/components/Button";
 import Link from "next/link";
+import { Suspense } from "react";
 
 const page = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -71,7 +72,7 @@ const page = () => {
           <Image src={success} alt="" />
         </Container>
         <ButtonWrapper>
-          <Button theme="ghost-invert" style={{ alignSelf: "end" }}>
+          <Button theme="ghost-invert" style={{ alignSelf: "end" }} isLink>
             <Link href={"/"}>
               RETURN TO HOME{" "}
               <Image src={arrow} alt={""} width={20} height={20} />
@@ -84,4 +85,14 @@ const page = () => {
   );
 };
 
-export default page;
+const SuspenseWrapper = (Component: React.ComponentType) => {
+  return function WrappedComponent() {
+    return (
+      <Suspense>
+        <Component />
+      </Suspense>
+    );
+  };
+};
+
+export default SuspenseWrapper(page);

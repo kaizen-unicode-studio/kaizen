@@ -53,7 +53,7 @@ const ElementsProvider = () => {
         <Empty>
           <SubHeader>OOPS!</SubHeader>
           <Error>looks like your cart is empty</Error>
-          <Button theme="pay">
+          <Button theme="pay" isLink>
             <Link href="/#services">GO TO THE SERVICES</Link>
           </Button>
         </Empty>
