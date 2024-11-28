@@ -27,7 +27,10 @@ const Footer = () => {
               <Item>
                 {" "}
                 <Image src={mail} alt={""} />
-                <Link href="mailto:kaizenbyyulia@gmail.com">
+                <Link
+                  href="mailto:kaizenbyyulia@gmail.com"
+                  style={{ textDecoration: "underline" }}
+                >
                   kaizenbyyulia@gmail.com
                 </Link>
               </Item>
@@ -48,9 +51,12 @@ const Footer = () => {
               <Item>
                 {" "}
                 <Image src={mail} alt={""} />
-                <a href="mailto:yulia.dantes@gmail.com">
+                <Link
+                  href="mailto:yulia.dantes@gmail.com"
+                  style={{ textDecoration: "underline" }}
+                >
                   yulia.dantes@gmail.com
-                </a>
+                </Link>
               </Item>
               <Item>
                 <Image src={instagram} alt={""} />
@@ -71,9 +77,15 @@ const Footer = () => {
           <Section>
             <SubHeader>INFOS</SubHeader>
             <div>
-              <Item>Privacy Policy</Item>
-              <Item>Terms & Conditions</Item>
-              <Item>Refund Policy</Item>
+              <Item>
+                <Link href="/privacy-policy">Privacy Policy</Link>
+              </Item>
+              <Item>
+                <Link href="/terms">Terms & Conditions</Link>
+              </Item>
+              <Item>
+                <Link href="/refund">Refund Policy</Link>
+              </Item>
             </div>
           </Section>
         </Grid>

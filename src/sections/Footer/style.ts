@@ -65,6 +65,7 @@ export const Item = styled.p`
   cursor: pointer;
 
   > a {
+    text-decoration: none;
     color: var(--main-color);
   }
 `;
