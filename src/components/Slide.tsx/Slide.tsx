@@ -7,7 +7,7 @@ import Image from "next/image";
 const Slide = () => {
   return (
     <Card>
-      <Image src={quotes} alt={""} />
+      <Image src={quotes} alt={""} width={76} height={52} />
       <Text>
         Working with a nutritionist has completely transformed my approach to
         food and health. The personalized plan was easy to follow, and the
@@ -20,7 +20,7 @@ const Slide = () => {
           <Image src={customer} alt={""} />
           <Name>Customer Name</Name>
         </Avatar>
-        <Image src={quotes} alt={""} />
+        <Image src={quotes} alt={""} width={76} height={52} />
       </Customer>
     </Card>
   );

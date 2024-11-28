@@ -7,7 +7,7 @@ export const StyledHero = styled.section`
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
 
-  padding: 0 80px 60px;
+  padding: 100px 80px 60px;
 
   @media (max-width: 768px) {
     padding: 0 16px 20px;
@@ -161,6 +161,9 @@ export const Header = styled.h1`
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 41px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   @media (max-width: 768px) {
     font-size: 80px;

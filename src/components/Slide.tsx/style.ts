@@ -13,13 +13,11 @@ export const Card = styled.div`
   background: var(--extra-light-gray);
   box-shadow: 0 5px 5px var(--violet-light);
 
-  @media (max-width: 375px) {
+  @media (max-width: 1180px) {
     height: auto;
   }
 
   > img {
-    width: 76px;
-    height: 52px;
     opacity: 0.16;
     transform: rotate(180deg);
   }

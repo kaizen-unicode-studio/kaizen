@@ -6,8 +6,14 @@ export const StyledBag = styled.div`
   z-index: 40;
 
   position: fixed;
-  bottom: 163px;
-  right: 32px;
+  bottom: 64px;
+  right: 64px;
+
+  @media (max-width: 768px) {
+    bottom: 32px;
+    right: 32px;
+  }
+
   > img {
     position: relative;
     cursor: pointer;

@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 export const Card = styled.div`
   background: ${(props: { var?: string }) => `var(${props.var})`};
   padding: 16px;
+  border-radius: 12px;
 `;
 
 export const Header = styled.h6`

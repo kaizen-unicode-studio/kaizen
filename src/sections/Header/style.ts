@@ -2,9 +2,16 @@
 import styled from "@emotion/styled";
 
 export const Header = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background: var(--violet-dark);
   color: var(--main-color);
   padding-inline: 80px;
+  z-index: 20;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
 
   @media (max-width: 768px) {
     padding-inline: 16px;

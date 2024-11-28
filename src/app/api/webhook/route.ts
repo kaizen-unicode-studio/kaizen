@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { getValueFromStream } from "./utils";
+import { NextURL } from "next/dist/server/web/next-url";
 
 export const config = {
   api: {
@@ -16,6 +17,8 @@ const stripe = new Stripe(process.env.STRIPE_TOKEN || "", {
 export async function POST(req: NextRequest) {
   const sig = req.headers.get("stripe-signature")!;
   const bodyReader = req.body!.getReader()!;
+
+  const nextUrl = new NextURL(req.url);
 
   if (!sig) {
     return NextResponse.json(
@@ -34,8 +37,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ err }, { status: 400 });
   }
 
-  //balance_transaction
-  const { payment_intent, metadata } = JSON.parse(bufferData!).data.object;
+  const { payment_intent, metadata, balance_transaction } = JSON.parse(
+    bufferData!
+  ).data.object;
 
   switch (event.type) {
     case "checkout.session.completed":
@@ -43,11 +47,11 @@ export async function POST(req: NextRequest) {
 
       break;
     case "charge.updated":
-      // const { amount } = await stripe.balanceTransactions.retrieve(
-      //   balance_transaction
-      // );
+      const { amount } = await stripe.balanceTransactions.retrieve(
+        balance_transaction
+      );
 
-      const paymentData = await stripe.paymentIntents.retrieve(payment_intent); // TODO get metadata and sent to airTables
+      const paymentData = await stripe.paymentIntents.retrieve(payment_intent);
 
       try {
         await fetch("https://api.airtable.com/v0/appHiUu8xLatLQoQj/orders", {
@@ -59,9 +63,16 @@ export async function POST(req: NextRequest) {
           body: JSON.stringify({
             fields: {
               ...paymentData.metadata,
-              phone: paymentData.metadata.phone,
+              amount: "$" + (amount / 100).toFixed(2),
             },
           }),
+        });
+
+        fetch(`${nextUrl.origin}/api/send`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
         });
       } catch (error) {
         return NextResponse.json(

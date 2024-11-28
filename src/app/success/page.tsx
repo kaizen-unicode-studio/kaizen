@@ -6,13 +6,9 @@ import { useSearchParams } from "next/navigation";
 import React, { useEffect } from "react";
 import {
   Container,
-  TextSection,
-  TopHeader,
-  Text,
   SubHeader,
   Description,
   Afterword,
-  TextWrapper,
   ButtonWrapper,
 } from "./style";
 import success from "/public/images/success.jpeg";
@@ -21,6 +17,8 @@ import donut from "/public/covers/donut.svg";
 import Image from "next/image";
 import Button from "@/components/Button";
 import Link from "next/link";
+import { Suspense } from "react";
+import SmallHero from "@/components/SmallHero";
 
 const page = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -40,20 +38,7 @@ const page = () => {
     <>
       <Header />
       <main style={{ background: "var(--main-color)", paddingBottom: 110 }}>
-        <TextWrapper>
-          <TextSection>
-            <TopHeader>
-              KAI<span>ZEN</span>
-            </TopHeader>
-            <Text>
-              Improving your health through mindful choices is at the heart of
-              our philosophy, where zest for life grows by prioritizing
-              nutrition. Elevate your well-being with our holistic approach,
-              nurturing your body and soul through the principles of lifelong
-              improvement. Transform yourself with Kaizen.
-            </Text>
-          </TextSection>
-        </TextWrapper>
+        <SmallHero />
         <Container>
           <Image src={donut} className="cover_img" alt={""} />
           <article>
@@ -71,7 +56,7 @@ const page = () => {
           <Image src={success} alt="" />
         </Container>
         <ButtonWrapper>
-          <Button theme="ghost-invert" style={{ alignSelf: "end" }}>
+          <Button theme="ghost-invert" style={{ alignSelf: "end" }} isLink>
             <Link href={"/"}>
               RETURN TO HOME{" "}
               <Image src={arrow} alt={""} width={20} height={20} />
@@ -84,4 +69,14 @@ const page = () => {
   );
 };
 
-export default page;
+const SuspenseWrapper = (Component: React.ComponentType) => {
+  return function WrappedComponent() {
+    return (
+      <Suspense>
+        <Component />
+      </Suspense>
+    );
+  };
+};
+
+export default SuspenseWrapper(page);

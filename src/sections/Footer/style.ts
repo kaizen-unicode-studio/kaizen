@@ -18,7 +18,7 @@ export const StyledFooter = styled.footer`
 export const Container = styled.section`
   max-width: 1180px;
   margin-inline: auto;
-  @media (max-width: 1080px) {
+  @media (max-width: 1180px) {
     padding-inline: 30px;
   }
   @media (max-width: 768px) {
@@ -63,6 +63,11 @@ export const Item = styled.p`
   align-items: flex-end;
   gap: 8px;
   cursor: pointer;
+
+  > a {
+    text-decoration: none;
+    color: var(--main-color);
+  }
 `;
 
 export const Header = styled.h4`

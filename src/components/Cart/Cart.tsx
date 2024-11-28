@@ -14,6 +14,7 @@ import cancel from "/public/icons/cancel.svg";
 import Button from "../Button";
 import Link from "next/link";
 import Order from "../Order/Order";
+import right_arrow from "/public/icons/right_arrow.svg";
 import { IProduct } from "@/products";
 
 interface CartProps {
@@ -41,17 +42,21 @@ const Cart: FC<CartProps> = ({ close }) => {
         {items.data.length ? (
           <>
             <Order />
-            <Button theme="pay">
-              <Link href={"/checkout"}>CHECK OUT</Link>
+            <Button theme="pay" isLink>
+              <Link href={"/checkout"}>
+                CHECK OUT
+                <Image src={right_arrow} alt={""} width={24} height={24} />
+              </Link>
             </Button>
           </>
         ) : (
           <>
             <SubHeader>OOPS!</SubHeader>
             <Error>looks like your cart is empty</Error>
-            <Button theme="pay" onClick={close}>
+            <Button theme="pay" onClick={close} isLink>
               <Link onClick={close} href="/#services">
                 GO TO THE SERVICES
+                <Image src={right_arrow} alt={""} width={24} height={24} />
               </Link>
             </Button>
           </>

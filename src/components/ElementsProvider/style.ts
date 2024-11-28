@@ -4,11 +4,17 @@ import styled from "@emotion/styled";
 
 export const Container = styled.section`
   background: var(--violet-dark);
-  padding-inline: 80px;
+  padding: 100px 80px 60px;
   width: 100%;
-  padding-bottom: 60px;
   border-bottom-right-radius: 24px;
   border-bottom-left-radius: 24px;
+
+  @media (max-width: 768px) {
+    padding: 100px 16px 24px;
+  }
+  @media (max-width: 520px) {
+    padding: 100px 0 24px;
+  }
 `;
 
 export const TextSection = styled.article`
@@ -23,16 +29,17 @@ export const TextSection = styled.article`
     max-width: 1440px;
   }
 
-  @media (max-width: 520px) {
-    padding-inline: 0;
-  }
-
   @media (max-width: 1280px) {
     justify-content: center;
+    flex-direction: column;
   }
 
   @media (max-width: 768px) {
     padding-inline: 10px;
+  }
+
+  @media (max-width: 520px) {
+    padding-inline: 0;
   }
 
   > p {
@@ -49,6 +56,10 @@ export const TopHeader = styled.h1`
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 41px;
+
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   @media (max-width: 768px) {
     font-size: 80px;
@@ -109,5 +120,49 @@ export const Empty = styled.main`
 
   @media (max-width: 768px) {
     padding-inline: 16px;
+  }
+`;
+
+export const Mobile = styled.article`
+  display: none;
+
+  @media (max-width: 1280px) {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  > img {
+    max-width: 1180px;
+    width: 100%;
+    height: 280px;
+    border-radius: 8px;
+
+    object-fit: cover;
+    object-position: bottom center;
+
+    @media (max-width: 520px) {
+      height: 180px;
+    }
+  }
+`;
+
+export const MobileText = styled.p`
+  color: var(--main-color);
+  display: block;
+  align-self: center;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  width: 100%;
+  max-width: 1000px;
+  text-align: left;
+
+  font-family: Cantarell;
+  line-height: 1.6;
+
+  @media (max-width: 375px) {
+    line-height: 20px;
+    font-size: 16px;
   }
 `;

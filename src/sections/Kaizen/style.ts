@@ -20,6 +20,10 @@ export const StyledKaizen = styled.section`
     padding-inline: 16px;
   }
 
+  @media (max-width: 840px) {
+    grid-template: 1fr / 1fr;
+  }
+
   @media (max-width: 375px) {
     padding-inline: 10px;
   }
@@ -35,7 +39,7 @@ export const StyledKaizen = styled.section`
       width: 322px;
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 840px) {
       display: none;
     }
   }
@@ -43,12 +47,17 @@ export const StyledKaizen = styled.section`
   .mobile_image {
     display: none;
 
-    @media (max-width: 520px) {
+    @media (max-width: 840px) {
       display: block;
       width: 488px;
       height: auto;
       border-radius: 8px;
       margin-block: 32px;
+    }
+
+    @media (max-width: 520px) {
+      width: 343px;
+      height: 205px;
     }
 
     @media (max-width: 375px) {
@@ -62,7 +71,7 @@ export const StyledKaizen = styled.section`
 export const Container = styled.article`
   display: block;
 
-  @media (max-width: 520px) {
+  @media (max-width: 840px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -155,6 +164,7 @@ export const Text = styled.p`
   word-spacing: -4px;
 
   @media (max-width: 768px) {
+    max-width: 480px;
     width: 100%;
   }
   @media (max-width: 375px) {

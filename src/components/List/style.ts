@@ -16,4 +16,8 @@ export const Header = styled.h3`
   font-weight: 600;
   line-height: 29.26px;
   margin-bottom: 12px;
+
+  @media (max-width: 520px) {
+    font-size: 22px;
+  }
 `;

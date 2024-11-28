@@ -1,11 +1,6 @@
 "use client";
 
-import React, {
-  ComponentPropsWithRef,
-  FC,
-  isValidElement,
-  ReactNode,
-} from "react";
+import React, { ComponentPropsWithRef, FC, ReactNode } from "react";
 import { StyledButton, StyledLink } from "./style";
 
 export type ThemeType = "ghost" | "dark" | "pay" | "ghost-invert";
@@ -15,21 +10,16 @@ interface ButtonProps extends ComponentPropsWithRef<"button"> {
   children: ReactNode;
   onClick?: () => void;
   hidden?: boolean;
+  isLink?: boolean;
 }
 
 const Button: FC<ButtonProps> = ({
   theme = "ghost",
   hidden = false,
   children,
+  isLink,
   ...rest
 }) => {
-  const isLink =
-    isValidElement(children) &&
-    (() => {
-      const type = children.type as unknown as { render: { name: string } };
-      return type.render.name === "LinkComponent";
-    })();
-
   if (isLink)
     return (
       <StyledLink hidden={hidden} theme={theme}>

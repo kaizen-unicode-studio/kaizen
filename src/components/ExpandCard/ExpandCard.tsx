@@ -35,20 +35,48 @@ const ExpandCard: FC<ExpandCardProps> = ({
   const [isExpanded, setIsExpanded] = useState(false);
   const [contentHeight, setContentHeight] = useState(1000);
   const contentRef = useRef<HTMLDivElement>(null);
+  const [isProductInStorage, setIsProductInStorage] = useState(false);
+
+  useEffect(() => {
+    const handleCheckStorage = () => {
+      const product = products.find((item) => item.id === number)!;
+      const storageData: { data: IProduct[] } = JSON.parse(
+        localStorage.getItem("basket") || `{"data": []}`
+      );
+
+      const isInStorage = storageData.data.find(
+        (item) => item.id === product.id
+      );
+
+      setIsProductInStorage(!!isInStorage);
+    };
+
+    handleCheckStorage();
+
+    window.addEventListener("storage", handleCheckStorage);
+
+    return () => {
+      window.removeEventListener("storage", handleCheckStorage);
+    };
+  });
 
   const handleToggle = () => {
     setIsExpanded((prev) => !prev);
   };
 
-  const addToLocalStorage = (id: number) => {
+  const dispatchStorage = (id: number) => {
     const basket: { data: IProduct[] } = JSON.parse(
       localStorage.getItem("basket") || '{"data": []}'
     );
     const product = products.find((item) => item.id === id);
+    const isProductInStorage = !!basket.data.find((item) => item.id === id);
 
-    if (!basket.data.find((item) => item.id === id) && product) {
+    if (!isProductInStorage && product) {
       basket.data.push(product);
       localStorage.setItem("basket", JSON.stringify(basket));
+    } else if (isProductInStorage && product) {
+      const newBasket = basket.data.filter((item) => item.id !== product.id);
+      localStorage.setItem("basket", JSON.stringify({ data: newBasket }));
     }
   };
 
@@ -82,12 +110,20 @@ const ExpandCard: FC<ExpandCardProps> = ({
           <Button
             theme="dark"
             onClick={() => {
-              addToLocalStorage(number);
+              dispatchStorage(number);
               window.dispatchEvent(new Event("storage"));
             }}
           >
-            GET IT NOW
-            <Image src={plus} alt={""} />
+            {isProductInStorage ? "DELETE IT" : "GET IT NOW"}
+            <Image
+              src={plus}
+              alt={""}
+              style={{
+                transform: isProductInStorage
+                  ? "rotate(45deg)"
+                  : "rotate(0deg)",
+              }}
+            />
           </Button>
         </ButtonsWrapper>
       </Content>

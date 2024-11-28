@@ -13,6 +13,7 @@ import Image from "next/image";
 import mail from "/public/icons/mail.svg";
 import instagram from "/public/icons/instagram.svg";
 import phone from "/public/icons/phone.svg";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -26,11 +27,21 @@ const Footer = () => {
               <Item>
                 {" "}
                 <Image src={mail} alt={""} />
-                kaizenbyyulia@gmail.com
+                <Link
+                  href="mailto:kaizenbyyulia@gmail.com"
+                  style={{ textDecoration: "underline" }}
+                >
+                  kaizenbyyulia@gmail.com
+                </Link>
               </Item>
               <Item>
                 <Image src={instagram} alt={""} />
-                kaizenpro.j
+                <Link
+                  target="_blank"
+                  href="https://www.instagram.com/kaizenpro.j/"
+                >
+                  kaizenpro.j
+                </Link>
               </Item>
             </div>
           </Section>
@@ -40,25 +51,41 @@ const Footer = () => {
               <Item>
                 {" "}
                 <Image src={mail} alt={""} />
-                yulia.dantes@gmail.com
+                <Link
+                  href="mailto:yulia.dantes@gmail.com"
+                  style={{ textDecoration: "underline" }}
+                >
+                  yulia.dantes@gmail.com
+                </Link>
               </Item>
               <Item>
                 <Image src={instagram} alt={""} />
-                yuliadantes
+                <Link
+                  target="_blank"
+                  href="https://www.instagram.com/yuliadantes/"
+                >
+                  yuliadantes
+                </Link>
               </Item>
 
               <Item>
                 <Image src={phone} alt={""} />
-                +447300490640
+                <Link href="tel:+447300490640">+447300490640</Link>
               </Item>
             </div>
           </Section>
           <Section>
             <SubHeader>INFOS</SubHeader>
             <div>
-              <Item>Privacy Policy</Item>
-              <Item>Terms & Conditions</Item>
-              <Item>Refund Policy</Item>
+              <Item>
+                <Link href="/privacy-policy">Privacy Policy</Link>
+              </Item>
+              <Item>
+                <Link href="/terms">Terms & Conditions</Link>
+              </Item>
+              <Item>
+                <Link href="/refund">Refund Policy</Link>
+              </Item>
             </div>
           </Section>
         </Grid>
