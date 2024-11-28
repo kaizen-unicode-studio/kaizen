@@ -17,7 +17,8 @@ export const Overlay = styled.div`
 export const Grid = styled.article`
   display: grid;
   padding: 24px;
-  height: 180px;
+  height: auto;
+  min-height: 200px;
   background-color: ${({ blur }: { blur: boolean }) =>
     blur ? "rgba(0, 0, 0, 0.4)" : ""};
   border-radius: 10px;
@@ -27,12 +28,16 @@ export const Grid = styled.article`
   align-items: center;
 
   @media (max-width: 1440px) {
-    grid-template-columns: 480px 480px;
+    grid-template-columns: 1.5fr 1fr;
   }
 
-  @media (max-width: 1080px) {
+  /* @media (max-width: 1080px) {
     grid-template-columns: 480px 1fr;
   }
+
+  @media (max-width: 740px) {
+    grid-template-columns: 380px 1fr;
+  } */
 
   @media (max-width: 520px) {
     height: auto;
@@ -43,7 +48,6 @@ export const Grid = styled.article`
   @media (max-width: 375px) {
     gap: 28px;
     padding: 16px;
-    height: 180px;
     align-items: baseline;
   }
 
@@ -118,7 +122,7 @@ export const Content = styled.div`
 
   @media (max-width: 768px) {
     padding: ${({ isExpanded }: { isExpanded: boolean }) =>
-      isExpanded ? "16px 40px 24px" : "0 40px 0"};
+      isExpanded ? "16px 16px 24px" : "0 16px 0"};
   }
 `;
 
