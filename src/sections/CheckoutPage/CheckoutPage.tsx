@@ -14,6 +14,7 @@ import donut from "/public/covers/donut.svg";
 import { Container, Grid, Header, OrderWrapper, SubHeader } from "./style";
 import { SubmitHandler, useForm } from "react-hook-form";
 import right_arrow from "/public/icons/right_arrow.svg";
+import { IProduct } from "@/products";
 export interface Fields {
   firstName: string;
   lastName: string;
@@ -38,7 +39,28 @@ const CheckoutPage = ({
   const [errorMessage, setErrorMessage] = useState<string>();
   const [clientSecret, setClientSecret] = useState("");
   const [loading, setLoading] = useState(false);
+  const [items, setItems] = useState<{ data: IProduct[] }>({ data: [] });
 
+  const updateItems = () => {
+    const items: { data: IProduct[] } = JSON.parse(
+      localStorage.getItem("basket") || '{"data": []}'
+    );
+    setItems(items);
+  };
+
+  useEffect(() => {
+    updateItems();
+
+    const handleStorageChange = () => {
+      updateItems();
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
   useEffect(() => {
     try {
       fetch(`/api/strapi?total=${amount}&currency=${currency.currency}`, {
@@ -77,7 +99,9 @@ const CheckoutPage = ({
       elements,
       clientSecret,
       confirmParams: {
-        return_url: `${window.location.origin}/success?${fields.join("")}`,
+        return_url: `${window.location.origin}/success?${fields.join(
+          ""
+        )}&products=[${items.data.map((item) => item.name).join(", ")}]`,
       },
     });
 

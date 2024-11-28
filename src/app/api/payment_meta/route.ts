@@ -13,6 +13,8 @@ export async function POST(req: NextRequest) {
     lastName: searchParams.get("lastName"),
     phone: searchParams.get("phone"),
     email: searchParams.get("email"),
+    amount: searchParams.get("amount"),
+    products: searchParams.get("products"),
   };
 
   try {

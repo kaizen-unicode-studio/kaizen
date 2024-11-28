@@ -34,8 +34,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ err }, { status: 400 });
   }
 
-  //balance_transaction
-  const { payment_intent, metadata } = JSON.parse(bufferData!).data.object;
+  const { payment_intent, metadata, balance_transaction } = JSON.parse(
+    bufferData!
+  ).data.object;
 
   switch (event.type) {
     case "checkout.session.completed":
@@ -43,11 +44,11 @@ export async function POST(req: NextRequest) {
 
       break;
     case "charge.updated":
-      // const { amount } = await stripe.balanceTransactions.retrieve(
-      //   balance_transaction
-      // );
+      const { amount } = await stripe.balanceTransactions.retrieve(
+        balance_transaction
+      );
 
-      const paymentData = await stripe.paymentIntents.retrieve(payment_intent); // TODO get metadata and sent to airTables
+      const paymentData = await stripe.paymentIntents.retrieve(payment_intent);
 
       try {
         await fetch("https://api.airtable.com/v0/appHiUu8xLatLQoQj/orders", {
@@ -59,7 +60,7 @@ export async function POST(req: NextRequest) {
           body: JSON.stringify({
             fields: {
               ...paymentData.metadata,
-              phone: paymentData.metadata.phone,
+              amount: "$" + (amount / 100).toFixed(2),
             },
           }),
         });
