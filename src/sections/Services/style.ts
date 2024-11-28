@@ -49,15 +49,12 @@ export const ServicesWrapper = styled.div`
 `;
 
 export const Separator = styled.div`
-  width: 600px;
+  width: 100%;
   height: 1px;
   background: rgb(0, 0, 0);
   margin-inline: auto;
   margin-bottom: 64px;
 
-  @media (max-width: 520px) {
-    width: 400px;
-  }
   @media (max-width: 375px) {
     display: none;
   }

@@ -63,8 +63,8 @@ export const Text = styled.p`
     line-height: 19.82px;
   }
 `;
-
-export const Card = styled.div`
+export const Overlay = styled.div`
+  background: rgba(0, 0, 0, 0.32);
   color: white;
   gap: 35px;
   padding: 24px 16px;
@@ -72,9 +72,6 @@ export const Card = styled.div`
   justify-content: space-between;
   flex-direction: column;
   border-radius: 8px;
-  background-image: url("/images/about_card.jpeg");
-  background-size: cover;
-  background-position: center;
 
   @media (max-width: 1080px) {
     max-width: 500px;
@@ -94,4 +91,11 @@ export const Card = styled.div`
     padding: 0px 9px 11px;
     min-height: 170px;
   }
+`;
+
+export const Card = styled.div`
+  background-image: url(${({ img }: { img: string }) => `"${img}"`});
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
 `;
