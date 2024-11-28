@@ -63,6 +63,10 @@ export const Item = styled.p`
   align-items: flex-end;
   gap: 8px;
   cursor: pointer;
+
+  > a {
+    color: var(--main-color);
+  }
 `;
 
 export const Header = styled.h4`
