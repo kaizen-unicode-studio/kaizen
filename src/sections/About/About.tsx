@@ -32,7 +32,7 @@ const About = () => {
           text={
             " We provide you with essential information and insights to make informed dietary choices"
           }
-          img="/images/about/1.jpeg"
+          img="/images/about/1-main.jpeg"
         ></AboutCard>
         <AboutCard
           header={"ACHIEVEMENT"}
