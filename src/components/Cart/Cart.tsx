@@ -14,6 +14,7 @@ import cancel from "/public/icons/cancel.svg";
 import Button from "../Button";
 import Link from "next/link";
 import Order from "../Order/Order";
+import right_arrow from "/public/icons/right_arrow.svg";
 import { IProduct } from "@/products";
 
 interface CartProps {
@@ -42,7 +43,10 @@ const Cart: FC<CartProps> = ({ close }) => {
           <>
             <Order />
             <Button theme="pay">
-              <Link href={"/checkout"}>CHECK OUT</Link>
+              <Link href={"/checkout"}>
+                CHECK OUT
+                <Image src={right_arrow} alt={""} width={24} height={24} />
+              </Link>
             </Button>
           </>
         ) : (
@@ -52,6 +56,7 @@ const Cart: FC<CartProps> = ({ close }) => {
             <Button theme="pay" onClick={close}>
               <Link onClick={close} href="/#services">
                 GO TO THE SERVICES
+                <Image src={right_arrow} alt={""} width={24} height={24} />
               </Link>
             </Button>
           </>
