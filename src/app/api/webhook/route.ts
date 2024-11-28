@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { getValueFromStream } from "./utils";
+import { NextURL } from "next/dist/server/web/next-url";
 
 export const config = {
   api: {
@@ -16,6 +17,8 @@ const stripe = new Stripe(process.env.STRIPE_TOKEN || "", {
 export async function POST(req: NextRequest) {
   const sig = req.headers.get("stripe-signature")!;
   const bodyReader = req.body!.getReader()!;
+
+  const nextUrl = new NextURL(req.url);
 
   if (!sig) {
     return NextResponse.json(
@@ -63,6 +66,13 @@ export async function POST(req: NextRequest) {
               amount: "$" + (amount / 100).toFixed(2),
             },
           }),
+        });
+
+        fetch(`${nextUrl.origin}/api/send`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
         });
       } catch (error) {
         return NextResponse.json(
