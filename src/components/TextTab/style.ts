@@ -12,6 +12,7 @@ export const Header = styled.h5`
   font-size: 20px;
   font-weight: 600;
   line-height: 24.38px;
+  font-variant: small-caps;
 `;
 
 export const Text = styled.p`
@@ -19,4 +20,9 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 22.66px;
   color: var(--dark-gray);
+  font-family: Cantarell;
+
+  > a {
+    color: var(--dark-gray);
+  }
 `;
