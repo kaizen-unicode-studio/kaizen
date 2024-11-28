@@ -26,8 +26,14 @@ const Button: FC<ButtonProps> = ({
   const isLink =
     isValidElement(children) &&
     (() => {
-      const type = children.type as unknown as { render: { name: string } };
-      return type.render.name === "LinkComponent";
+      const type = children.type;
+      console.log(children);
+
+      if (String(type) !== "Symbol(react.fragment)") {
+        const overriddenType = type as unknown as { render: { name: string } };
+        return overriddenType.render.name === "LinkComponent";
+      }
+      return false;
     })();
 
   if (isLink)
