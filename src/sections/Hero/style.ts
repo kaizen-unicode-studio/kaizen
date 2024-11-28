@@ -161,6 +161,9 @@ export const Header = styled.h1`
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 41px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   @media (max-width: 768px) {
     font-size: 80px;

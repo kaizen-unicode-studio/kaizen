@@ -35,6 +35,30 @@ const ExpandCard: FC<ExpandCardProps> = ({
   const [isExpanded, setIsExpanded] = useState(false);
   const [contentHeight, setContentHeight] = useState(1000);
   const contentRef = useRef<HTMLDivElement>(null);
+  const [isProductInStorage, setIsProductInStorage] = useState(false);
+
+  useEffect(() => {
+    const handleCheckStorage = () => {
+      const product = products.find((item) => item.id === number)!;
+      const storageData: { data: IProduct[] } = JSON.parse(
+        localStorage.getItem("basket") || `{"data": []}`
+      );
+
+      const isInStorage = storageData.data.find(
+        (item) => item.id === product.id
+      );
+
+      setIsProductInStorage(!!isInStorage);
+    };
+
+    handleCheckStorage();
+
+    window.addEventListener("storage", handleCheckStorage);
+
+    return () => {
+      window.removeEventListener("storage", handleCheckStorage);
+    };
+  });
 
   const handleToggle = () => {
     setIsExpanded((prev) => !prev);
@@ -86,8 +110,16 @@ const ExpandCard: FC<ExpandCardProps> = ({
               window.dispatchEvent(new Event("storage"));
             }}
           >
-            GET IT NOW
-            <Image src={plus} alt={""} />
+            {isProductInStorage ? "DELETE IT" : "GET IT NOW"}
+            <Image
+              src={plus}
+              alt={""}
+              style={{
+                transform: isProductInStorage
+                  ? "rotate(45deg)"
+                  : "rotate(0deg)",
+              }}
+            />
           </Button>
         </ButtonsWrapper>
       </Content>
