@@ -105,7 +105,7 @@ export const Content = styled.div`
   }: {
     isExpanded: boolean;
     height: number;
-  }) => (isExpanded ? `${height * 2}px` : "0")};
+  }) => (isExpanded ? `${height * 2.2}px` : "0")};
   overflow: hidden;
   transition: max-height 0.3s linear, padding 0.1s linear;
   color: var(--black);
@@ -123,6 +123,11 @@ export const Content = styled.div`
   @media (max-width: 768px) {
     padding: ${({ isExpanded }: { isExpanded: boolean }) =>
       isExpanded ? "16px 16px 24px" : "0 16px 0"};
+  }
+
+  @media (max-width: 520px) {
+    padding: ${({ isExpanded }: { isExpanded: boolean }) =>
+      isExpanded ? "16px 10px 24px" : "0 10px 0"};
   }
 `;
 

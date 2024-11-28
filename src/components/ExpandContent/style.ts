@@ -7,7 +7,7 @@ export const StyledContent = styled.article`
   flex-direction: column;
   gap: 24px;
   width: 100%;
-  margin-bottom: 36px;
+  margin-bottom: 24px;
   border-bottom: 1px solid var(--light-gray);
 
   @media (max-width: 520px) {
