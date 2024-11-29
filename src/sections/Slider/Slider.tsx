@@ -50,7 +50,7 @@ const Slider = () => {
           autoplay={true}
           loop={true}
           slidesPerView={3}
-          modules={[Pagination]}
+          modules={[Autoplay, Pagination]}
           centeredSlides={true}
           breakpoints={{
             1920: { slidesPerView: 3, spaceBetween: 20 },
