@@ -6,11 +6,32 @@ import Slide from "@/components/Slide.tsx";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { SliderContainer, StyledSlider } from "./style";
+import { SliderContainer, StyledSlider, Wrapper } from "./style";
 import "./style.css";
+import FirstSlide from "@/components/FirstSlide";
+import { useEffect, useState } from "react";
 const Slider = () => {
+  const [isLarge, setIsLarge] = useState(true);
+
+  const handleResize = () => {
+    if (window.innerWidth > 768) {
+      setIsLarge(true);
+    } else {
+      setIsLarge(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+  }, []);
+
   return (
     <StyledSlider>
+      {!isLarge && (
+        <Wrapper>
+          <FirstSlide small />
+        </Wrapper>
+      )}
       <SliderContainer>
         <Swiper
           pagination={{
@@ -29,7 +50,7 @@ const Slider = () => {
           autoplay={true}
           loop={true}
           slidesPerView={3}
-          modules={[Autoplay, Pagination]}
+          modules={[Pagination]}
           centeredSlides={true}
           breakpoints={{
             1920: { slidesPerView: 3, spaceBetween: 20 },
@@ -41,9 +62,11 @@ const Slider = () => {
             0: { slidesPerView: 1, spaceBetween: 0 },
           }}
         >
-          <SwiperSlide>
-            <Slide />
-          </SwiperSlide>
+          {isLarge && (
+            <SwiperSlide>
+              <FirstSlide />
+            </SwiperSlide>
+          )}
           <SwiperSlide>
             <Slide />
           </SwiperSlide>

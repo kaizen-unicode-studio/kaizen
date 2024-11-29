@@ -1,9 +1,13 @@
 import React from "react";
 import { Card, Title } from "./style";
 
-const FirstSlide = () => {
+interface FirstSlideProps {
+  small?: boolean;
+}
+
+const FirstSlide = ({ small = false }: FirstSlideProps) => {
   return (
-    <Card>
+    <Card small={small}>
       <Title>
         YOUR RESULTS <br />
         ARE OUR INSPIRATION

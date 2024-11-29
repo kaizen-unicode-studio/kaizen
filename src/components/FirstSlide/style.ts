@@ -6,13 +6,13 @@ export const Card = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 380px;
-  height: 340px;
+  width: ${({ small }: { small: boolean }) => (small ? "auto" : "380px")};
+  height: ${({ small }: { small: boolean }) => (small ? "146px" : "340px")};
   border-radius: 12px;
   background-image: url("/covers/first_slide_cover.png");
   background-position: center center;
   background-size: cover;
-  padding-inline: 24px;
+  padding-inline: 36px;
 `;
 
 export const Title = styled.h5`
