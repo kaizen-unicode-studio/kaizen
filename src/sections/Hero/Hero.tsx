@@ -8,7 +8,7 @@ import {
 } from "./style";
 import Image from "next/image";
 import hero_1 from "/public/images/hero_1.jpeg";
-import hero_2 from "/public/images/hero_2.jpeg";
+import hero_2 from "/public/images/hero_2.webp";
 
 const Hero = () => {
   return (
@@ -28,7 +28,13 @@ const Hero = () => {
         </TextSection>
         <ImageSection>
           <Image src={hero_1} alt={""} priority fetchPriority="high" />
-          <Image src={hero_2} alt={""} priority fetchPriority="high" />
+          <Image
+            src={hero_2}
+            alt={""}
+            priority
+            fetchPriority="high"
+            quality={50}
+          />
         </ImageSection>
         <Text>
           IMPROVING YOUR HEALTH THROUGH MINDFUL CHOICES IS AT THE HEART OF OUR
