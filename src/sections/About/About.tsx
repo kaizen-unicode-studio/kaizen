@@ -32,42 +32,42 @@ const About = () => {
           text={
             " We provide you with essential information and insights to make informed dietary choices"
           }
-          img="/images/about/1-main.jpeg"
+          img="/images/about/1-main.webp"
         ></AboutCard>
         <AboutCard
           header={"ACHIEVEMENT"}
           text={
             "Our goal is to assist you in reaching your personal health and fitness milestones."
           }
-          img="/images/about/2.jpeg"
+          img="/images/about/2.webp"
         ></AboutCard>
         <AboutCard
           header={"INSPIRATION"}
           text={
             "We provide the support you need to stay committed to your wellness journey."
           }
-          img="/images/about/3.jpeg"
+          img="/images/about/3.webp"
         ></AboutCard>
         <AboutCard
           header={"ZEAL"}
           text={
             "We nurture a passionate and enthusiastic approach to maintaining healthy habits."
           }
-          img="/images/about/4.jpeg"
+          img="/images/about/4.webp"
         ></AboutCard>
         <AboutCard
           header={"EMPOWERMENT"}
           text={
             "We empower you to take control of your health and well-being with confidence."
           }
-          img="/images/about/5.jpeg"
+          img="/images/about/5.webp"
         ></AboutCard>
         <AboutCard
           header={"NURTURE"}
           text={
             "Providing ongoing support and guidance to foster your growth and success."
           }
-          img="/images/about/6.jpeg"
+          img="/images/about/6.webp"
         ></AboutCard>
       </Grid>
       <Afterword>
