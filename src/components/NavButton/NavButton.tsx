@@ -27,6 +27,7 @@ const NavButton: FC<NavButtonProps> = ({ ...props }) => {
     <Button
       {...props}
       style={props.rotate ? { transform: `rotate(${props.rotate}deg)` } : {}}
+      aria-label="nav button"
     >
       <Image src={image} alt={""}></Image>
     </Button>
