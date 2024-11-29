@@ -3,6 +3,7 @@ import StyledComponentsRegistry from "./lib/registry";
 
 export const metadata: Metadata = {
   title: "Kaizen",
+  description: "Powered by UniCode",
 };
 
 export default async function RootLayout({
