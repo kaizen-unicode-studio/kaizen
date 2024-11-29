@@ -80,10 +80,12 @@ export const FounderContainer = styled.article`
 export const FounderImage = styled.div`
   display: flex;
   flex-direction: column;
+  width: 418px;
 
   @media (max-width: 768px) {
     background: var(--black);
     border-radius: 12px;
+    width: auto;
   }
 
   img {
