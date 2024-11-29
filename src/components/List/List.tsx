@@ -9,10 +9,10 @@ interface ListProps {
 
 const List: FC<ListProps> = ({ header, children, css }) => {
   return (
-    <StyledList style={css}>
+    <div>
       {header && <Header>{header}</Header>}
-      {children}
-    </StyledList>
+      <StyledList style={css}>{children}</StyledList>
+    </div>
   );
 };
 
