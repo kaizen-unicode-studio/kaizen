@@ -1,11 +1,9 @@
-import EmailTemplate from "@/components/EmailTemplate/EmailTemplate";
 import { NextURL } from "next/dist/server/web/next-url";
 import { NextRequest, NextResponse } from "next/server";
-import React from "react";
 import nodemailer from "nodemailer";
-import { renderToString } from "react-dom/server";
-import Order from "@/components/Order/Order";
 import { getValueFromStream } from "@/utils";
+import StaticOrder from "@/components/StaticOrder";
+import { render } from "@react-email/components";
 
 const senderMail = "nodemailer.kaizen.test.mail@gmail.com";
 const senderPass = "qrey cvcr aqad omqc";
@@ -21,23 +19,31 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// const html = renderToString(<Order />)
-
 export async function POST(req: NextRequest) {
   const { searchParams } = new NextURL(req.url);
-  // const bodyReader = req.body?.getReader();
-  // const stringData = await bodyReader?.read().then(getValueFromStream);
-  // console.log(stringData);
+  const bodyReader = req.body?.getReader();
+  const bodyData: { products: string; amount: number } = JSON.parse(
+    (await bodyReader?.read().then(getValueFromStream))!
+  );
+
+  console.log("body:", bodyData);
+
+  const html = await render(
+    StaticOrder({
+      itemsNames: bodyData.products,
+      amount: Number(bodyData.amount),
+    })
+  );
 
   const customerMail = searchParams.get("email")!;
   try {
-    // const isVerified = await transporter.verify();
+    await transporter.verify();
 
     const info = await transporter.sendMail({
       from: senderMail,
       to: customerMail,
-      subject: "Your order",
-      html: "<p>hello from nextjs</p>",
+      subject: "Thank you for purchasing our service!",
+      html: html,
     });
 
     return NextResponse.json({ info }, { status: 200 });

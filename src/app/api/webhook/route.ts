@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { getValueFromStream } from "../../../utils";
-import { NextURL } from "next/dist/server/web/next-url";
 
 export const config = {
   api: {
@@ -68,14 +67,14 @@ export async function POST(req: NextRequest) {
           }),
         });
 
-        fetch(`${origin}/api/send?email=oleksiychernenko286@gmail.com`, {
+        fetch(`${origin}/api/send?email=${paymentData.metadata.firstName}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
             ...paymentData.metadata,
-            amount: "$" + (amount / 100).toFixed(2),
+            amount: (amount / 100).toFixed(2),
           }),
         });
       } catch (error) {
