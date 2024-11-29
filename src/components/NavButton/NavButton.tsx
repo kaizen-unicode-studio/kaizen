@@ -8,7 +8,7 @@ import { ComponentPropsWithRef, FC } from "react";
 interface NavButtonProps extends ComponentPropsWithRef<"button"> {
   image?: "arrow" | "increment" | "decrement";
   text?: string;
-  rotate?: number;
+  rotateProp?: number;
 }
 
 const NavButton: FC<NavButtonProps> = ({ ...props }) => {
@@ -26,7 +26,11 @@ const NavButton: FC<NavButtonProps> = ({ ...props }) => {
   return (
     <Button {...props} aria-label="nav button">
       <Image
-        style={props.rotate ? { transform: `rotate(${props.rotate}deg)` } : {}}
+        style={
+          props.rotateProp
+            ? { transform: `rotate(${props.rotateProp}deg)` }
+            : {}
+        }
         src={image}
         alt={""}
       ></Image>

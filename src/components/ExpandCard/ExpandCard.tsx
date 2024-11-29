@@ -110,7 +110,7 @@ const ExpandCard: FC<ExpandCardProps> = ({
         {children}
 
         <ButtonsWrapper>
-          <NavButton rotate={45} image="increment" onClick={handleToggle} />
+          <NavButton rotateProp={45} image="increment" onClick={handleToggle} />
           <Button
             theme="dark"
             onClick={() => {
