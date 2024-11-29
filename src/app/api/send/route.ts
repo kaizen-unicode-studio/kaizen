@@ -1,27 +1,52 @@
-import EmailTemplate from "@/components/EmailTemplate/EmailTemplate";
 import { NextURL } from "next/dist/server/web/next-url";
-import { NextRequest } from "next/server";
-import { Resend } from "resend";
-import React from "react";
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+import { getValueFromStream } from "@/utils";
+import StaticOrder from "@/components/StaticOrder";
+import { render } from "@react-email/components";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const senderMail = "nodemailer.kaizen.test.mail@gmail.com";
+const senderPass = "qrey cvcr aqad omqc";
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: senderMail,
+    pass: senderPass,
+  },
+});
 
 export async function POST(req: NextRequest) {
   const { searchParams } = new NextURL(req.url);
+  const bodyReader = req.body?.getReader();
+  const bodyData: { products: string; amount: number } = JSON.parse(
+    (await bodyReader?.read().then(getValueFromStream))!
+  );
+
+  console.log("body:", bodyData);
+
+  const html = await render(
+    StaticOrder({
+      itemsNames: bodyData.products,
+      amount: Number(bodyData.amount),
+    })
+  );
+
   const customerMail = searchParams.get("email")!;
   try {
-    const { data, error } = await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: ["oleksiychernenko286@gmail.com", customerMail],
-      subject: "Hello world",
-      react: EmailTemplate() as React.ReactElement,
+    await transporter.verify();
+
+    const info = await transporter.sendMail({
+      from: senderMail,
+      to: customerMail,
+      subject: "Thank you for purchasing our service!",
+      html: html,
     });
 
-    if (error) {
-      return Response.json({ error }, { status: 500 });
-    }
-
-    return Response.json(data);
+    return NextResponse.json({ info }, { status: 200 });
   } catch (error) {
     return Response.json({ error }, { status: 500 });
   }

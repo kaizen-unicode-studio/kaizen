@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
-import { getValueFromStream } from "./utils";
-import { NextURL } from "next/dist/server/web/next-url";
+import { getValueFromStream } from "../../../utils";
 
 export const config = {
   api: {
@@ -18,7 +17,7 @@ export async function POST(req: NextRequest) {
   const sig = req.headers.get("stripe-signature")!;
   const bodyReader = req.body!.getReader()!;
 
-  const nextUrl = new NextURL(req.url);
+  const origin = process.env.URL_ORIGIN;
 
   if (!sig) {
     return NextResponse.json(
@@ -68,11 +67,15 @@ export async function POST(req: NextRequest) {
           }),
         });
 
-        fetch(`${nextUrl.origin}/api/send`, {
+        fetch(`${origin}/api/send?email=${paymentData.metadata.firstName}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
+          body: JSON.stringify({
+            ...paymentData.metadata,
+            amount: (amount / 100).toFixed(2),
+          }),
         });
       } catch (error) {
         return NextResponse.json(
