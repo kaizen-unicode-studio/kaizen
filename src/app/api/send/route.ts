@@ -1,27 +1,46 @@
 import EmailTemplate from "@/components/EmailTemplate/EmailTemplate";
 import { NextURL } from "next/dist/server/web/next-url";
-import { NextRequest } from "next/server";
-import { Resend } from "resend";
+import { NextRequest, NextResponse } from "next/server";
 import React from "react";
+import nodemailer from "nodemailer";
+import { renderToString } from "react-dom/server";
+import Order from "@/components/Order/Order";
+import { getValueFromStream } from "@/utils";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const senderMail = "nodemailer.kaizen.test.mail@gmail.com";
+const senderPass = "qrey cvcr aqad omqc";
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: senderMail,
+    pass: senderPass,
+  },
+});
+
+// const html = renderToString(<Order />)
 
 export async function POST(req: NextRequest) {
   const { searchParams } = new NextURL(req.url);
+  // const bodyReader = req.body?.getReader();
+  // const stringData = await bodyReader?.read().then(getValueFromStream);
+  // console.log(stringData);
+
   const customerMail = searchParams.get("email")!;
   try {
-    const { data, error } = await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: ["oleksiychernenko286@gmail.com", customerMail],
-      subject: "Hello world",
-      react: EmailTemplate() as React.ReactElement,
+    // const isVerified = await transporter.verify();
+
+    const info = await transporter.sendMail({
+      from: senderMail,
+      to: customerMail,
+      subject: "Your order",
+      html: "<p>hello from nextjs</p>",
     });
 
-    if (error) {
-      return Response.json({ error }, { status: 500 });
-    }
-
-    return Response.json(data);
+    return NextResponse.json({ info }, { status: 200 });
   } catch (error) {
     return Response.json({ error }, { status: 500 });
   }
