@@ -33,7 +33,7 @@ const Expand: FC<ExpandProps> = ({ title, children }) => {
       </Header>
       <Content
         ref={contentRef}
-        height={`${contentHeight}px`}
+        heightProp={`${contentHeight}px`}
         isExpanded={isExpanded}
       >
         {children}

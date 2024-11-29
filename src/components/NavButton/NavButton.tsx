@@ -24,12 +24,12 @@ const NavButton: FC<NavButtonProps> = ({ ...props }) => {
       : decrement;
 
   return (
-    <Button
-      {...props}
-      style={props.rotate ? { transform: `rotate(${props.rotate}deg)` } : {}}
-      aria-label="nav button"
-    >
-      <Image src={image} alt={""}></Image>
+    <Button {...props} aria-label="nav button">
+      <Image
+        style={props.rotate ? { transform: `rotate(${props.rotate}deg)` } : {}}
+        src={image}
+        alt={""}
+      ></Image>
     </Button>
   );
 };

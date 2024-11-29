@@ -51,7 +51,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Menu = styled.menu`
+export const Menu = styled.div`
   width: 100%;
   display: flex;
   align-items: center;

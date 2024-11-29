@@ -102,7 +102,7 @@ export const Grid = styled.article`
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2s, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 
   @media (max-width: 1440px) {
     grid-template-columns: repeat(2, 1fr);

@@ -41,11 +41,11 @@ export const Header = styled.h3`
 export const Content = styled.div`
   max-height: ${({
     isExpanded,
-    height,
+    heightProp,
   }: {
     isExpanded: boolean;
-    height: `${number}px`;
-  }) => (isExpanded ? height : "0")};
+    heightProp: `${number}px`;
+  }) => (isExpanded ? heightProp : "0")};
   transition: max-height 0.1s linear;
   padding-inline: 10px;
   overflow: hidden;
