@@ -40,7 +40,7 @@ export const Header = styled.h3`
   letter-spacing: 0.5px;
 
   @media (max-width: 520px) {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 24px;
   }
 

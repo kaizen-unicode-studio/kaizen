@@ -106,6 +106,7 @@ export const Header = styled.h4`
   @media (max-width: 375px) {
     line-height: 0.7;
     padding: 16px 0 10px;
+    font-size: 72px;
   }
 
   > span {
@@ -127,6 +128,10 @@ export const Header = styled.h4`
     @media (max-width: 768px) {
       font-size: 80px;
       letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 72px;
     }
   }
 `;

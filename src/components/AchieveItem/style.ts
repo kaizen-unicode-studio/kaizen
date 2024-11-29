@@ -18,7 +18,7 @@ export const Item = styled.article`
   }
 
   @media (max-width: 920px) {
-    grid-template-columns: repeat(2, 375px);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (max-width: 768px) {
@@ -59,6 +59,7 @@ export const Header = styled.div`
       font-size: 20px;
       line-height: 20px;
     }
+
     @media (max-width: 375px) {
       font-size: 15px;
       line-height: 1;
