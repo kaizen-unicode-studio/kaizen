@@ -15,7 +15,7 @@ export const Card = styled.div`
   padding-inline: 36px;
 `;
 
-export const Title = styled.h5`
+export const Title = styled.h3`
   font-size: 26px;
   font-weight: 600;
   line-height: 39.01px;
