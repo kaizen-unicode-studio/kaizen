@@ -41,7 +41,7 @@ const StaticOrder = ({ itemsNames, amount }: OrderProps) => {
     console.log("names:", names);
 
     const items = names.map(
-      (item) => products.find((product) => product.name === item)!
+      (item) => products.find((product) => product.name.match(item))!
     );
     return { data: items };
   };
