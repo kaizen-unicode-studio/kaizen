@@ -40,7 +40,7 @@ export const Section = styled.section`
     }
   }
 `;
-export const SubHeader = styled.h5`
+export const SubHeader = styled.p`
   font-size: 17px;
   font-weight: 400;
   line-height: 1.8;
