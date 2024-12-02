@@ -70,7 +70,7 @@ export const Item = styled.p`
   }
 `;
 
-export const Header = styled.h4`
+export const Header = styled.p`
   font-size: 28px;
   font-weight: 700;
   line-height: 40px;

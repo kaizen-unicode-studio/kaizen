@@ -24,13 +24,13 @@ export const Container = styled.main`
   }
 `;
 
-export const Header = styled.h3`
+export const Header = styled.h2`
   font-size: 28px;
   font-weight: 700;
   line-height: 40px;
 `;
 
-export const SubHeader = styled.h5`
+export const SubHeader = styled.h3`
   font-size: 20px;
   font-weight: 600;
   line-height: 24.38px;

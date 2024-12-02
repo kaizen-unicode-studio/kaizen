@@ -8,7 +8,7 @@ export const Card = styled.div`
   border-radius: 12px;
 `;
 
-export const Header = styled.h6`
+export const Header = styled.h3`
   font-size: 17px;
   line-height: 1.8;
   letter-spacing: 0.2px;

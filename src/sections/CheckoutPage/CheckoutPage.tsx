@@ -114,7 +114,7 @@ const CheckoutPage = ({
 
   return (
     <Container>
-      <Image src={donut} alt={""} />
+      <Image src={donut} alt={""} priority />
       {!clientSecret || !stripe || !elements ? (
         <div>
           <div role="status">
