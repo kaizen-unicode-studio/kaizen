@@ -10,7 +10,7 @@ export const StyledHero = styled.section`
   padding: 100px 80px 60px;
 
   @media (max-width: 768px) {
-    padding: 0 16px 20px;
+    padding: 100px 16px 20px;
   }
 
   @media (max-width: 375px) {

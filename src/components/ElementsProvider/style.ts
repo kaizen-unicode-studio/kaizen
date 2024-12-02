@@ -38,10 +38,6 @@ export const TextSection = styled.article`
     padding-inline: 10px;
   }
 
-  @media (max-width: 520px) {
-    padding-inline: 0;
-  }
-
   > p {
     display: block;
     @media (max-width: 1280px) {
