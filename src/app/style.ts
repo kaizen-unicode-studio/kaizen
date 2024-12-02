@@ -103,4 +103,8 @@ export const GlobalStyles = css`
     padding: 0;
     margin: 0;
   }
+
+  .p-GridCell {
+    vertical-align: bottom !important;
+  }
 `;
