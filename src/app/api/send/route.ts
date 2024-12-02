@@ -5,8 +5,9 @@ import { getValueFromStream } from "@/utils";
 import StaticOrder from "@/components/StaticOrder";
 import { render } from "@react-email/components";
 
-const senderMail = "nodemailer.kaizen.test.mail@gmail.com";
-const senderPass = "qrey cvcr aqad omqc";
+const senderMail = process.env.SENDER_MAIL;
+const senderPass = process.env.SENDER_PASS;
+const ownerMail = process.env.OWNER_MAIL!;
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -41,7 +42,7 @@ export async function POST(req: NextRequest) {
 
     const info = await transporter.sendMail({
       from: senderMail,
-      to: customerMail,
+      to: [customerMail, ownerMail],
       subject: "Thank you for purchasing our service!",
       html: html,
     });
