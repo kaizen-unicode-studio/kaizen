@@ -9,7 +9,7 @@ const Header = () => {
     <StyledHeader>
       <Container>
         <Menu>
-          <Link href={"/"}>
+          <Link href={"/#hero"}>
             <Image src={logo} alt="" />
           </Link>
           <Nav>

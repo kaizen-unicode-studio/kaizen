@@ -12,7 +12,7 @@ import hero_2 from "/public/images/hero_2.webp";
 
 const Hero = () => {
   return (
-    <StyledHero>
+    <StyledHero id="hero">
       <Container>
         <TextSection>
           <Header>
