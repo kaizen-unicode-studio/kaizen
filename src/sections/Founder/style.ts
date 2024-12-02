@@ -50,7 +50,7 @@ export const Container = styled.article`
   margin-bottom: 45px;
 
   @media (max-width: 1440px) {
-    grid-template-columns: 582px 578px;
+    grid-template-columns: auto 418px;
   }
 
   @media (max-width: 1280px) {
@@ -66,7 +66,7 @@ export const Container = styled.article`
   }
 `;
 
-export const FounderContainer = styled.article`
+export const FounderContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,12 +80,11 @@ export const FounderContainer = styled.article`
 export const FounderImage = styled.div`
   display: flex;
   flex-direction: column;
-  width: 418px;
+  width: auto;
 
   @media (max-width: 768px) {
     background: var(--black);
     border-radius: 12px;
-    width: auto;
   }
 
   img {

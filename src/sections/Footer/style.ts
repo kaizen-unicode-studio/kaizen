@@ -97,9 +97,11 @@ export const Grid = styled.article`
   @media (max-width: 978px) {
     grid-template: 1fr / repeat(3, 1fr);
   }
+  @media (max-width: 700px) {
+    gap: 20px;
+  }
 
   @media (max-width: 660px) {
     grid-template: repeat(3, auto) / 1fr;
-    gap: 20px;
   }
 `;

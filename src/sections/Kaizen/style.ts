@@ -24,7 +24,7 @@ export const StyledKaizen = styled.section`
     grid-template: 1fr / 1fr;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 400px) {
     padding-inline: 10px;
   }
 
@@ -103,7 +103,7 @@ export const Header = styled.h4`
     margin-bottom: 0;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 400px) {
     line-height: 0.7;
     padding: 16px 0 10px;
     font-size: 72px;
@@ -130,7 +130,7 @@ export const Header = styled.h4`
       letter-spacing: 0.02em;
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: 400px) {
       font-size: 72px;
     }
   }
