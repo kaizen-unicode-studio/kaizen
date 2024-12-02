@@ -21,8 +21,8 @@ const page = () => {
       <main>
         <SmallHero />
         <Section>
-          <Image src={donut} alt={""} className="first_cover" />
-          <Image src={donut_part} alt={""} className="second_cover" />
+          <Image src={donut} alt={"Donut"} className="first_cover" />
+          <Image src={donut_part} alt={"Donut part"} className="second_cover" />
           <SectionHeader>TERMS & CONDITIONS</SectionHeader>
           <TextTab
             header={"use of website and services"}

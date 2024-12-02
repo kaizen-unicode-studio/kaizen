@@ -84,7 +84,7 @@ const ElementsProvider = () => {
                 improvement. Transform yourself with Kaizen.
               </Text>
               <Mobile>
-                <Image src={hero_2} alt={""} />
+                <Image src={hero_2} alt={"Fruit on table"} />
                 <MobileText>
                   Improving your health through mindful choices is at the heart
                   of our philosophy, where zest for life grows by prioritizing

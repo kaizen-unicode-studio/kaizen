@@ -13,7 +13,7 @@ const AchieveItem: FC<AchieveItemProps> = ({ image, header, text }) => {
   return (
     <Item>
       <Header>
-        <Image src={image} alt={""} />
+        <Image src={image} alt={"Item icon"} />
         <h3>{header}</h3>
       </Header>
       <Text>{text}</Text>

@@ -17,7 +17,7 @@ const Kaizen = () => {
   return (
     <StyledKaizen>
       <Cover>
-        <Image src={kaizen_cover} alt={""} />
+        <Image src={kaizen_cover} alt={"Donut"} />
       </Cover>
       <Container>
         <Header>
@@ -25,14 +25,18 @@ const Kaizen = () => {
         </Header>
         <Quote>“ Kaizen wa isshō ”</Quote>
         <Japanese>改善は一生</Japanese>
-        <Image className="mobile_image" src={kaizen_mobile} alt={""} />
+        <Image
+          className="mobile_image"
+          src={kaizen_mobile}
+          alt={"a white cup with plate with cookies"}
+        />
         <Text>
           Improvement is a lifelong process. <br /> Guided by this belief, we
           inspire lasting health through small, meaningful changes that grow
           over time.
         </Text>
       </Container>
-      <Image className="main_image" src={kaizen} alt={""} />
+      <Image className="main_image" src={kaizen} alt={"Founder"} />
     </StyledKaizen>
   );
 };

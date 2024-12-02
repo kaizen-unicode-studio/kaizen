@@ -13,7 +13,7 @@ import donut from "/public/covers/donut.svg";
 const About = () => {
   return (
     <StyledAbout id="about">
-      <Image src={donut} alt={""} />
+      <Image src={donut} alt={"Donut"} />
       <Header>ABOUT THE PROJECT</Header>
       <Text>
         Discover a new path to wellness with Kaizen. Through expert nutrition

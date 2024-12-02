@@ -41,7 +41,7 @@ const Bag = () => {
 
   return (
     <StyledBag onClick={handleToggle}>
-      <Image src={bag} alt={""} width={64} height={64} />
+      <Image src={bag} alt={"Bag"} width={64} height={64} />
       {total !== 0 && <div>{total}</div>}
       <Modal open={isOpen}>
         <Cart close={handleToggle} />

@@ -32,7 +32,7 @@ const NavButton: FC<NavButtonProps> = ({ ...props }) => {
             : {}
         }
         src={image}
-        alt={""}
+        alt={props.image || "decrement"}
       ></Image>
     </Button>
   );

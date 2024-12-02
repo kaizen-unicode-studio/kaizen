@@ -114,7 +114,7 @@ const CheckoutPage = ({
 
   return (
     <Container>
-      <Image src={donut} alt={""} priority />
+      <Image src={donut} alt={"Donut"} priority />
       {!clientSecret || !stripe || !elements ? (
         <div>
           <div role="status">
@@ -193,7 +193,12 @@ Please make sure you are available on WhatsApp, Telegram, or Viber"
                 {!loading ? (
                   <>
                     <p>pay now</p>
-                    <Image src={right_arrow} alt={""} width={20} height={20} />
+                    <Image
+                      src={right_arrow}
+                      alt={"Arrow"}
+                      width={20}
+                      height={20}
+                    />
                   </>
                 ) : (
                   "Processing..."

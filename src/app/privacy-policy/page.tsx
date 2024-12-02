@@ -7,7 +7,6 @@ import TextTab from "@/components/TextTab";
 import { Metadata } from "next";
 import donut from "/public/covers/donut.svg";
 import Image from "next/image";
-<Image src={donut} alt={""} className="first_cover" />;
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -20,7 +19,7 @@ const page = () => {
       <main>
         <SmallHero />
         <Section>
-          <Image src={donut} alt={""} className="first_cover" />
+          <Image src={donut} alt={"Donut"} className="first_cover" />
           <SectionHeader>PRIVACY POLICY</SectionHeader>
           <TextTab
             header={"information collection"}

@@ -26,7 +26,7 @@ const Footer = () => {
             <div>
               <Item>
                 {" "}
-                <Image src={mail} alt={""} />
+                <Image src={mail} alt={"Mail"} />
                 <Link
                   href="mailto:kaizenbyyulia@gmail.com"
                   style={{ textDecoration: "underline" }}
@@ -35,7 +35,7 @@ const Footer = () => {
                 </Link>
               </Item>
               <Item>
-                <Image src={instagram} alt={""} />
+                <Image src={instagram} alt={"Instagram logo"} />
                 <Link
                   target="_blank"
                   href="https://www.instagram.com/kaizenpro.j/"
@@ -50,7 +50,7 @@ const Footer = () => {
             <div>
               <Item>
                 {" "}
-                <Image src={mail} alt={""} />
+                <Image src={mail} alt={"Mail"} />
                 <Link
                   href="mailto:yulia.dantes@gmail.com"
                   style={{ textDecoration: "underline" }}
@@ -59,7 +59,7 @@ const Footer = () => {
                 </Link>
               </Item>
               <Item>
-                <Image src={instagram} alt={""} />
+                <Image src={instagram} alt={"Instagram logo"} />
                 <Link
                   target="_blank"
                   href="https://www.instagram.com/yuliadantes/"
@@ -69,7 +69,7 @@ const Footer = () => {
               </Item>
 
               <Item>
-                <Image src={phone} alt={""} />
+                <Image src={phone} alt={"Phone"} />
                 <Link href="tel:+447300490640">+447300490640</Link>
               </Item>
             </div>

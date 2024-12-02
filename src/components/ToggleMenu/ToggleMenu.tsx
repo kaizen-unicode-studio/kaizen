@@ -25,7 +25,7 @@ const ToggleMenu = () => {
   return (
     <div className="modal-toggle">
       <div onClick={handleToggleOpen}>
-        <Image src={menu} alt={""} />
+        <Image src={menu} alt={"Menu"} />
       </div>
       <Modal open={open}>
         <ModalContent>
@@ -50,7 +50,7 @@ const ToggleMenu = () => {
             target="_blank"
             href="https://www.instagram.com/kaizenpro.j/"
           >
-            <Image src={instagram} alt={""} />
+            <Image src={instagram} alt={"Instagram logo"} />
             kaizenpro.j
           </Instagram>
           <Info>

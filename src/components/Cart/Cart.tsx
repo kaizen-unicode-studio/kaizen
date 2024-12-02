@@ -36,7 +36,13 @@ const Cart: FC<CartProps> = ({ close }) => {
       >
         <Header>
           Shopping cart
-          <Image src={cancel} alt={""} width={24} height={24} onClick={close} />
+          <Image
+            src={cancel}
+            alt={"Cancel"}
+            width={24}
+            height={24}
+            onClick={close}
+          />
         </Header>
         <Separator />
         {items.data.length ? (
@@ -45,7 +51,12 @@ const Cart: FC<CartProps> = ({ close }) => {
             <Button theme="pay" isLink>
               <Link href={"/checkout"}>
                 CHECK OUT
-                <Image src={right_arrow} alt={""} width={24} height={24} />
+                <Image
+                  src={right_arrow}
+                  alt={"Right arrow"}
+                  width={24}
+                  height={24}
+                />
               </Link>
             </Button>
           </>
@@ -56,7 +67,7 @@ const Cart: FC<CartProps> = ({ close }) => {
             <Button theme="pay" onClick={close} isLink>
               <Link onClick={close} href="/#services">
                 GO TO THE SERVICES
-                <Image src={right_arrow} alt={""} width={24} height={24} />
+                <Image src={right_arrow} alt={"Arrow"} width={24} height={24} />
               </Link>
             </Button>
           </>

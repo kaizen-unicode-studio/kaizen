@@ -40,7 +40,7 @@ const page = () => {
       <main style={{ background: "var(--main-color)", paddingBottom: 110 }}>
         <SmallHero />
         <Container>
-          <Image src={donut} className="cover_img" alt={""} />
+          <Image src={donut} className="cover_img" alt={"Donut"} />
           <article>
             <SubHeader>THANK YOU FOR PURCHASING OUR SERVICE!</SubHeader>
             <Description>
@@ -59,7 +59,7 @@ const page = () => {
           <Button theme="ghost-invert" style={{ alignSelf: "end" }} isLink>
             <Link href={"/"}>
               RETURN TO HOME{" "}
-              <Image src={arrow} alt={""} width={20} height={20} />
+              <Image src={arrow} alt={"Arrow"} width={20} height={20} />
             </Link>
           </Button>
         </ButtonWrapper>

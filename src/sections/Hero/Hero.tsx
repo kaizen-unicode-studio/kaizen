@@ -27,10 +27,10 @@ const Hero = () => {
           </Text>
         </TextSection>
         <ImageSection>
-          <Image src={hero_1} alt={""} priority fetchPriority="high" />
+          <Image src={hero_1} alt={"Founder"} priority fetchPriority="high" />
           <Image
             src={hero_2}
-            alt={""}
+            alt={"Fruit on table"}
             priority
             fetchPriority="high"
             quality={50}

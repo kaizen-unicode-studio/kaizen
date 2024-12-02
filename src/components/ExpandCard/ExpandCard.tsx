@@ -97,7 +97,7 @@ const ExpandCard: FC<ExpandCardProps> = ({
 
           <Button hidden={isExpanded}>
             SHOW MORE
-            <Image src={plus} alt={""} />
+            <Image src={plus} alt={"Plus"} />
           </Button>
           <Description hidden={!isExpanded}>{description}</Description>
         </Grid>
@@ -121,7 +121,7 @@ const ExpandCard: FC<ExpandCardProps> = ({
             {isProductInStorage ? "DELETE IT" : "GET IT NOW"}
             <Image
               src={plus}
-              alt={""}
+              alt={"Plus"}
               style={{
                 transform: isProductInStorage
                   ? "rotate(45deg)"
