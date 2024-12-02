@@ -69,6 +69,7 @@ const ElementsProvider = () => {
             mode: "payment",
             amount: Math.round(total * 100),
             currency: currency.currency,
+            locale: "en",
           }}
         >
           <Container>

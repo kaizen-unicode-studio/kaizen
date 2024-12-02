@@ -15,10 +15,10 @@ export const Container = styled.div`
   transition: padding 0.2s linear;
 
   @media (max-width: 520px) {
-    padding: 18px 0 0;
+    padding: 18px 0;
   }
   @media (max-width: 375px) {
-    padding: 14px 0 0;
+    padding: 14px 0;
   }
 `;
 

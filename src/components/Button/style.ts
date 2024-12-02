@@ -12,7 +12,7 @@ export const StyledButton = styled.button(
     gap: "4px",
     cursor: "pointer",
     lineHeight: "17.07px",
-    padding: props.theme === "pay" ? "14px" : "7px 8px 7px 11px",
+    padding: props.theme === "pay" ? "14px" : "12px 8px 12px 11px;",
     borderRadius: "50px",
     border: `1px solid ${
       props.theme !== "ghost-invert"
@@ -26,7 +26,7 @@ export const StyledButton = styled.button(
     display: props.hidden ? "none" : "flex",
     alignItems: props.theme === "pay" ? "flex-start" : "center",
     // alignItems: "flex-end",
-    fontSize: props.theme === "pay" ? "24px" : "14px",
+    fontSize: props.theme === "pay" ? "24px" : "16px",
     fontWeight: props.theme === "pay" ? "500" : "400",
     justifyContent: props.theme === "pay" ? "center" : "start",
     width: props.theme === "pay" ? "100%" : "",

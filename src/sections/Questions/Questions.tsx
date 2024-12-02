@@ -9,7 +9,7 @@ const Questions = () => {
       <Expand
         title={
           <SmallCaps>
-            how does the "Personal NUTRITION Plan" service work
+            how does the "personal nutrition plan" service work
           </SmallCaps>
         }
       >
@@ -32,8 +32,7 @@ const Questions = () => {
       <Expand
         title={
           <SmallCaps>
-            how does the "
-            <span>Individualized Monthly NutriTionist Support</span>" service
+            how does the "individualized monthly nutritionist support" service
             work
           </SmallCaps>
         }

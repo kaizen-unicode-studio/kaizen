@@ -49,8 +49,4 @@ export const Header = styled.h2`
 
 export const SmallCaps = styled.span`
   font-variant: small-caps;
-
-  > span {
-    font-weight: 600;
-  }
 `;
