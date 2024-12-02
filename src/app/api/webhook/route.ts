@@ -67,7 +67,7 @@ export async function POST(req: NextRequest) {
           }),
         });
 
-        fetch(`${origin}/api/send?email=${paymentData.metadata.firstName}`, {
+        fetch(`${origin}/api/send?email=${paymentData.metadata.email}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
