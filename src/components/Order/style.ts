@@ -18,7 +18,7 @@ export const Total = styled.p`
 
 export const Overflow = styled.div`
   overflow-y: auto;
-  max-height: 80vh;
+  max-height: calc(100lvh - 300px);
   margin-block: 12px;
   gap: 20px;
   display: flex;
