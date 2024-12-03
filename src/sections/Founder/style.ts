@@ -173,14 +173,21 @@ export const Quote = styled.div`
 `;
 
 export const Card = styled.p`
-  font-family: Cantarell;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 23px;
-  border-radius: 12px;
-  width: 100%;
+    font-family: Cantarell;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+    border-radius: 12px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 
-  padding: 32px;
-  color: var(--main-color);
-  background: var(--black);
+    padding: 32px;
+    color: var(--main-color);
+    background: var(--black);
+
+    > span {
+        margin-top: 16px;
+        align-self: flex-end;
+    }
 `;
