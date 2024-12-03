@@ -47,4 +47,10 @@ export const StyledInput = styled.input`
     line-height: 19.82px;
     color: var(--light-gray);
   }
+    
+    :focus {
+        outline: none;
+        border-color: #0570de;
+        box-shadow:  0 0 3px 3px rgba(0, 112, 243, 0.25);
+    }
 `;
