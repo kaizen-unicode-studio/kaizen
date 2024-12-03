@@ -16,6 +16,7 @@ import plus from "/public/icons/plus.svg";
 import NavButton from "../NavButton";
 import Button from "../Button";
 import { IProduct, products } from "@/products";
+import {Property} from "csstype";
 
 interface ExpandCardProps {
   title: string;
@@ -23,6 +24,7 @@ interface ExpandCardProps {
   description: string;
   number: number;
   image: StaticImageData;
+  position?: Property.BackgroundPosition
 }
 
 const ExpandCard: FC<ExpandCardProps> = ({
@@ -31,6 +33,7 @@ const ExpandCard: FC<ExpandCardProps> = ({
   description,
   number,
   image,
+  position
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [contentHeight, setContentHeight] = useState(1000);
@@ -88,7 +91,7 @@ const ExpandCard: FC<ExpandCardProps> = ({
 
   return (
     <Container>
-      <Overlay img={image} onClick={() => setIsExpanded(true)}>
+      <Overlay img={image} onClick={() => setIsExpanded(true)} position={position || "center"}>
         <Grid blur={!isExpanded}>
           <HeaderWrapper>
             <StyledNumber>/00{number}</StyledNumber>
