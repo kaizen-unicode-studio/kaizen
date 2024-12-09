@@ -52,15 +52,11 @@ const Questions = () => {
           </li>
         </ol>
       </Expand>
-      <Expand title={<SmallCaps>How will I receive the meal plans?</SmallCaps>}>
+      <Expand title={<SmallCaps>how will i receive the meal plans?</SmallCaps>}>
         You will receive the meal plans via email.
       </Expand>
       <Expand
-        title={
-          <SmallCaps>
-            how many meals should i have in a day/how often should i eat?
-          </SmallCaps>
-        }
+        title={<SmallCaps>how many meals should i have in a day?</SmallCaps>}
       >
         The meal plan is developed specifically for each person during the
         Individualized Monthly Nutrition Support. Therefore, the number of meals
