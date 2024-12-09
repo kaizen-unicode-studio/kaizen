@@ -37,7 +37,7 @@ const ToggleMenu = () => {
       <Modal open={open}>
         <ModalContent>
           <LinkList>
-            <Link onClick={handleToggleOpen} href={"/"}>
+            <Link onClick={handleToggleOpen} href={"/#hero"}>
               HOME
             </Link>
             <Link onClick={handleToggleOpen} href={"/#about"}>
