@@ -88,6 +88,12 @@ export const GlobalStyles = css`
     --violet-light: #7861a9;
   }
 
+  html {
+    scroll-behavior: smooth;
+
+    scroll-padding-top: 100px;
+  }
+
   body {
     color: var(--foreground);
     background: var(--background);
@@ -98,7 +104,6 @@ export const GlobalStyles = css`
 
   * {
     box-sizing: border-box;
-    scroll-behavior: smooth;
 
     padding: 0;
     margin: 0;
