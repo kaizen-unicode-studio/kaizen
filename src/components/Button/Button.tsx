@@ -8,7 +8,6 @@ export type ThemeType = "ghost" | "dark" | "pay" | "ghost-invert";
 interface ButtonProps extends ComponentPropsWithRef<"button"> {
   theme?: ThemeType;
   children: ReactNode;
-  anchor?: string;
   hidden?: boolean;
   isLink?: boolean;
 }
@@ -17,7 +16,6 @@ const Button: FC<ButtonProps> = ({
   theme = "ghost",
   hidden = false,
   children,
-  anchor,
   isLink,
   ...rest
 }) => {
