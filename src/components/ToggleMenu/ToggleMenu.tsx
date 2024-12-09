@@ -7,12 +7,19 @@ import Modal from "../Modal";
 import Link from "next/link";
 import instagram from "/public/icons/instagram.svg";
 import { Info, Instagram, LinkList, ModalContent } from "./style";
+import { ModalInstance } from "@/utils";
 
 const ToggleMenu = () => {
   const [open, setOpen] = useState(false);
 
   const handleToggleOpen = () => {
     setOpen((prev) => !prev);
+  };
+
+  const handleOpenBasket = () => {
+    setOpen((prev) => !prev);
+
+    ModalInstance.isOpen = true;
   };
 
   useEffect(() => {
@@ -39,7 +46,7 @@ const ToggleMenu = () => {
             <Link onClick={handleToggleOpen} href={"/#services"}>
               SERVICES
             </Link>
-            <Link onClick={handleToggleOpen} href={""}>
+            <Link onClick={handleOpenBasket} href={""}>
               MY BASKET
             </Link>
             <Link onClick={handleToggleOpen} href={"/#contacts"}>

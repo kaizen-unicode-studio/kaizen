@@ -7,10 +7,11 @@ import { StyledBag } from "./style";
 import Modal from "../Modal";
 import Cart from "../Cart";
 import { IProduct } from "@/products";
+import { ModalInstance } from "@/utils";
 
 const Bag = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [total, setTotal] = useState(0);
+  const [isOpen, setIsOpen] = useState<boolean>(ModalInstance.isOpen);
 
   const updateTotal = () => {
     const items: { data: IProduct[] } = JSON.parse(
@@ -18,6 +19,16 @@ const Bag = () => {
     );
     setTotal(items.data.length);
   };
+
+  useEffect(() => {
+    const updateState = () => setIsOpen(ModalInstance.isOpen);
+
+    ModalInstance.subscribe(updateState);
+
+    return () => {
+      ModalInstance.unsubscribe(updateState);
+    };
+  }, []);
 
   useEffect(() => {
     updateTotal();

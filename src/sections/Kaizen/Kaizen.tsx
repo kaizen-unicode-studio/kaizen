@@ -10,7 +10,6 @@ import {
 } from "./style";
 import Image from "next/image";
 import kaizen from "/public/images/kaizen.jpeg";
-import kaizen_mobile from "/public/images/kaizen_mobile.jpeg";
 import kaizen_cover from "/public/covers/kaizen_cover.svg";
 
 const Kaizen = () => {

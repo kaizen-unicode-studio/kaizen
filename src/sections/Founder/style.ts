@@ -117,26 +117,6 @@ export const FounderImage = styled.div`
   }
 `;
 
-export const FounderName = styled.p`
-  display: none;
-  @media (max-width: 768px) {
-    display: block;
-    font-family: Cantarell;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 23px;
-    border-radius: 12px;
-    width: 100%;
-
-    padding: 32px;
-    color: var(--main-color);
-    background: var(--black);
-  }
-  @media (max-width: 375px) {
-    padding: 12px;
-  }
-`;
-
 export const Text = styled.p`
   display: none;
 

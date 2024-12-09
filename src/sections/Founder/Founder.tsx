@@ -4,7 +4,6 @@ import {
   Container,
   FounderContainer,
   FounderImage,
-  FounderName,
   Header,
   MobileText,
   Quote,

@@ -1,13 +1,3 @@
-import { Readable } from "node:stream";
-
-export async function buffer(readable: Readable) {
-  const chunks = [];
-  for await (const chunk of readable) {
-    chunks.push(typeof chunk === "string" ? Buffer.from(chunk) : chunk);
-  }
-  return Buffer.concat(chunks);
-}
-
 export function Utf8ArrayToStr(array: Uint8Array) {
   let out, i, c;
   let char2, char3;
