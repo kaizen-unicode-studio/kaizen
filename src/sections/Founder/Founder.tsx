@@ -37,8 +37,7 @@ const Founder = () => {
             expert guidance. We’re committed to helping you stay on track,
             making small, meaningful changes that add up to big improvements.
             Begin your journey toward better health with us.
-          </Card>
-          <Card>Yulia Dantes</Card>
+            <span>Yulia Dantes</span></Card>
           <Image src={achieve_2} alt={"Icon"} />
         </Quote>
         <FounderContainer>

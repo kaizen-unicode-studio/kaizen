@@ -1,18 +1,20 @@
 "use client";
 import styled from "@emotion/styled";
 import { StaticImageData } from "next/image";
+import {Property} from "csstype";
 
 export const Container = styled.div`
   overflow: hidden;
 `;
 
-export const Overlay = styled.div`
-  background-image: ${({ img }: { img: StaticImageData }) => `url(${img.src})`};
-  background-position: center;
-  background-size: cover;
-  border-radius: 10px;
-  cursor: pointer;
-`;
+export const Overlay = styled.div((props: { img: StaticImageData, position?: Property.BackgroundPosition }) => ({
+  backgroundImage: `url(${props.img.src})`,
+  backgroundPosition: 'center ' + `${props.position ? props.position : "center"}`,
+  backgroundSize: 'cover',
+  borderRadius: '10px',
+  cursor: 'pointer',
+}));
+
 
 export const Grid = styled.article`
   display: grid;

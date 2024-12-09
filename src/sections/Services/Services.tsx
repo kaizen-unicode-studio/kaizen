@@ -16,6 +16,7 @@ const Services = () => {
       <ServicesWrapper gap="18px">
         <ExpandCard
           image={services_1}
+          position={'-450px'}
           title={"PERSONALIZED NUTRITION PLAN"}
           description={
             "We offer personalized nutrition plans, advice and support so you can achieve your health and fitness goals. Find out more about how proper food can brighten up your life!"
@@ -126,6 +127,7 @@ const Services = () => {
       <ServicesWrapper style={{ marginBottom: 64 }} gap="12px">
         <ExpandCard
           image={services_3}
+          position={'-30px'}
           title={"14-DAY BALANCED MEAL PLAN"}
           description={
             "This 14-day balanced meal plan will help you fill your body with nutrients, improve your well-being and keep you energized throughout the day."
@@ -141,6 +143,7 @@ const Services = () => {
         </ExpandCard>
         <ExpandCard
           image={services_4}
+          position={'-500px'}
           title={"NUTRIENT-RICH BREAKFASTS COLLECTION"}
           description={
             "Start your day right! This collection contains recipes that will energize you, provide you with important vitamins and minerals, and support your health throughout the day."
