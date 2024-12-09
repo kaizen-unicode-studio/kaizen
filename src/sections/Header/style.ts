@@ -10,8 +10,10 @@ export const Header = styled.header`
   color: var(--main-color);
   padding-inline: 80px;
   z-index: 20;
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
+  border-bottom-left-radius: ${(props: { isOpen: boolean }) =>
+    props.isOpen ? "0" : "24px"};
+  border-bottom-right-radius: ${(props: { isOpen: boolean }) =>
+    props.isOpen ? " 0" : "24px"};
 
   @media (max-width: 768px) {
     padding-inline: 16px;

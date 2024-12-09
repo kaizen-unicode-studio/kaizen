@@ -9,11 +9,17 @@ import instagram from "/public/icons/instagram.svg";
 import { Info, Instagram, LinkList, ModalContent } from "./style";
 import { ModalInstance } from "@/utils";
 
-const ToggleMenu = () => {
-  const [open, setOpen] = useState(false);
+interface ToggleMenuProps {
+  isOpen: boolean;
+  close: () => void;
+}
+
+const ToggleMenu = ({ isOpen, close }: ToggleMenuProps) => {
+  const [open, setOpen] = useState(isOpen);
 
   const handleToggleOpen = () => {
     setOpen((prev) => !prev);
+    close();
   };
 
   const handleOpenBasket = () => {
