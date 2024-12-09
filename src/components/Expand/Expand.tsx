@@ -6,9 +6,16 @@ import { Container, Content, Header, Icon } from "./style";
 interface ExpandProps {
   title: string | ReactNode;
   children: ReactNode;
+  wide?: boolean;
+  bold?: boolean;
 }
 
-const Expand: FC<ExpandProps> = ({ title, children }) => {
+const Expand: FC<ExpandProps> = ({
+  title,
+  children,
+  wide = false,
+  bold = false,
+}) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [contentHeight, setContentHeight] = useState(1000);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -24,8 +31,8 @@ const Expand: FC<ExpandProps> = ({ title, children }) => {
   }, [contentRef]);
 
   return (
-    <Container isExpanded={isExpanded}>
-      <Header onClick={handleToggle}>
+    <Container isExpanded={isExpanded} wide={wide}>
+      <Header onClick={handleToggle} bold={bold}>
         {title}
         <Icon isExpanded={isExpanded}>
           <NavButton image={isExpanded ? "decrement" : "increment"} />

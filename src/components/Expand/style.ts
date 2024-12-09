@@ -6,12 +6,14 @@ export const Container = styled.div`
   overflow: hidden;
   margin-bottom: 10px;
   border-bottom: 1px solid var(--light-gray);
-  padding: 18px 15px 0;
+  padding-block: 18px 0;
+  padding-inline: ${(props: { wide: boolean; isExpanded: boolean }) =>
+    props.wide ? "0" : "15px"};
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-bottom: ${({ isExpanded }: { isExpanded: boolean }) =>
-    isExpanded ? "20px" : "0"};
+  padding-bottom: ${(props: { isExpanded: boolean }) =>
+    props.isExpanded ? "20px" : "0"};
   transition: padding 0.2s linear;
 
   @media (max-width: 520px) {
@@ -29,7 +31,7 @@ export const Header = styled.h3`
   align-items: center;
   font-weight: bold;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: ${({ bold }: { bold: boolean }) => (bold ? "600" : "500")};
   line-height: 29.26px;
 
   @media (max-width: 375px) {
@@ -47,7 +49,7 @@ export const Content = styled.div`
     heightProp: `${number}px`;
   }) => (isExpanded ? heightProp : "0")};
   transition: max-height 0.1s linear;
-  padding-inline: 10px;
+  /* padding-inline: 10px; */
   overflow: hidden;
 
   font-family: "Cantarell";

@@ -49,20 +49,22 @@ export const StyledKaizen = styled.section`
 
     @media (max-width: 840px) {
       display: block;
-      width: 488px;
-      height: auto;
+      object-fit: cover;
+      object-position: center center;
+      width: 480px;
+      height: 420px;
       border-radius: 8px;
       margin-block: 32px;
     }
 
     @media (max-width: 520px) {
-      width: 343px;
-      height: 205px;
+      width: 350px;
+      height: 300px;
     }
 
     @media (max-width: 375px) {
       width: 343px;
-      height: 205px;
+      height: 295px;
       margin-block: 14px;
     }
   }

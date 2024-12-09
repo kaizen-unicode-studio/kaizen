@@ -76,6 +76,21 @@ const CheckoutPage = ({
     }
   }, [amount, currency.currency]);
 
+  useEffect(() => {
+    if (clientSecret && stripe && elements) {
+      var cssLink = document.createElement("link");
+      cssLink.href = "./style.css";
+      cssLink.rel = "stylesheet";
+      cssLink.type = "text/css";
+      document.querySelectorAll("iframe").forEach((frame) => {
+        if (frame.name.match("__privateStripeFrame")) {
+          frame.appendChild(cssLink);
+          frame.contentDocument?.head.appendChild(cssLink);
+        }
+      });
+    }
+  }, [clientSecret, stripe, elements]);
+
   const onSubmit: SubmitHandler<Fields> = async (data) => {
     setLoading(true);
 

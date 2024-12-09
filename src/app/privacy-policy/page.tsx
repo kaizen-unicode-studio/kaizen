@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <>
-      <Header />
+      <Header removeButtons />
       <main>
         <SmallHero />
         <Section>

@@ -23,7 +23,6 @@ export const Letter = styled.span`
     text-align: center;
   }
   @media (max-width: 375px) {
-    font-size: 64px;
     text-align: center;
     line-height: 72px;
   }
@@ -44,8 +43,11 @@ export const Header = styled.h3`
     line-height: 24px;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 445px) {
     font-size: 16px;
+  }
+
+  @media (max-width: 375px) {
     top: 39%;
     line-height: 24px;
   }

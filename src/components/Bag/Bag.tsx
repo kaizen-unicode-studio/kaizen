@@ -20,10 +20,8 @@ const Bag = () => {
   };
 
   useEffect(() => {
-    // Initial load
     updateTotal();
 
-    // Event listener for localStorage changes
     const handleStorageChange = () => {
       updateTotal();
     };

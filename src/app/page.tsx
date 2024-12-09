@@ -8,7 +8,7 @@ import Hero from "@/sections/Hero";
 import Kaizen from "@/sections/Kaizen";
 import Questions from "@/sections/Questions";
 import Services from "@/sections/Services";
-import Slider from "@/sections/Slider";
+// import Slider from "@/sections/Slider";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
         <Achieve />
         <Services />
         <Founder />
-        <Slider />
+        {/* <Slider /> */}
         <Kaizen />
         <Questions />
         <Footer />

@@ -27,7 +27,7 @@ const Kaizen = () => {
         <Japanese>改善は一生</Japanese>
         <Image
           className="mobile_image"
-          src={kaizen_mobile}
+          src={kaizen}
           alt={"a white cup with plate with cookies"}
         />
         <Text>

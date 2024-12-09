@@ -30,7 +30,7 @@ const About = () => {
         <AboutCard
           header={"KNOWLEDGE"}
           text={
-            " We provide you with essential information and insights to make informed dietary choices"
+            " We provide you with essential information and insights to make informed dietary choices."
           }
           img="/images/about/1-main.webp"
         ></AboutCard>

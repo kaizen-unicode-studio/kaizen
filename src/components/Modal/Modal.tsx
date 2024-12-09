@@ -10,7 +10,6 @@ interface ModalProps {
 }
 
 const Modal: FC<ModalProps> = ({ open, children, className }) => {
-  const modalRef = useRef<HTMLDivElement>(null);
   const container = useRef<Element | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -31,9 +30,7 @@ const Modal: FC<ModalProps> = ({ open, children, className }) => {
 
   return container && mounted && open
     ? createPortal(
-        <div ref={modalRef} className={className}>
-          {children}
-        </div>,
+        <div className={className}>{children}</div>,
         container.current!
       )
     : null;

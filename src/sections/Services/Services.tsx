@@ -16,7 +16,7 @@ const Services = () => {
       <ServicesWrapper gap="18px">
         <ExpandCard
           image={services_1}
-          position={'-450px'}
+          position={"-450px"}
           title={"PERSONALIZED NUTRITION PLAN"}
           description={
             "We offer personalized nutrition plans, advice and support so you can achieve your health and fitness goals. Find out more about how proper food can brighten up your life!"
@@ -26,7 +26,7 @@ const Services = () => {
           <ExpandContent
             header={"PERSONALIZED NUTRITION PLAN"}
             listHeader="THE NUTRITION PLAN INCLUDES"
-            price={70}
+            price={60}
           >
             <li>
               Discussion with the nutritionist about goals and expectations from
@@ -40,7 +40,7 @@ const Services = () => {
               Free consultation throughout the week following the session.
             </li>
           </ExpandContent>
-          <Expand title={"WHAT WILL YOU ACHIVE"}>
+          <Expand wide bold title={"WHAT WILL YOU ACHIVE"}>
             <List>
               <li>
                 Understanding your body's needs. Knowledge on creating a healthy
@@ -53,7 +53,7 @@ const Services = () => {
               </li>
             </List>
           </Expand>
-          <Expand title="THIS CONSULTATION IS RIGHT FOR YOU IF">
+          <Expand wide bold title="THIS CONSULTATION IS RIGHT FOR YOU IF">
             <List>
               <li>
                 You have a specific goal (such as weight loss, gain, or
@@ -77,7 +77,7 @@ const Services = () => {
           <ExpandContent
             header={"INDIVIDUALIZED MONTHLY NUTRITIONIST SUPPORT"}
             listHeader="WHAT IS INCLUDED"
-            price={200}
+            price={170}
           >
             <li>
               Calculation of energy expenditure and selection of appropriate
@@ -95,7 +95,7 @@ const Services = () => {
               month.
             </li>
           </ExpandContent>
-          <Expand title={"WHAT WILL YOU ACHIVE"}>
+          <Expand wide bold title={"WHAT WILL YOU ACHIVE"}>
             <List>
               <li>
                 Understanding your body's needs. Knowledge on creating a healthy
@@ -108,7 +108,7 @@ const Services = () => {
               </li>
             </List>
           </Expand>
-          <Expand title="THIS CONSULTATION IS RIGHT FOR YOU IF">
+          <Expand wide bold title="THIS CONSULTATION IS RIGHT FOR YOU IF">
             <List>
               <li>
                 You have a specific goal (such as weight loss, gain, or
@@ -127,14 +127,14 @@ const Services = () => {
       <ServicesWrapper style={{ marginBottom: 64 }} gap="12px">
         <ExpandCard
           image={services_3}
-          position={'-30px'}
+          position={"-30px"}
           title={"14-DAY BALANCED MEAL PLAN"}
           description={
             "This 14-day balanced meal plan will help you fill your body with nutrients, improve your well-being and keep you energized throughout the day."
           }
           number={3}
         >
-          <ExpandContent header={"14-DAY BALANCED MEAL PLAN"} price={50}>
+          <ExpandContent header={"14-DAY BALANCED MEAL PLAN"} price={30}>
             Enjoy a diverse range of tasty, nutrient-packed meals designed to
             keep you energized and satisfied. With easy-to-follow recipes for
             every meal, achieving a balanced diet has never been simpler. Start
@@ -143,7 +143,7 @@ const Services = () => {
         </ExpandCard>
         <ExpandCard
           image={services_4}
-          position={'-500px'}
+          position={"-500px"}
           title={"NUTRIENT-RICH BREAKFASTS COLLECTION"}
           description={
             "Start your day right! This collection contains recipes that will energize you, provide you with important vitamins and minerals, and support your health throughout the day."
@@ -152,7 +152,7 @@ const Services = () => {
         >
           <ExpandContent
             header={"NUTRIENT-RICH BREAKFASTS COLLECTION"}
-            price={50}
+            price={30}
           >
             New Day = New Breakfast. This collection of 20 recipes is perfect
             for those who seek to enjoy a delicious and mindful breakfast that
@@ -169,7 +169,7 @@ const Services = () => {
         >
           <ExpandContent
             header={"VEGAN BLISS: NUTRITIOUS & FLAVORFUL CREATIONS"}
-            price={50}
+            price={30}
           >
             Featuring 20 delicious recipes, this assortment offers a perfect
             blend of nutrition and taste. Ideal for both dedicated vegans and

@@ -12,7 +12,6 @@ import {
 import Image from "next/image";
 import mail from "/public/icons/mail.svg";
 import instagram from "/public/icons/instagram.svg";
-import phone from "/public/icons/phone.svg";
 import Link from "next/link";
 
 const Footer = () => {
@@ -67,11 +66,6 @@ const Footer = () => {
                   yuliadantes
                 </Link>
               </Item>
-
-              <Item>
-                <Image src={phone} alt={"Phone"} />
-                <Link href="tel:+447300490640">+447300490640</Link>
-              </Item>
             </div>
           </Section>
           <Section>
@@ -82,9 +76,6 @@ const Footer = () => {
               </Item>
               <Item>
                 <Link href="/terms">Terms & Conditions</Link>
-              </Item>
-              <Item>
-                <Link href="/refund">Refund Policy</Link>
               </Item>
             </div>
           </Section>
