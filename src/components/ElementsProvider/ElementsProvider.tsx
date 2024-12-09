@@ -72,7 +72,7 @@ const ElementsProvider = () => {
             locale: "en",
           }}
         >
-          <Container>
+          {/* <Container>
             <TextSection>
               <TopHeader>
                 KAI<span>ZEN</span>
@@ -95,7 +95,7 @@ const ElementsProvider = () => {
                 </MobileText>
               </Mobile>
             </TextSection>
-          </Container>
+          </Container> */}
           <CheckoutPage amount={total} currency={currency} />
         </Elements>
       )}
