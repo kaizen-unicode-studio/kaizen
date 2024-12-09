@@ -18,7 +18,7 @@ class Singleton {
     return this.state;
   }
 
-  set isOpen(newState: any) {
+  set isOpen(newState: boolean) {
     this.state = newState;
     this.notifyListeners();
   }

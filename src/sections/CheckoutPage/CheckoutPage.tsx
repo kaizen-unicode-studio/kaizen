@@ -78,7 +78,7 @@ const CheckoutPage = ({
 
   useEffect(() => {
     if (clientSecret && stripe && elements) {
-      let cssLink = document.createElement("link");
+      const cssLink = document.createElement("link");
       cssLink.href = "./style.css";
       cssLink.rel = "stylesheet";
       cssLink.type = "text/css";

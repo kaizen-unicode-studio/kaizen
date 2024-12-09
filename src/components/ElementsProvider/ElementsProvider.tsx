@@ -4,21 +4,21 @@ import CheckoutPage from "@/sections/CheckoutPage";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import {
-  TextSection,
-  TopHeader,
-  Text,
-  Container,
+  // TextSection,
+  // TopHeader,
+  // Text,
+  // Container,
   SubHeader,
   Error,
   Empty,
-  Mobile,
-  MobileText,
+  // Mobile,
+  // MobileText,
 } from "./style";
 import { useEffect, useState } from "react";
 import Button from "../Button";
 import Link from "next/link";
-import Image from "next/image";
-import hero_2 from "/public/images/hero_2.webp";
+// import Image from "next/image";
+// import hero_2 from "/public/images/hero_2.webp";
 
 const stripePromise = loadStripe(
   "pk_test_51Q5MVHK3Qri9t8WuOL0RIOeGPgwuCKuXJ9EEIJcSMBbtZ5Ncq4dafZ25Yk0PBxU2Vkc4Bej2Kn4Q8ImebWJTMx0D00vrX1OB9z"
