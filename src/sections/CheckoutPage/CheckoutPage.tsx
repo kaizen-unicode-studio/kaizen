@@ -144,7 +144,7 @@ const CheckoutPage = ({
               <SubHeader>Contact information</SubHeader>
 
               <Input
-                label={"First Name"}
+                label={"First name"}
                 register={register}
                 params={{
                   required: true,
@@ -156,7 +156,7 @@ const CheckoutPage = ({
                 }}
               />
               <Input
-                label={"Last Name"}
+                label={"Last name"}
                 register={register}
                 params={{
                   required: true,
