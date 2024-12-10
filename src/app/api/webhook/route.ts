@@ -62,7 +62,7 @@ export async function POST(req: NextRequest) {
           body: JSON.stringify({
             fields: {
               ...paymentData.metadata,
-              amount: "£" + (amount / 100).toFixed(2),
+              amount: "€" + (amount / 100).toFixed(2),
             },
           }),
         });

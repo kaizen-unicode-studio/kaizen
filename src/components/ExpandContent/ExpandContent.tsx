@@ -25,7 +25,7 @@ const ExpandContent: FC<ExpandContentProps> = ({
     <StyledContent>
       <HeaderWrapper>
         <Header>{header}</Header>
-        <Amount>£{price.toFixed(2)}</Amount>
+        <Amount>€{price.toFixed(2)}</Amount>
       </HeaderWrapper>
       {children && listHeader && (
         <List css={{ paddingBlock: 12 }} header={listHeader || ""}>

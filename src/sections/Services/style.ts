@@ -3,7 +3,7 @@
 import styled from "@emotion/styled";
 
 export const StyledServices = styled.section`
-  padding-top: 64px;
+  margin-top: 64px;
   max-width: 1180px;
   margin-inline: auto;
 

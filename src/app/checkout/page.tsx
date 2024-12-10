@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const Checkout = () => {
   return (
     <div style={{ background: "var(--main-color)" }}>
-      <Header />
+      <Header removeButtons />
       <ElementsProvider />
       <Footer />
     </div>

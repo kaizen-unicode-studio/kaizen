@@ -36,7 +36,7 @@ const page = () => {
 
   return (
     <>
-      <Header />
+      <Header removeButtons />
       <main style={{ background: "var(--main-color)", paddingBottom: 110 }}>
         <SmallHero />
         <Container>
