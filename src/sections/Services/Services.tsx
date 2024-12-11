@@ -1,14 +1,14 @@
-import React from "react";
 import { StyledServices, Header, ServicesWrapper, Separator } from "./style";
 import ExpandCard from "@/components/ExpandCard";
 import Expand from "@/components/Expand";
 import List from "@/components/List";
 import ExpandContent from "@/components/ExpandContent";
-import services_1 from "/public/covers/services_1.jpeg";
-import services_2 from "/public/covers/services_2.jpeg";
-import services_3 from "/public/covers/services_3.jpeg";
-import services_4 from "/public/covers/services_4.jpeg";
-import services_5 from "/public/covers/services_5.jpeg";
+import services_1 from "/public/covers/services_1.webp";
+import services_2 from "/public/covers/services_2.webp";
+import services_3 from "/public/covers/services_3.webp";
+import services_4 from "/public/covers/services_4.webp";
+import services_5 from "/public/covers/services_5.webp";
+
 const Services = () => {
   return (
     <StyledServices id="services">
