@@ -80,7 +80,7 @@ export const Container = styled.article`
   }
 `;
 
-export const Header = styled.h4`
+export const Header = styled.h3`
   color: var(--black);
   font-size: 128px;
   font-weight: 700;
