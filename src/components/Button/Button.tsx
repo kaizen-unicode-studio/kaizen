@@ -21,7 +21,7 @@ const Button: FC<ButtonProps> = ({
 }) => {
   if (isLink)
     return (
-      <StyledLink hidden={hidden} theme={theme}>
+      <StyledLink hidden={hidden} theme={theme} aria-label="link">
         {children}
       </StyledLink>
     );

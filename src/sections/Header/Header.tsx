@@ -22,7 +22,7 @@ const Header = ({ removeButtons = false }: HeaderProps) => {
     <StyledHeader isOpen={isOpen}>
       <Container>
         <Menu>
-          <Link href={"/#hero"}>
+          <Link href={"/#hero"} aria-label="link">
             <Image src={logo} alt="" />
           </Link>
           {!removeButtons && (
