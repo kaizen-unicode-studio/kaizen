@@ -23,7 +23,7 @@ interface ExpandCardProps {
   children: ReactNode;
   description: string;
   number: number;
-  image: StaticImageData;
+  image: string;
   position?: Property.BackgroundPosition;
 }
 
