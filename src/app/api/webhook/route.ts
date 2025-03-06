@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
   const bodyReader = req.body!.getReader()!;
 
   const origin = process.env.URL_ORIGIN;
-
+  const tableToken = process.env.TABLE_TOKEN;
   if (!sig) {
     return NextResponse.json(
       { error: "Missing Stripe signature" },
@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
       const paymentData = await stripe.paymentIntents.retrieve(payment_intent);
 
       try {
-        await fetch("https://api.airtable.com/v0/appHiUu8xLatLQoQj/orders", {
+        await fetch(`https://api.airtable.com/v0/${tableToken}/orders`, {
           method: "POST",
           headers: {
             Authorization: "Bearer " + process.env.AIRTABLE_TOKEN,
