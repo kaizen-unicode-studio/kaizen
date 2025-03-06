@@ -1,6 +1,5 @@
 "use client";
 import styled from "@emotion/styled";
-import { StaticImageData } from "next/image";
 import { Property } from "csstype";
 
 export const Container = styled.div`

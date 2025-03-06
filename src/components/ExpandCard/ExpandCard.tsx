@@ -11,7 +11,7 @@ import {
   ButtonsWrapper,
   StyledNumber,
 } from "./style";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import plus from "/public/icons/plus.svg";
 import NavButton from "../NavButton";
 import Button from "../Button";

@@ -3,11 +3,11 @@ import ExpandCard from "@/components/ExpandCard";
 import Expand from "@/components/Expand";
 import List from "@/components/List";
 import ExpandContent from "@/components/ExpandContent";
-import services_1 from "/public/covers/services_1.webp";
-import services_2 from "/public/covers/services_2.webp";
-import services_3 from "/public/covers/services_3.webp";
-import services_4 from "/public/covers/services_4.webp";
-import services_5 from "/public/covers/services_5.webp";
+// import services_1 from "/public/covers/services_1.webp";
+// import services_2 from "/public/covers/services_2.webp";
+// import services_3 from "/public/covers/services_3.webp";
+// import services_4 from "/public/covers/services_4.webp";
+// import services_5 from "/public/covers/services_5.webp";
 import { services } from "@/services";
 import { products } from "@/products";
 
@@ -36,9 +36,10 @@ const Services = () => {
                   >
                     {product.html.content}
                   </ExpandContent>
-                  {product.html.expand?.length! > 0 &&
+                  {product.html?.expand &&
+                    product.html?.expand?.length > 0 &&
                     product.html.expand?.map((item) => (
-                      <Expand wide bold title={item.title}>
+                      <Expand wide bold title={item.title} key={item.title}>
                         <List>{item.content}</List>
                       </Expand>
                     ))}
