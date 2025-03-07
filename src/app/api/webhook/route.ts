@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
   try {
     event = stripe.webhooks.constructEvent(bufferData!, sig, endpointSecret);
   } catch (err) {
-    return NextResponse.json({ err }, { status: 400 });
+    return NextResponse.json({ err, event }, { status: 400 });
   }
 
   const { payment_intent, metadata, balance_transaction } = JSON.parse(
