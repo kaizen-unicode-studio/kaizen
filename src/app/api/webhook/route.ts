@@ -10,7 +10,7 @@ export const config = {
 
 const endpointSecret = process.env.WEBHOOK_SECRET!;
 const stripe = new Stripe(process.env.STRIPE_TOKEN || "", {
-  apiVersion: "2024-11-20.acacia",
+  apiVersion: "2025-02-24.acacia",
 });
 
 export async function POST(req: NextRequest) {
@@ -53,19 +53,19 @@ export async function POST(req: NextRequest) {
       const paymentData = await stripe.paymentIntents.retrieve(payment_intent);
 
       try {
-        await fetch(`https://api.airtable.com/v0/${tableToken}/orders`, {
-          method: "POST",
-          headers: {
-            Authorization: "Bearer " + process.env.AIRTABLE_TOKEN,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            fields: {
-              ...paymentData.metadata,
-              amount: "€" + (amount / 100).toFixed(2),
-            },
-          }),
-        });
+        // await fetch(`https://api.airtable.com/v0/${tableToken}/orders`, {
+        //   method: "POST",
+        //   headers: {
+        //     Authorization: "Bearer " + process.env.AIRTABLE_TOKEN,
+        //     "Content-Type": "application/json",
+        //   },
+        //   body: JSON.stringify({
+        //     fields: {
+        //       ...paymentData.metadata,
+        //       amount: "€" + (amount / 100).toFixed(2),
+        //     },
+        //   }),
+        // });
 
         fetch(`${origin}/api/send?email=${paymentData.metadata.email}`, {
           method: "POST",
