@@ -14,7 +14,17 @@ export interface IProduct {
     content: ReactNode;
     expand?: { content: ReactNode; title: string }[];
   };
+  // attachments?: [
+  //   {
+  //     filename: string;
+  //     path: string;
+  //     contentType: "application/pdf";
+  //   }
+  // ];
+  attached_link: string;
 }
+
+const origin = process.env.NEXT_PUBLIC_URL_ORIGIN;
 
 export const products: IProduct[] = [
   {
@@ -74,6 +84,8 @@ export const products: IProduct[] = [
         },
       ],
     },
+    attached_link:
+      "https://docs.google.com/forms/d/e/1FAIpQLSf4Bwghd1vZiFL8ypmbeQcdfCbhdSKSwxOJoejh2uVoUsbghw/viewform?usp=preview",
   },
   {
     id: 2,
@@ -137,6 +149,8 @@ export const products: IProduct[] = [
         },
       ],
     },
+    attached_link:
+      "https://docs.google.com/forms/d/e/1FAIpQLScKdB88Q20b2eIoE0CIVcECkPxdWy5ZgH-mTI_u9hP9VzKUkg/viewform?usp=dialog",
   },
   {
     id: 3,
@@ -157,6 +171,7 @@ export const products: IProduct[] = [
         </>
       ),
     },
+    attached_link: `${origin}/attachments/14-DAY BALANCED MEAL PLAN.pdf`,
   },
   {
     id: 4,
@@ -176,6 +191,7 @@ export const products: IProduct[] = [
         </>
       ),
     },
+    attached_link: `${origin}/attachments/NUTRIENT-RICH BREAKFASTS COLLECTION.pdf`,
   },
   {
     id: 5,
@@ -195,5 +211,6 @@ export const products: IProduct[] = [
         </>
       ),
     },
+    attached_link: `${origin}/attachments/EGAN BLISS: NUTRITIOUS & FLAVORFUL CREATIONS.pdf`,
   },
 ];

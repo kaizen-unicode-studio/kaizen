@@ -4,6 +4,7 @@ interface CartItemProps {
   description: string;
   id: number;
   amount: number;
+  attached_link: string;
 }
 
 const Card: CSSProperties = {
@@ -44,13 +45,19 @@ const Description: CSSProperties = {
   width: "70%",
 };
 
-const CartItem: FC<CartItemProps> = ({ amount, description, name }) => {
+const CartItem: FC<CartItemProps> = ({
+  amount,
+  description,
+  name,
+  attached_link,
+}) => {
   return (
-    <div style={Card}>
+    <a href={attached_link} target="_blank" style={Card}>
       <h6 style={Header}>{name}</h6>
       <p style={Description}>{description}</p>
       <p style={Amount}>£{amount.toFixed(2)}</p>
-    </div>
+      {/* {attached_link && <a href={attached_link}>Click here to learn more</a>} */}
+    </a>
   );
 };
 
