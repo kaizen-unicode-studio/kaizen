@@ -46,37 +46,23 @@ export async function POST(req: NextRequest) {
 
       break;
     case "charge.updated":
-      const { amount } = await stripe.balanceTransactions.retrieve(
-        balance_transaction
-      );
+      await stripe.balanceTransactions.retrieve(balance_transaction);
 
       const paymentData = await stripe.paymentIntents.retrieve(payment_intent);
 
       try {
-        // await fetch(`https://api.airtable.com/v0/${tableToken}/orders`, {
-        //   method: "POST",
-        //   headers: {
-        //     Authorization: "Bearer " + process.env.AIRTABLE_TOKEN,
-        //     "Content-Type": "application/json",
-        //   },
-        //   body: JSON.stringify({
-        //     fields: {
-        //       ...paymentData.metadata,
-        //       amount: "€" + (amount / 100).toFixed(2),
-        //     },
-        //   }),
-        // });
-
-        fetch(`${origin}/api/send?email=${paymentData.metadata.email}`, {
+        await fetch(`${origin}/api/send?email=${paymentData.metadata.email}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
             ...paymentData.metadata,
-            amount: (amount / 100).toFixed(2),
+            amount: (paymentData.amount / 100).toFixed(2),
           }),
         });
+
+        return NextResponse.json({ info: "success" }, { status: 200 });
       } catch (error) {
         return NextResponse.json(
           { error: JSON.stringify(error) },
@@ -84,7 +70,6 @@ export async function POST(req: NextRequest) {
         );
       }
 
-      break;
     default:
   }
 
