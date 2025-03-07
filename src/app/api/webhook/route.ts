@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
   const bodyReader = req.body!.getReader()!;
 
   const origin = process.env.URL_ORIGIN;
-  const tableToken = process.env.TABLE_TOKEN;
+  // const tableToken = process.env.TABLE_TOKEN;
   if (!sig) {
     return NextResponse.json(
       { error: "Missing Stripe signature" },
