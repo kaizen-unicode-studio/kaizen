@@ -40,6 +40,8 @@ export async function POST(req: NextRequest) {
     bufferData!
   ).data.object;
 
+  console.log({ payment_intent, metadata, balance_transaction });
+
   switch (event.type) {
     case "checkout.session.completed":
       await stripe.paymentIntents.update(payment_intent, { metadata });
@@ -49,6 +51,7 @@ export async function POST(req: NextRequest) {
       await stripe.balanceTransactions.retrieve(balance_transaction);
 
       const paymentData = await stripe.paymentIntents.retrieve(payment_intent);
+      console.log("payment data:", paymentData);
 
       try {
         await fetch(`${origin}/api/send?email=${paymentData.metadata.email}`, {
