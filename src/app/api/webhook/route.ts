@@ -67,12 +67,20 @@ export async function POST(req: NextRequest) {
             ...paymentData.metadata,
             amount: (amount / 100).toFixed(2),
           }),
-        });
+        }).catch((r) => console.log("send error:", r));
 
         return NextResponse.json({ info: "success" }, { status: 200 });
       } catch (error) {
         return NextResponse.json(
-          { error: JSON.stringify(error), info: "cannot send email" },
+          {
+            error: JSON.stringify(error),
+            info: "cannot send email",
+            link: `${origin}/api/send?email=${paymentData.metadata.email}`,
+            body: {
+              ...paymentData.metadata,
+              amount: (amount / 100).toFixed(2),
+            },
+          },
           { status: 400 }
         );
       }
