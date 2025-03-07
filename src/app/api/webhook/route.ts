@@ -30,6 +30,8 @@ export async function POST(req: NextRequest) {
 
   const bufferData = await bodyReader.read().then(getValueFromStream);
 
+  console.log("buffer data:", bufferData);
+
   try {
     event = stripe.webhooks.constructEvent(bufferData!, sig, endpointSecret);
   } catch (err) {
@@ -68,7 +70,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ info: "success" }, { status: 200 });
       } catch (error) {
         return NextResponse.json(
-          { error: JSON.stringify(error) },
+          { error: JSON.stringify(error), info: "cannot send email" },
           { status: 400 }
         );
       }
@@ -79,6 +81,9 @@ export async function POST(req: NextRequest) {
   try {
     return NextResponse.json({ status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: JSON.stringify(error) }, { status: 400 });
+    return NextResponse.json(
+      { error: JSON.stringify(error), info: "unknown error" },
+      { status: 400 }
+    );
   }
 }
