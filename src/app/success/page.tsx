@@ -34,6 +34,10 @@ const page = () => {
     });
   }, [params]);
 
+  useEffect(() => {
+    localStorage.removeItem("basket");
+  }, []);
+
   return (
     <>
       <Header removeButtons />
