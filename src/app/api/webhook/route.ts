@@ -50,7 +50,9 @@ export async function POST(req: NextRequest) {
 
       break;
     case "charge.updated":
-      await stripe.balanceTransactions.retrieve(balance_transaction);
+      const { amount } = await stripe.balanceTransactions.retrieve(
+        balance_transaction
+      );
 
       const paymentData = await stripe.paymentIntents.retrieve(payment_intent);
       console.log("payment data:", paymentData);
@@ -63,7 +65,7 @@ export async function POST(req: NextRequest) {
           },
           body: JSON.stringify({
             ...paymentData.metadata,
-            amount: (paymentData.amount / 100).toFixed(2),
+            amount: (amount / 100).toFixed(2),
           }),
         });
 
