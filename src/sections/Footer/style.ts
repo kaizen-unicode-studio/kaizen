@@ -105,3 +105,12 @@ export const Grid = styled.article`
     grid-template: repeat(3, auto) / 1fr;
   }
 `;
+
+export const Copy = styled.p`
+  margin-top: 40px;
+  text-align: center;
+`;
+
+export const CopyLink = styled.a`
+  color: var(--main-color);
+`;

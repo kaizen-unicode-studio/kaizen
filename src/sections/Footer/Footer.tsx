@@ -8,6 +8,8 @@ import {
   Section,
   StyledFooter,
   SubHeader,
+  Copy,
+  CopyLink,
 } from "./style";
 import Image from "next/image";
 import mail from "/public/icons/mail.svg";
@@ -15,6 +17,7 @@ import instagram from "/public/icons/instagram.svg";
 import Link from "next/link";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
   return (
     <StyledFooter id="contacts">
       <Container>
@@ -80,6 +83,11 @@ const Footer = () => {
             </div>
           </Section>
         </Grid>
+        <Copy>
+          {" "}
+          &copy; {year}. Made by{" "}
+          <CopyLink href="https://unicode.software">Unicode.Software</CopyLink>{" "}
+        </Copy>
       </Container>
     </StyledFooter>
   );
