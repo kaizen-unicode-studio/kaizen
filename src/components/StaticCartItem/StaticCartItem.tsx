@@ -52,12 +52,16 @@ const CartItem: FC<CartItemProps> = ({
   attached_link,
 }) => {
   return (
-    <a href={attached_link} target="_blank" style={Card}>
+    <div style={Card}>
       <h6 style={Header}>{name}</h6>
       <p style={Description}>{description}</p>
       <p style={Amount}>£{amount.toFixed(2)}</p>
-      {/* {attached_link && <a href={attached_link}>Click here to learn more</a>} */}
-    </a>
+      {attached_link && (
+        <a href={attached_link} target="_blank">
+          Get your product
+        </a>
+      )}
+    </div>
   );
 };
 
