@@ -24,7 +24,7 @@ export interface IProduct {
   attached_link: string;
 }
 
-const origin = process.env.NEXT_PUBLIC_URL_ORIGIN;
+const origin = "https://kaizenproject.net"; //process.env.NEXT_PUBLIC_URL_ORIGIN;
 
 export const products: IProduct[] = [
   {

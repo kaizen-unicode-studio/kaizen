@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
   const sig = req.headers.get("stripe-signature")!;
   const bodyReader = req.body!.getReader()!;
 
-  const origin = process.env.NEXT_PUBLIC_URL_ORIGIN;
+  const origin = "https://kaizenproject.net"; // process.env.NEXT_PUBLIC_URL_ORIGIN;
   // const tableToken = process.env.TABLE_TOKEN;
   if (!sig) {
     return NextResponse.json(
