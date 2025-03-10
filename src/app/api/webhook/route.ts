@@ -50,9 +50,9 @@ export async function POST(req: NextRequest) {
 
       break;
     case "charge.updated":
-      const { amount } = await stripe.balanceTransactions.retrieve(
-        balance_transaction
-      );
+      // const { amount } = await stripe.balanceTransactions.retrieve(
+      //   balance_transaction
+      // );
 
       const paymentData = await stripe.paymentIntents.retrieve(payment_intent);
       console.log("payment data:", paymentData);
@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
           },
           body: JSON.stringify({
             ...paymentData.metadata,
-            amount: (amount / 100).toFixed(2),
+            amount: (paymentData.amount / 100).toFixed(2),
           }),
         }).catch((r) => console.log("send error:", r));
 
@@ -78,7 +78,7 @@ export async function POST(req: NextRequest) {
             link: `${origin}/api/send?email=${paymentData.metadata.email}`,
             body: {
               ...paymentData.metadata,
-              amount: (amount / 100).toFixed(2),
+              amount: (paymentData.amount / 100).toFixed(2),
             },
           },
           { status: 400 }
