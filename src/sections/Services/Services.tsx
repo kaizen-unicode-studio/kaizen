@@ -10,12 +10,13 @@ import ExpandContent from "@/components/ExpandContent";
 // import services_5 from "/public/covers/services_5.webp";
 import { services } from "@/services";
 import { products } from "@/products";
+import React from "react";
 
 const Services = () => {
   return (
     <StyledServices id="services">
       {services.map((service) => (
-        <>
+        <React.Fragment key={service.id}>
           <Header>{service.title}</Header>
           <ServicesWrapper gap={`${service.gap}px`}>
             {products
@@ -46,7 +47,7 @@ const Services = () => {
                 </ExpandCard>
               ))}
           </ServicesWrapper>
-        </>
+        </React.Fragment>
       ))}
 
       <Separator />
