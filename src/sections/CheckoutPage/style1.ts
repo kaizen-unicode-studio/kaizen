@@ -12,23 +12,24 @@ export const Container = styled.main`
   @media (max-width: 768px) {
     padding-inline: 16px;
   }
-
-  > img {
-    position: absolute;
-    top: 114px;
-    left: 523px;
-    z-index: 0;
-
-    @media (max-width: 920px) {
-      display: none;
-    }
-  }
 `;
 
 export const Header = styled.h2`
   font-size: 28px;
   font-weight: 700;
   line-height: 40px;
+  position: relative;
+
+  > img {
+    position: absolute;
+    top: 114px;
+    left: 442px; // 523px
+    z-index: 0;
+
+    @media (max-width: 920px) {
+      display: none;
+    }
+  }
 `;
 
 export const SubHeader = styled.h3`

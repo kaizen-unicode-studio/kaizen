@@ -129,10 +129,10 @@ const CheckoutPage = ({
 
   return (
     <Container>
-      <Image src={donut} alt={"Donut"} priority />
-
       <>
-        <Header>CHECKOUT</Header>
+        <Header>
+          CHECKOUT <Image src={donut} alt={"Donut"} priority />
+        </Header>
         <Grid>
           <form onSubmit={handleSubmit(onSubmit)}>
             <SubHeader>Contact information</SubHeader>
