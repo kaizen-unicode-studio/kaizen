@@ -4,9 +4,10 @@ export const Container = styled.main`
   max-width: 1340px;
   padding-inline: 80px;
   margin-inline: auto;
-  margin-block: 64px 110px;
+  /* margin-block: 64px 110px; */
+  padding-block: 174px 120px;
   position: relative;
-  min-height: 50vh;
+  min-height: calc(100vh - 385px);
 
   @media (max-width: 768px) {
     padding-inline: 16px;
