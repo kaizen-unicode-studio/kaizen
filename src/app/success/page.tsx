@@ -34,6 +34,7 @@ const page = () => {
     });
   }, [params]);
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     localStorage.removeItem("basket");
   }, []);
