@@ -1,5 +1,6 @@
 "use client";
 
+import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const Container = styled.section`
@@ -161,4 +162,31 @@ export const MobileText = styled.p`
     line-height: 20px;
     font-size: 16px;
   }
+`;
+
+const LoadingAnimation = keyframes`
+  0%{
+    rotate: 0deg
+  }
+  100%{
+    rotate: 360deg
+  }
+`;
+
+export const Loader = styled.div`
+  width: 50px;
+  height: 50px;
+  animation: ${LoadingAnimation} 2s linear infinite forwards;
+  > img {
+    width: 50px;
+    height: 50px;
+  }
+`;
+
+export const LoaderWrapper = styled.div`
+  width: 100%;
+  height: calc(100vh - 385px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

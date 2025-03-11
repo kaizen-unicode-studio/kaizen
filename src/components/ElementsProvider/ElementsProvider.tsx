@@ -3,22 +3,12 @@ import { IProduct } from "@/products";
 import CheckoutPage from "@/sections/CheckoutPage";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import {
-  // TextSection,
-  // TopHeader,
-  // Text,
-  // Container,
-  SubHeader,
-  Error,
-  Empty,
-  // Mobile,
-  // MobileText,
-} from "./style";
+import { SubHeader, Error, Empty, Loader, LoaderWrapper } from "./style";
 import { useEffect, useState } from "react";
 import Button from "../Button";
 import Link from "next/link";
-// import Image from "next/image";
-// import hero_2 from "/public/images/hero_2.webp";
+import loader from "/public/icons/loader.svg";
+import Image from "next/image";
 
 const pub_token = process.env.NEXT_PUBLIC_STRIPE_PUBLIC_TOKEN;
 const ElementsProvider = () => {
@@ -52,7 +42,7 @@ const ElementsProvider = () => {
 
   return (
     <>
-      {!items.data.length && !total && (
+      {!items.data.length ? (
         <Empty>
           <SubHeader>OOPS!</SubHeader>
           <Error>looks like your cart is empty</Error>
@@ -60,8 +50,7 @@ const ElementsProvider = () => {
             <Link href="/#services">GO TO THE SERVICES</Link>
           </Button>
         </Empty>
-      )}
-      {!!total && stripePromise && (
+      ) : !!total && stripePromise ? (
         <Elements
           stripe={stripePromise}
           options={{
@@ -71,32 +60,16 @@ const ElementsProvider = () => {
             locale: "en",
           }}
         >
-          {/* <Container>
-            <TextSection>
-              <TopHeader>
-                KAI<span>ZEN</span>
-              </TopHeader>
-              <Text>
-                Improving your health through mindful choices is at the heart of
-                our philosophy, where zest for life grows by prioritizing
-                nutrition. Elevate your well-being with our holistic approach,
-                nurturing your body and soul through the principles of lifelong
-                improvement. Transform yourself with Kaizen.
-              </Text>
-              <Mobile>
-                <Image src={hero_2} alt={"Fruit on table"} />
-                <MobileText>
-                  Improving your health through mindful choices is at the heart
-                  of our philosophy, where zest for life grows by prioritizing
-                  nutrition. Elevate your well-being with our holistic approach,
-                  nurturing your body and soul through the principles of
-                  lifelong improvement. Transform yourself with Kaizen.
-                </MobileText>
-              </Mobile>
-            </TextSection>
-          </Container> */}
           <CheckoutPage amount={total} currency={currency} />
         </Elements>
+      ) : (
+        <>
+          <LoaderWrapper>
+            <Loader>
+              <Image src={loader} alt="" />
+            </Loader>
+          </LoaderWrapper>
+        </>
       )}
     </>
   );

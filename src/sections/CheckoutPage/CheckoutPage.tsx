@@ -130,103 +130,106 @@ const CheckoutPage = ({
   return (
     <Container>
       <Image src={donut} alt={"Donut"} priority />
-      {!clientSecret || !stripe || !elements ? (
-        <div>
-          <div role="status">
-            <p>Loading...</p>
-          </div>
-        </div>
-      ) : (
-        <>
-          <Header>CHECKOUT</Header>
-          <Grid>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <SubHeader>Contact information</SubHeader>
 
-              <Input
-                label={"First name"}
-                register={register}
-                params={{
-                  required: true,
-                }}
-                registerKey="firstName"
-                error={{
-                  state: errors.firstName,
-                  message: "User name is required",
-                }}
-              />
-              <Input
-                label={"Last name"}
-                register={register}
-                params={{
-                  required: true,
-                }}
-                registerKey="lastName"
-                error={{
-                  state: errors.lastName,
-                  message: "Last name is required",
-                }}
-              />
-              <Input
-                register={register}
-                params={{
-                  required: true,
-                  pattern:
-                    /^\+?(\d{1,3})?[-.\s]?(\(?\d{1,4}\)?)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/i,
-                }}
-                registerKey="phone"
-                error={{
-                  state: errors.phone,
-                  message: "Phone is required",
-                }}
-                label={"Phone number"}
-                placeholder="Enter you number"
-                description="We need your phone number to contact you about the consultation.
+      <>
+        <Header>CHECKOUT</Header>
+        <Grid>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <SubHeader>Contact information</SubHeader>
+
+            <Input
+              label={"First name"}
+              register={register}
+              params={{
+                required: true,
+              }}
+              registerKey="firstName"
+              error={{
+                state: errors.firstName,
+                message: "User name is required",
+              }}
+            />
+            <Input
+              label={"Last name"}
+              register={register}
+              params={{
+                required: true,
+              }}
+              registerKey="lastName"
+              error={{
+                state: errors.lastName,
+                message: "Last name is required",
+              }}
+            />
+            <Input
+              register={register}
+              params={{
+                required: true,
+                pattern:
+                  /^\+?(\d{1,3})?[-.\s]?(\(?\d{1,4}\)?)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/i,
+              }}
+              registerKey="phone"
+              error={{
+                state: errors.phone,
+                message: "Phone is required",
+              }}
+              label={"Phone number"}
+              placeholder="Enter you number"
+              description="We need your phone number to contact you about the consultation.
 Please make sure you are available on WhatsApp, Telegram, or Viber"
-              />
-              <Input
-                register={register}
-                params={{
-                  required: true,
-                  pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
-                }}
-                error={{ state: errors.email, message: "Email is required" }}
-                registerKey="email"
-                label={"Email address"}
-                placeholder="Enter your email"
-                description="We need your email to send your order in PDF format"
-              />
-              {clientSecret && <PaymentElement />}
+            />
+            <Input
+              register={register}
+              params={{
+                required: true,
+                pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
+              }}
+              error={{ state: errors.email, message: "Email is required" }}
+              registerKey="email"
+              label={"Email address"}
+              placeholder="Enter your email"
+              description="We need your email to send your order in PDF format"
+            />
+            {!clientSecret || !stripe || !elements ? (
+              <div>
+                <div role="status">
+                  <p>Loading...</p>
+                </div>
+              </div>
+            ) : (
+              <>
+                {clientSecret && <PaymentElement />}
 
-              {errorMessage && <div>{errorMessage}</div>}
+                {errorMessage && <div>{errorMessage}</div>}
 
-              <Button
-                theme="pay"
-                disabled={!stripe || loading}
-                style={{ marginTop: 20 }}
-              >
-                {!loading ? (
-                  <>
-                    <p>pay now</p>
-                    <Image
-                      src={right_arrow}
-                      alt={"Arrow"}
-                      width={20}
-                      height={20}
-                    />
-                  </>
-                ) : (
-                  "Processing..."
-                )}
-              </Button>
-            </form>
-            <OrderWrapper>
-              <SubHeader style={{ margin: "0 0 16px" }}>your order</SubHeader>
-              <Order bgColor="--main-color" />
-            </OrderWrapper>
-          </Grid>
-        </>
-      )}
+                <Button
+                  theme="pay"
+                  disabled={!stripe || loading}
+                  style={{ marginTop: 20 }}
+                >
+                  {!loading ? (
+                    <>
+                      <p>pay now</p>
+                      <Image
+                        src={right_arrow}
+                        alt={"Arrow"}
+                        width={20}
+                        height={20}
+                      />
+                    </>
+                  ) : (
+                    "Processing..."
+                  )}
+                </Button>
+              </>
+            )}
+          </form>
+          <OrderWrapper>
+            <SubHeader style={{ margin: "0 0 16px" }}>your order</SubHeader>
+            <Order bgColor="--main-color" />
+          </OrderWrapper>
+        </Grid>
+      </>
     </Container>
   );
 };
