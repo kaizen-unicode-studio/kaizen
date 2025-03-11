@@ -35,7 +35,7 @@ const CartItem: FC<CartItemProps> = ({
       <Header>
         {name}
         <div>
-          <Amount>£{amount.toFixed(2)}</Amount>
+          <Amount>${amount.toFixed(2)}</Amount>
           <Remove onClick={handleRemove}>
             <Image src={remove} alt={"Trash bin"} />
           </Remove>

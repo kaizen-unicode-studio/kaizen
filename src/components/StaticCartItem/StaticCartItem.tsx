@@ -36,7 +36,7 @@ const Amount: CSSProperties = {
   margin: 0,
 };
 
-const Description: CSSProperties = {
+export const Description: CSSProperties = {
   fontFamily: "Cantarell",
   fontSize: "14px",
   fontWeight: 400,
@@ -55,7 +55,7 @@ const CartItem: FC<CartItemProps> = ({
     <div style={Card}>
       <h6 style={Header}>{name}</h6>
       <p style={Description}>{description}</p>
-      <p style={Amount}>£{amount.toFixed(2)}</p>
+      <p style={Amount}>${amount.toFixed(2)}</p>
       {attached_link && (
         <a href={attached_link} target="_blank">
           Get your product

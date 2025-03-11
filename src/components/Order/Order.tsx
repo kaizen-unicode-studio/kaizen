@@ -45,7 +45,7 @@ const Order: FC<OrderProps> = ({ bgColor }) => {
       </Overflow>
 
       <Total>
-        TOTAL AMOUNT <span>£{total.toFixed(2)}</span>
+        TOTAL AMOUNT <span>${total.toFixed(2)}</span>
       </Total>
     </div>
   );

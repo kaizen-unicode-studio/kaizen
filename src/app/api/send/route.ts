@@ -36,6 +36,8 @@ export async function POST(req: NextRequest) {
     })
   );
 
+  console.log("test html:", html);
+
   const customerMail = searchParams.get("email")!;
   try {
     await transporter.verify();
@@ -43,9 +45,11 @@ export async function POST(req: NextRequest) {
     const info = await transporter.sendMail({
       from: senderMail,
       to: [customerMail, ownerMail],
-      subject: "Thank you for purchasing our service!",
+      subject: "Thank You for Choosing Kaizen Project! Here's Your Purchase!",
       html: html,
     });
+
+    console.log("info:", info);
 
     return NextResponse.json({ info }, { status: 200 });
   } catch (error) {
