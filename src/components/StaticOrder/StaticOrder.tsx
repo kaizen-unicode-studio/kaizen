@@ -3,6 +3,8 @@ import { products } from "@/products";
 import StaticCartItem from "../StaticCartItem";
 import { Html } from "@react-email/components";
 import { Description } from "../StaticCartItem/StaticCartItem";
+import mail from "/public/icons/mail.svg";
+import instagram from "/public/icons/instagram.svg";
 interface OrderProps {
   itemsNames: string;
   amount: number;
@@ -34,6 +36,12 @@ const Overflow: CSSProperties = {
   overflowY: "auto",
 };
 
+const Footer: CSSProperties = {
+  ...Description,
+  margin: 0,
+  fontSize: "16px",
+};
+
 const StaticOrder = ({ itemsNames, amount }: OrderProps) => {
   const getItems = () => {
     const names: string[] = itemsNames
@@ -61,20 +69,23 @@ const StaticOrder = ({ itemsNames, amount }: OrderProps) => {
         <p style={Text}>
           TOTAL AMOUNT <span>${total.toFixed(2)}</span>
         </p>
-        <p style={{ ...Description, fontSize: "16px" }}>
+
+        <p style={Footer}>
           For any questions or support, feel free to reach out. Best regards,
         </p>
-        <p style={{ ...Description, fontSize: "16px" }}>
-          Kaizen Project Team https://kaizenproject.net
-        </p>
-        <p style={{ ...Description, fontSize: "16px" }}>
-          (https://kaizenproject.net/%22%20%5Ct%20%22_new)
+        <br />
+        <p style={Footer}>Kaizen Project Team</p>
+        <p style={Footer}>https://kaizenproject.net</p>
+
+        {/* <br />
+        <p style={Footer}>
+          <img src={mail} alt="email logo" />
           kaizenbyyulia@gmail.com
         </p>
-        <p style={{ ...Description, fontSize: "16px" }}>kaizenpro.j</p>
-        <p style={{ ...Description, fontSize: "16px" }}>
-          (https://www.instagram.com/kaizenpro.j/%22%20%5Ct%20%22_blank)
-        </p>
+        <p style={Footer}>
+          <img src={instagram} alt="instagram logo" />
+          <a href="https://www.instagram.com/kaizenpro.j">kaizenpro.j</a>
+        </p> */}
       </div>
     </Html>
   );
