@@ -5,7 +5,8 @@ import Image from "next/image";
 import logo from "/public/icons/logo.svg";
 import ToggleMenu from "@/components/ToggleMenu";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import packageJson from "../../../package.json";
 
 interface HeaderProps {
   removeButtons?: boolean;
@@ -17,6 +18,22 @@ const Header = ({ removeButtons = false }: HeaderProps) => {
   const handleClose = () => {
     setIsOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    const clear = () => {
+      caches.keys().then((names) => {
+        names.forEach((name) => {
+          caches.delete(name);
+        });
+      });
+      localStorage.clear();
+    };
+    const { version } = packageJson;
+    if (localStorage.getItem("version") !== version) {
+      clear();
+      localStorage.setItem("version", version);
+    }
+  }, []);
 
   return (
     <StyledHeader isOpen={isOpen}>
