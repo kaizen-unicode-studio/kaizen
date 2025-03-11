@@ -40,6 +40,7 @@ const Footer: CSSProperties = {
   ...Description,
   margin: 0,
   fontSize: "16px",
+  width: "100%",
 };
 
 const StaticOrder = ({ itemsNames, amount }: OrderProps) => {
@@ -71,9 +72,10 @@ const StaticOrder = ({ itemsNames, amount }: OrderProps) => {
         </p>
 
         <p style={Footer}>
-          For any questions or support, feel free to reach out. Best regards,
+          For any questions or support, feel free to reach out.
         </p>
         <br />
+        <p style={Footer}> Best regards,</p>
         <p style={Footer}>Kaizen Project Team</p>
         <p style={Footer}>https://kaizenproject.net</p>
 
